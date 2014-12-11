@@ -17,6 +17,53 @@ namespace Client
         public Form1()
         {
             InitializeComponent();
+            PopulateTreeViewLocal();
+        }
+
+        private void PopulateTreeViewLocal()
+        {
+            TreeNode rootNode;
+
+            DirectoryInfo info = new DirectoryInfo("C:");
+            if (info.Exists)
+            {
+                rootNode = new TreeNode(info.Name);
+                rootNode.Tag = info;
+                GetDirectories(info.GetDirectories(), rootNode);
+                treeViewLocal.Nodes.Add(rootNode);
+            }
+        }
+
+        /* private void PopulateTreeViewDistant()
+        {
+            TreeNode rootNode;
+
+            DirectoryInfo info = new DirectoryInfo(@"../..");
+            if (info.Exists)
+            {
+                rootNode = new TreeNode(info.Name);
+                rootNode.Tag = info;
+                GetDirectories(info.GetDirectories(), rootNode);
+                treeViewDistant.Nodes.Add(rootNode);
+            }
+        } */
+
+        private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
+        {
+            TreeNode aNode;
+            DirectoryInfo[] subSubDirs;
+            foreach (DirectoryInfo subDir in subDirs)
+            {
+                aNode = new TreeNode(subDir.Name, 0, 0);
+                aNode.Tag = subDir;
+                aNode.ImageKey = "folder";
+                subSubDirs = subDir.GetDirectories();
+                if (subSubDirs.Length != 0)
+                {
+                    GetDirectories(subSubDirs, aNode);
+                }
+                nodeToAddTo.Nodes.Add(aNode);
+            }
         }
 
         private void connexionButton_Click(object sender, EventArgs e)
