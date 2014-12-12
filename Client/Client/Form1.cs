@@ -24,7 +24,7 @@ namespace Client
         {
             TreeNode rootNode;
 
-            DirectoryInfo info = new DirectoryInfo("C:");
+            DirectoryInfo info = new DirectoryInfo("C:\\");
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
@@ -54,15 +54,22 @@ namespace Client
             DirectoryInfo[] subSubDirs;
             foreach (DirectoryInfo subDir in subDirs)
             {
-                aNode = new TreeNode(subDir.Name, 0, 0);
-                aNode.Tag = subDir;
-                aNode.ImageKey = "folder";
-                subSubDirs = subDir.GetDirectories();
-                if (subSubDirs.Length != 0)
+                try
                 {
-                    GetDirectories(subSubDirs, aNode);
+                    aNode = new TreeNode(subDir.Name, 0, 0);
+                    aNode.Tag = subDir;
+                    aNode.ImageKey = "folder";
+                    subSubDirs = subDir.GetDirectories();
+                    //if (subSubDirs.Length != 0)
+                    //{
+                    //    GetDirectories(subSubDirs, aNode);
+                    //}
+                    nodeToAddTo.Nodes.Add(aNode);
                 }
-                nodeToAddTo.Nodes.Add(aNode);
+                catch (UnauthorizedAccessException)
+                {
+                    continue;
+                }
             }
         }
 
@@ -88,5 +95,10 @@ namespace Client
 
             connexionButton.Hide();
         }
+
+        /* private void deconnexionButton_Click(object sender, EventArgs e)
+        {
+            
+        } */
     }
 }

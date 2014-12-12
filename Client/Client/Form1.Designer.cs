@@ -44,29 +44,29 @@
             this.deconnexionButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.sendButton = new System.Windows.Forms.Button();
-            this.receiveButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.imageListFtp = new System.Windows.Forms.ImageList(this.components);
             this.treeViewLocal = new System.Windows.Forms.TreeView();
-            this.treeViewDistant = new System.Windows.Forms.TreeView();
+            this.imageListFtp = new System.Windows.Forms.ImageList(this.components);
             this.listViewLocal = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.nomLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.typeLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dernModifLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.treeViewDistant = new System.Windows.Forms.TreeView();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.nomDistant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.typeDistant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dernModifDistant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sendButton = new System.Windows.Forms.Button();
+            this.receiveButton = new System.Windows.Forms.Button();
             this.connexionPanel.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -92,7 +92,6 @@
             // connexionPanel
             // 
             this.connexionPanel.Controls.Add(this.sitesButton);
-            this.connexionPanel.Controls.Add(this.connexionButton);
             this.connexionPanel.Controls.Add(this.portTextBox);
             this.connexionPanel.Controls.Add(this.portLabel);
             this.connexionPanel.Controls.Add(this.serverLabel);
@@ -102,6 +101,7 @@
             this.connexionPanel.Controls.Add(this.loginLabel);
             this.connexionPanel.Controls.Add(this.loginTextBox);
             this.connexionPanel.Controls.Add(this.deconnexionButton);
+            this.connexionPanel.Controls.Add(this.connexionButton);
             this.connexionPanel.Location = new System.Drawing.Point(12, 12);
             this.connexionPanel.Name = "connexionPanel";
             this.connexionPanel.Size = new System.Drawing.Size(972, 48);
@@ -182,6 +182,7 @@
             this.deconnexionButton.TabIndex = 3;
             this.deconnexionButton.Text = "Déconnexion";
             this.deconnexionButton.UseVisualStyleBackColor = true;
+            //this.deconnexionButton.Click += new System.EventHandler(this.deconnexionButton_Click);
             // 
             // panel1
             // 
@@ -198,6 +199,70 @@
             this.panel2.Size = new System.Drawing.Size(420, 360);
             this.panel2.TabIndex = 4;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.treeViewLocal);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.listViewLocal);
+            this.splitContainer1.Size = new System.Drawing.Size(420, 360);
+            this.splitContainer1.SplitterDistance = 156;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // treeViewLocal
+            // 
+            this.treeViewLocal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeViewLocal.ImageIndex = 0;
+            this.treeViewLocal.ImageList = this.imageListFtp;
+            this.treeViewLocal.Location = new System.Drawing.Point(0, 0);
+            this.treeViewLocal.Name = "treeViewLocal";
+            this.treeViewLocal.SelectedImageIndex = 0;
+            this.treeViewLocal.Size = new System.Drawing.Size(156, 360);
+            this.treeViewLocal.TabIndex = 0;
+            // 
+            // imageListFtp
+            // 
+            this.imageListFtp.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListFtp.ImageStream")));
+            this.imageListFtp.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListFtp.Images.SetKeyName(0, "ob_4a18d1_dossier.png");
+            this.imageListFtp.Images.SetKeyName(1, "icone-fichier.png");
+            // 
+            // listViewLocal
+            // 
+            this.listViewLocal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nomLocal,
+            this.typeLocal,
+            this.dernModifLocal});
+            this.listViewLocal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewLocal.Location = new System.Drawing.Point(0, 0);
+            this.listViewLocal.Name = "listViewLocal";
+            this.listViewLocal.Size = new System.Drawing.Size(260, 360);
+            this.listViewLocal.SmallImageList = this.imageListFtp;
+            this.listViewLocal.TabIndex = 0;
+            this.listViewLocal.UseCompatibleStateImageBehavior = false;
+            this.listViewLocal.View = System.Windows.Forms.View.Details;
+            // 
+            // nomLocal
+            // 
+            this.nomLocal.Text = "Nom";
+            this.nomLocal.Width = 53;
+            // 
+            // typeLocal
+            // 
+            this.typeLocal.Text = "Type";
+            // 
+            // dernModifLocal
+            // 
+            this.dernModifLocal.Text = "Dernière Modification";
+            this.dernModifLocal.Width = 163;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.splitContainer2);
@@ -205,6 +270,61 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(420, 360);
             this.panel3.TabIndex = 5;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.treeViewDistant);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.listView2);
+            this.splitContainer2.Size = new System.Drawing.Size(420, 360);
+            this.splitContainer2.SplitterDistance = 156;
+            this.splitContainer2.TabIndex = 1;
+            // 
+            // treeViewDistant
+            // 
+            this.treeViewDistant.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeViewDistant.ImageIndex = 0;
+            this.treeViewDistant.ImageList = this.imageListFtp;
+            this.treeViewDistant.Location = new System.Drawing.Point(0, 0);
+            this.treeViewDistant.Name = "treeViewDistant";
+            this.treeViewDistant.SelectedImageIndex = 0;
+            this.treeViewDistant.Size = new System.Drawing.Size(156, 360);
+            this.treeViewDistant.TabIndex = 1;
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nomDistant,
+            this.typeDistant,
+            this.dernModifDistant});
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView2.Location = new System.Drawing.Point(0, 0);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(260, 360);
+            this.listView2.SmallImageList = this.imageListFtp;
+            this.listView2.TabIndex = 1;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // nomDistant
+            // 
+            this.nomDistant.Text = "Nom";
+            // 
+            // typeDistant
+            // 
+            this.typeDistant.Text = "Type";
+            // 
+            // dernModifDistant
+            // 
+            this.dernModifDistant.Text = "Dernière Modification";
             // 
             // sendButton
             // 
@@ -224,125 +344,6 @@
             this.receiveButton.Text = "<----";
             this.receiveButton.UseVisualStyleBackColor = true;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeViewLocal);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.listViewLocal);
-            this.splitContainer1.Size = new System.Drawing.Size(420, 360);
-            this.splitContainer1.SplitterDistance = 156;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.treeViewDistant);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.listView2);
-            this.splitContainer2.Size = new System.Drawing.Size(420, 360);
-            this.splitContainer2.SplitterDistance = 156;
-            this.splitContainer2.TabIndex = 1;
-            // 
-            // imageListFtp
-            // 
-            this.imageListFtp.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListFtp.ImageStream")));
-            this.imageListFtp.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListFtp.Images.SetKeyName(0, "ob_4a18d1_dossier.png");
-            this.imageListFtp.Images.SetKeyName(1, "icone-fichier.png");
-            // 
-            // treeViewLocal
-            // 
-            this.treeViewLocal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeViewLocal.ImageIndex = 0;
-            this.treeViewLocal.ImageList = this.imageListFtp;
-            this.treeViewLocal.Location = new System.Drawing.Point(0, 0);
-            this.treeViewLocal.Name = "treeViewLocal";
-            this.treeViewLocal.SelectedImageIndex = 0;
-            this.treeViewLocal.Size = new System.Drawing.Size(156, 360);
-            this.treeViewLocal.TabIndex = 0;
-            // 
-            // treeViewDistant
-            // 
-            this.treeViewDistant.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeViewDistant.ImageIndex = 0;
-            this.treeViewDistant.ImageList = this.imageListFtp;
-            this.treeViewDistant.Location = new System.Drawing.Point(0, 0);
-            this.treeViewDistant.Name = "treeViewDistant";
-            this.treeViewDistant.SelectedImageIndex = 0;
-            this.treeViewDistant.Size = new System.Drawing.Size(156, 360);
-            this.treeViewDistant.TabIndex = 1;
-            // 
-            // listViewLocal
-            // 
-            this.listViewLocal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.nomLocal,
-            this.typeLocal,
-            this.dernModifLocal});
-            this.listViewLocal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewLocal.Location = new System.Drawing.Point(0, 0);
-            this.listViewLocal.Name = "listViewLocal";
-            this.listViewLocal.Size = new System.Drawing.Size(260, 360);
-            this.listViewLocal.SmallImageList = this.imageListFtp;
-            this.listViewLocal.TabIndex = 0;
-            this.listViewLocal.UseCompatibleStateImageBehavior = false;
-            this.listViewLocal.View = System.Windows.Forms.View.Details;
-            // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.nomDistant,
-            this.typeDistant,
-            this.dernModifDistant});
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView2.Location = new System.Drawing.Point(0, 0);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(260, 360);
-            this.listView2.SmallImageList = this.imageListFtp;
-            this.listView2.TabIndex = 1;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // nomLocal
-            // 
-            this.nomLocal.Text = "Nom";
-            this.nomLocal.Width = 53;
-            // 
-            // typeLocal
-            // 
-            this.typeLocal.Text = "Type";
-            // 
-            // dernModifLocal
-            // 
-            this.dernModifLocal.Text = "Dernière Modification";
-            this.dernModifLocal.Width = 163;
-            // 
-            // nomDistant
-            // 
-            this.nomDistant.Text = "Nom";
-            // 
-            // typeDistant
-            // 
-            this.typeDistant.Text = "Type";
-            // 
-            // dernModifDistant
-            // 
-            this.dernModifDistant.Text = "Dernière Modification";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,11 +360,11 @@
             this.connexionPanel.ResumeLayout(false);
             this.connexionPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
