@@ -40,8 +40,8 @@
             this.serverTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
-            this.deconnexionButton = new System.Windows.Forms.Button();
             this.connexionButton = new System.Windows.Forms.Button();
+            this.deconnexionButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -164,15 +164,6 @@
             this.passwordLabel.TabIndex = 2;
             this.passwordLabel.Text = "Mot de passe : ";
             // 
-            // deconnexionButton
-            // 
-            this.deconnexionButton.Location = new System.Drawing.Point(866, 12);
-            this.deconnexionButton.Name = "deconnexionButton";
-            this.deconnexionButton.Size = new System.Drawing.Size(87, 23);
-            this.deconnexionButton.TabIndex = 3;
-            this.deconnexionButton.Text = "Déconnexion";
-            this.deconnexionButton.UseVisualStyleBackColor = true;
-            // 
             // connexionButton
             // 
             this.connexionButton.Location = new System.Drawing.Point(866, 12);
@@ -182,6 +173,15 @@
             this.connexionButton.Text = "Connexion";
             this.connexionButton.UseVisualStyleBackColor = true;
             this.connexionButton.Click += new System.EventHandler(this.connexionButton_Click);
+            // 
+            // deconnexionButton
+            // 
+            this.deconnexionButton.Location = new System.Drawing.Point(866, 12);
+            this.deconnexionButton.Name = "deconnexionButton";
+            this.deconnexionButton.Size = new System.Drawing.Size(87, 23);
+            this.deconnexionButton.TabIndex = 3;
+            this.deconnexionButton.Text = "Déconnexion";
+            this.deconnexionButton.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 

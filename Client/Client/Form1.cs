@@ -32,6 +32,8 @@ namespace Client
                 GetDirectories(info.GetDirectories(), rootNode);
                 treeView.Nodes.Add(rootNode);
             }
+            FileInfo infoF = new FileInfo("toto");
+            int size = (int) infoF.Length;
         }
 
         private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
@@ -46,6 +48,7 @@ namespace Client
                     aNode.Tag = subDir;
                     aNode.ImageKey = "folder";
                     nodeToAddTo.Nodes.Add(aNode);
+
                 }
                 catch (UnauthorizedAccessException)
                 {

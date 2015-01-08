@@ -1,0 +1,4 @@
+C:\Users\Raphaël\Documents\Visual Studio 2012\Projects\Projet_FTP\Client\API_FTP\bin\Debug\API_FTP.dll
+C:\Users\Raphaël\Documents\Visual Studio 2012\Projects\Projet_FTP\Client\API_FTP\bin\Debug\API_FTP.pdb
+C:\Users\Raphaël\Documents\Visual Studio 2012\Projects\Projet_FTP\Client\API_FTP\obj\Debug\API_FTP.dll
+C:\Users\Raphaël\Documents\Visual Studio 2012\Projects\Projet_FTP\Client\API_FTP\obj\Debug\API_FTP.pdb
