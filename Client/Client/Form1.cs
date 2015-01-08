@@ -17,36 +17,22 @@ namespace Client
         public Form1()
         {
             InitializeComponent();
-            PopulateTreeViewLocal();
+            PopulateTreeView(treeViewLocal, "C:\\");
         }
 
-        private void PopulateTreeViewLocal()
+        private void PopulateTreeView(TreeView treeView ,string path)
         {
             TreeNode rootNode;
 
-            DirectoryInfo info = new DirectoryInfo("C:\\");
+            DirectoryInfo info = new DirectoryInfo(path);
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
                 rootNode.Tag = info;
                 GetDirectories(info.GetDirectories(), rootNode);
-                treeViewLocal.Nodes.Add(rootNode);
+                treeView.Nodes.Add(rootNode);
             }
         }
-
-        /* private void PopulateTreeViewDistant()
-        {
-            TreeNode rootNode;
-
-            DirectoryInfo info = new DirectoryInfo(@"../..");
-            if (info.Exists)
-            {
-                rootNode = new TreeNode(info.Name);
-                rootNode.Tag = info;
-                GetDirectories(info.GetDirectories(), rootNode);
-                treeViewDistant.Nodes.Add(rootNode);
-            }
-        } */
 
         private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
         {
@@ -59,14 +45,17 @@ namespace Client
                     aNode = new TreeNode(subDir.Name, 0, 0);
                     aNode.Tag = subDir;
                     aNode.ImageKey = "folder";
-                    subSubDirs = subDir.GetDirectories();
-                    //if (subSubDirs.Length != 0)
-                    //{
-                    //    GetDirectories(subSubDirs, aNode);
-                    //}
                     nodeToAddTo.Nodes.Add(aNode);
                 }
                 catch (UnauthorizedAccessException)
+                {
+                    continue;
+                }
+                catch (InvalidOperationException)
+                {
+                    continue;
+                }
+                catch (NullReferenceException)
                 {
                     continue;
                 }
@@ -93,12 +82,22 @@ namespace Client
 
             FtpWebResponse response = (FtpWebResponse) request.GetResponse();
 
+            Stream responseStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(responseStream);
+
+            //Console.WriteLine("Directory List Complete, status {0}", response.StatusDescription);
+
+            reader.Close();
+            response.Close();
+
+            // PopulateTreeView(treeViewDistant, string response);
+
             connexionButton.Hide();
         }
 
         /* private void deconnexionButton_Click(object sender, EventArgs e)
         {
-            
+            connexionButton.Show();
         } */
     }
 }
