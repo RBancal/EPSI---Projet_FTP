@@ -8,5 +8,14 @@ namespace API_FTP.FTP_Client.Classes
 {
     class LogFtp
     {
+        public static void log()
+        {
+
+        }
+
+        public static void logCustom()
+        {
+
+        }
     }
 }

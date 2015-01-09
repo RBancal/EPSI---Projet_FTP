@@ -8,5 +8,14 @@ namespace API_FTP.FTP_Client.Interfaces
 {
     interface IStatus
     {
+        public static void getStatusCode()
+        {
+
+        }
+
+        public static void getStatusDetail()
+        {
+
+        }
     }
 }

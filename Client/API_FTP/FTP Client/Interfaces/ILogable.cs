@@ -8,5 +8,14 @@ namespace API_FTP.FTP_Client.Interfaces
 {
     interface ILogable
     {
+        public static void addLog()
+        {
+
+        }
+
+        public static void addLogCustom()
+        {
+
+        }
     }
 }

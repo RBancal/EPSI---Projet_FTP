@@ -8,5 +8,12 @@ namespace API_FTP.FTP_Client.Classes
 {
     class Configuration
     {
+        string login, password, host;
+        int port;
+
+        public static void getURI()
+        {
+
+        }
     }
 }

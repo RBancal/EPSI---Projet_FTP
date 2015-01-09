@@ -8,5 +8,9 @@ namespace API_FTP.FTP_Client.Classes
 {
     class File
     {
+        public static void estUnDossier()
+        {
+
+        }
     }
 }

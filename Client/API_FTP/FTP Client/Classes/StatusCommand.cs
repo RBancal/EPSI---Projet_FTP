@@ -8,5 +8,19 @@ namespace API_FTP.FTP_Client.Classes
 {
     class StatusCommand
     {
+        public static void statusCommand()
+        {
+
+        }
+
+        public static void getStatusCode()
+        {
+
+        }
+
+        public static void getStatusDetail()
+        {
+
+        }
     }
 }

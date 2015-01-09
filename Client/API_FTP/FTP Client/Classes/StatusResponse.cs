@@ -8,5 +8,19 @@ namespace API_FTP.FTP_Client.Classes
 {
     class StatusResponse
     {
+        public static void statutResponse()
+        {
+
+        }
+
+        public static void getStatusCode()
+        {
+
+        }
+
+        public static void getStatusDetail()
+        {
+
+        }
     }
 }
