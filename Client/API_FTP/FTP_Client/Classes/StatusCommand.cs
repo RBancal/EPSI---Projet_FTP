@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API_FTP.FTP_Client.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,21 +7,100 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Classes
 {
-    class StatusCommand
+    /// <summary>
+    /// Class renseignant sur la structure d'un statut de type commande (StatusCommand)
+    /// </summary>
+    class StatusCommand : Status
     {
-        public static void statusCommand()
-        {
+        /// <summary>
+        /// Renseigne sur le statut de la commande
+        /// </summary>
+        protected EStatusCommand _status;
 
+        /// <summary>
+        /// Constructeur du statut command
+        /// </summary>
+        /// <param name="aStatus">l'enum statut commande que vous voulez ajouter</param>
+        public StatusCommand(EStatusCommand aStatus)
+        {
+            _status = aStatus;
+            InitialiserCommentaire(string.Empty);
         }
 
-        public static void getStatusCode()
+        /// <summary>
+        /// Constructeur du statut command avec un commenaire personalisée
+        /// </summary>
+        /// <param name="commentairePersonalisee">le commentaire personnalisé</param>
+        public StatusCommand(String commentairePersonalisee)
         {
-
+            _status = EStatusCommand.DemandePersonalisee;
+            InitialiserCommentaire(commentairePersonalisee);
         }
 
-        public static void getStatusDetail()
+        /// <summary>
+        /// Converti le statut en valeur int
+        /// </summary>
+        public int GetStatusCodeConvertInt
         {
+            get { return (int)_status; }
+        }
 
+        /// <summary>
+        /// Retourne le statut commande
+        /// </summary>
+        public EStatusCommand GetStatus
+        {
+            get { return _status; }
+        }
+
+        /// <summary>
+        /// Retourne le code statut réponse converti en int
+        /// </summary>
+        /// <returns>int</returns>
+        public new int GetStatusCode()
+        {
+            return GetStatusCodeConvertInt;
+        }
+
+        /// <summary>
+        /// Retourne la commentaire détaillé de la commande
+        /// </summary>
+        /// <returns>String</returns>
+        public new String GetStatusDetail()
+        {
+            return Commentaire;
+        }
+
+        /// <summary>
+        /// Initialise l'attribut commentaire de la classe abtraite
+        /// </summary>
+        /// <param name="commentairePersonalisee">commentaire personnalisée</param>
+        protected void InitialiserCommentaire(string commentairePersonalisee)
+        {
+            switch (_status)
+            {
+                case EStatusCommand.DemandeConnexion:
+                    Commentaire = "Connexion établie avec le serveur";
+                    break;
+                case EStatusCommand.DemandeDeconnexion:
+                    Commentaire = "Connexion perdu avec le serveur";
+                    break;
+                case EStatusCommand.DemandePersonalisee:
+                    Commentaire = commentairePersonalisee;
+                    break;
+                default:
+                    Commentaire = "";
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Returne ou modifie le commentaire
+        /// </summary>
+        protected String Commentaire
+        {
+            get { return string.Format("Commande : {0}", _comment); }
+            set { _comment = value; }
         }
     }
 }
