@@ -40,26 +40,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="FTP Client\Classes\ClientFtpProjectMultithreading.cs" />
-    <Compile Include="FTP Client\Classes\Configuration.cs" />
-    <Compile Include="FTP Client\Classes\DistantManager.cs" />
-    <Compile Include="FTP Client\Classes\Element.cs" />
-    <Compile Include="FTP Client\Classes\File.cs" />
-    <Compile Include="FTP Client\Classes\Folder.cs" />
-    <Compile Include="FTP Client\Classes\LocalManager.cs" />
-    <Compile Include="FTP Client\Classes\LogFtp.cs" />
-    <Compile Include="FTP Client\Classes\Manager.cs" />
-    <Compile Include="FTP Client\Classes\Status.cs" />
-    <Compile Include="FTP Client\Classes\StatusCommand.cs" />
-    <Compile Include="FTP Client\Classes\StatusResponse.cs" />
-    <Compile Include="FTP Client\Enums\EStatusCommand.cs" />
-    <Compile Include="FTP Client\Enums\EStatusResponse.cs" />
-    <Compile Include="FTP Client\Interfaces\IClientFtp.cs" />
-    <Compile Include="FTP Client\Interfaces\ILog.cs" />
-    <Compile Include="FTP Client\Interfaces\ILogable.cs" />
-    <Compile Include="FTP Client\Interfaces\IStatus.cs" />
-    <Compile Include="FTP Client\Interfaces\ITransfer.cs" />
+    <Compile Include="FTP_Client\Classes\ClientFtpProjectMultithreading.cs" />
+    <Compile Include="FTP_Client\Classes\Configuration.cs" />
+    <Compile Include="FTP_Client\Classes\DistantManager.cs" />
+    <Compile Include="FTP_Client\Classes\Element.cs" />
+    <Compile Include="FTP_Client\Classes\File.cs" />
+    <Compile Include="FTP_Client\Classes\Folder.cs" />
+    <Compile Include="FTP_Client\Classes\LocalManager.cs" />
+    <Compile Include="FTP_Client\Classes\LogFtp.cs" />
+    <Compile Include="FTP_Client\Classes\Manager.cs" />
+    <Compile Include="FTP_Client\Classes\Status.cs" />
+    <Compile Include="FTP_Client\Classes\StatusCommand.cs" />
+    <Compile Include="FTP_Client\Classes\StatusResponse.cs" />
+    <Compile Include="FTP_Client\Enums\EStatusCommand.cs" />
+    <Compile Include="FTP_Client\Enums\EStatusResponse.cs" />
+    <Compile Include="FTP_Client\Interfaces\IClientFtp.cs" />
+    <Compile Include="FTP_Client\Interfaces\ILog.cs" />
+    <Compile Include="FTP_Client\Interfaces\ILogable.cs" />
+    <Compile Include="FTP_Client\Interfaces\IStatus.cs" />
+    <Compile Include="FTP_Client\Interfaces\ITransfer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FTP_Server\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Analyse\DiagrammeAPIFTP.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
