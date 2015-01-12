@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Interfaces
 {
+    /// <summary>
+    /// Interface des éléments pouvant loguer des informations
+    /// </summary>
     interface ILog
     {
-        public static void log()
-        {
+        /// <summary>
+        /// Ajout une message de log à l'élément
+        /// </summary>
+        /// <param name="leStatut">le statut à logguer</param>
+        void Log(IStatus leStatut);
 
-        }
-
-        public static void logCustom()
-        {
-
-        }
+        /// <summary>
+        /// Ajout du message personnalisé de log à l'élément
+        /// </summary>
+        /// <param name="message">le statut à logguer</param>
+        void LogCustom(string message);
     }
 }
