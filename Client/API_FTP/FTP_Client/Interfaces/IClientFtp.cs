@@ -51,13 +51,13 @@ namespace API_FTP.FTP_Client.Interfaces
         /// <summary>
         /// Obtient la liste des Fchiers d'un dossier
         /// </summary>
-        /// <returns></returns>
+        /// <returns>liste d'ElementFile</returns>
         List<ElementFile> ListFileFolder(ElementFolder unDossier);
 
         /// <summary>
         /// Obtient la liste des Fchiers d'un dossier
         /// </summary>
-        /// <returns></returns>
+        /// <returns>liste d'ElementFile</returns>
         List<ElementFile> ListFileFolder(string unDossier);
 
         /// <summary>
