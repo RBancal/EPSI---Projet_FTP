@@ -6,26 +6,32 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Interfaces
 {
-    interface ITransfer
+    /// <summary>
+    /// Interface des éléments transferable
+    /// </summary>
+    interface ITransfer : ICloneable
     {
-        public static void getPath()
-        {
+        /// <summary>
+        /// Obtient le chemin complet de l'élément transferable
+        /// </summary>
+        /// <returns></returns>
+        string GetPath();
 
-        }
+        /// <summary>
+        /// Obtient le nom de l'élément transferable
+        /// </summary>
+        /// <returns></returns>
+        string GetName();
+        /// <summary>
+        /// Obtien la taille de l'élément transferable
+        /// </summary>
+        /// <returns>taille en réel(double)</returns>
+        double GetSize();
 
-        public static void getName()
-        {
-
-        }
-
-        public static void getSize()
-        {
-
-        }
-
-        public static void estUnDossier()
-        {
-
-        }
+        /// <summary>
+        /// Dit si l'élément transferable est un ElementFolder(dossier)
+        /// </summary>
+        /// <returns>true si c'est un élémentFolder(dossier)</returns>
+        Boolean EstUnDossier();
     }
 }
