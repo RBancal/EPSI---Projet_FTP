@@ -13,7 +13,6 @@ namespace API_FTP.FTP_Client.Classes
 
         protected string Name { get { return _name; } set { _name = value; } }
         protected string Path { get { return _path; } set { _path = value; } }
-        private long Size { get; }
 
         public string GetPath()
         {

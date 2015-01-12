@@ -33,11 +33,5 @@ namespace API_FTP.FTP_Client.Interfaces
         /// </summary>
         /// <returns>true si c'est un élémentFolder(dossier)</returns>
         Boolean EstUnDossier();
-
-        /// <summary>
-        /// Obtient le chemin complet d'accès à l'élément de transfer
-        /// </summary>
-        /// <returns>chemin sous format de chaine</returns>
-        string GetCheminAccess();
     }
 }
