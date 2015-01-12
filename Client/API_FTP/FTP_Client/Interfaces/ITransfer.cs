@@ -26,12 +26,18 @@ namespace API_FTP.FTP_Client.Interfaces
         /// Obtien la taille de l'élément transferable
         /// </summary>
         /// <returns>taille en réel(double)</returns>
-        double GetSize();
+        long GetSize();
 
         /// <summary>
         /// Dit si l'élément transferable est un ElementFolder(dossier)
         /// </summary>
         /// <returns>true si c'est un élémentFolder(dossier)</returns>
         Boolean EstUnDossier();
+
+        /// <summary>
+        /// Obtient le chemin complet d'accès à l'élément de transfer
+        /// </summary>
+        /// <returns>chemin sous format de chaine</returns>
+        string GetCheminAccess();
     }
 }

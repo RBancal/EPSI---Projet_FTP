@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,8 +45,8 @@
     <Compile Include="FTP_Client\Classes\Configuration.cs" />
     <Compile Include="FTP_Client\Classes\DistantManager.cs" />
     <Compile Include="FTP_Client\Classes\Element.cs" />
-    <Compile Include="FTP_Client\Classes\File.cs" />
-    <Compile Include="FTP_Client\Classes\Folder.cs" />
+    <Compile Include="FTP_Client\Classes\ElementFile.cs" />
+    <Compile Include="FTP_Client\Classes\ElementFolder.cs" />
     <Compile Include="FTP_Client\Classes\LocalManager.cs" />
     <Compile Include="FTP_Client\Classes\LogFtp.cs" />
     <Compile Include="FTP_Client\Classes\Manager.cs" />

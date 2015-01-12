@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API_FTP.FTP_Client.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,18 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Classes
 {
-    class Manager
+    abstract class Manager
     {
         // List<> folders
-        string pathRoot;
+        protected string _pathRoot;
+        protected List<ITransfer> _theFolders;
 
-        public static void getFolders()
+        List<ITransfer> GetFolders()
         {
-
+            return _theFolders;
         }
 
-        public static void parcourir()
+        public void Parcourir(ITransfer theFolders)
         {
 
         }
