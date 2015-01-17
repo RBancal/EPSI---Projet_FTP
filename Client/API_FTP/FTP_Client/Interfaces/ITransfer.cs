@@ -25,7 +25,7 @@ namespace API_FTP.FTP_Client.Interfaces
         /// <summary>
         /// Obtien la taille de l'élément transferable
         /// </summary>
-        /// <returns>taille en réel(double)</returns>
+        /// <returns>taille en long</returns>
         long GetSize();
 
         /// <summary>
