@@ -10,7 +10,7 @@ namespace API_FTP.FTP_Client.Classes
     {
         public static void log()
         {
-
+            lL
         }
 
         public static void logCustom()
