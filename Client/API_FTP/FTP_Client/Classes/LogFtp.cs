@@ -12,14 +12,11 @@ namespace API_FTP.FTP_Client.Classes
     {
         protected ILogable _monLogueur;
 
-        protected const string ERREUR_INITIALISATION_MESSAGE = "Ce logueur n'est pas initialisé. Merci de l'initialisé";
-        protected const string ERREUR_INITIALISATION_TITRE = "Erreur - Logueur";
-
         public void Log(IStatus leStatut)
         {
             if (_monLogueur == null)
             {
-                MessageBox.Show(ERREUR_INITIALISATION_MESSAGE, ERREUR_INITIALISATION_TITRE);
+                MethodesGlobales.AfficherMessageErreurInitialisationILog();
             }
             else
             {
@@ -31,7 +28,7 @@ namespace API_FTP.FTP_Client.Classes
         {
             if (_monLogueur == null)
             {
-                MessageBox.Show(ERREUR_INITIALISATION_MESSAGE, ERREUR_INITIALISATION_TITRE);
+                MethodesGlobales.AfficherMessageErreurInitialisationILog();
             }
             else
             {
@@ -53,7 +50,7 @@ namespace API_FTP.FTP_Client.Classes
         {
             if (lElementLogable == null)
             {
-                MessageBox.Show(ERREUR_INITIALISATION_MESSAGE, ERREUR_INITIALISATION_TITRE);
+                MethodesGlobales.AfficherMessageErreurInitialisationILog();
             }
             else
             {
