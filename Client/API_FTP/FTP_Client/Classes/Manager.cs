@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 namespace API_FTP.FTP_Client.Classes
 {
     /// <summary>
-    /// 
+    /// Class définissant la structure d'un manager
     /// </summary>
     abstract class Manager
     {
-
         /// <summary>
         /// est le logueur de messages
         /// </summary>
@@ -34,8 +33,17 @@ namespace API_FTP.FTP_Client.Classes
         /// <returns></returns>
         abstract public List<ElementFolder> GetFolders();
 
+        /// <summary>
+        /// Liste le contenu d'un dossier sans prendre en compte le contenu des sous-dossiers
+        /// </summary>
+        /// <param name="leDossier">le dossier à lister</param>
+        /// <returns>retourn la liste des ITranfert contenu dans ce dossier</returns>
         abstract public List<ITransfer> ListerContenu(ITransfer leDossier);
 
+        /// <summary>
+        /// Charge le lILog du manager et vérifie si le ILog est ibnitialisé
+        /// </summary>
+        /// <param name="unLogueur"> le ILog</param>
         protected void ChargerLogueur(ILog unLogueur)
         {
             if (unLogueur == null)
