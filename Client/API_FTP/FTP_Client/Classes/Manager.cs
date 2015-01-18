@@ -35,5 +35,17 @@ namespace API_FTP.FTP_Client.Classes
         abstract public List<ElementFolder> GetFolders();
 
         abstract public List<ITransfer> ListerContenu(ITransfer leDossier);
+
+        protected void ChargerLogueur(ILog unLogueur)
+        {
+            if (unLogueur == null)
+            {
+                MethodesGlobales.AfficherMessageErreurInitialisationILog();
+            }
+            else
+            {
+                _monLogueur = unLogueur;
+            }
+        }
     }
 }
