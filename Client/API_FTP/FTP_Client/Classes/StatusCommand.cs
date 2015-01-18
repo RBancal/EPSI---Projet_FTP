@@ -97,9 +97,16 @@ namespace API_FTP.FTP_Client.Classes
         /// <summary>
         /// Returne ou modifie le commentaire
         /// </summary>
+        /// <example>
+        ///     Le commentaire aura le formalisme suivant :
+        ///         Commande (Code [N°Code]) : [message]
+        ///         
+        ///         résultat d'une commande de type "DemandeConnexion"
+        ///         Commande (Code 1) : "Demande de connexion"
+        /// </example>
         protected String Commentaire
         {
-            get { return string.Format("Commande : {0}", _comment); }
+            get { return string.Format("Commande (Code {0}) : {1}", (int)_status ,_comment); }
             set { _comment = value; }
         }
     }
