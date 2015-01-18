@@ -12,6 +12,12 @@ namespace API_FTP.FTP_Client.Classes
     /// </summary>
     abstract class Manager
     {
+
+        /// <summary>
+        /// est le logueur de messages
+        /// </summary>
+        protected ILog _monLogueur;
+
         /// <summary>
         /// Chemin du répertoire racine de démarrage 
         /// </summary>
