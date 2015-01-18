@@ -7,20 +7,17 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Classes
 {
+    /// <summary>
+    /// 
+    /// </summary>
     abstract class Manager
     {
         // List<> folders
         protected string _pathRoot;
-        protected List<ITransfer> _theFolders;
+        protected List<ITransfer> _lesDossiers;
 
-        List<ITransfer> GetFolders()
-        {
-            return _theFolders;
-        }
+        abstract public List<ElementFolder> GetFolders();
 
-        public void Parcourir(ITransfer theFolders)
-        {
-
-        }
+        abstract public void Parcourir(ITransfer theFolders);
     }
 }
