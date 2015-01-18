@@ -11,10 +11,15 @@ namespace API_FTP.FTP_Client.Classes
     class LocalManager : Manager
     {
         /// <summary>
-        /// variable renseignant sur le loggeueur de message
+        /// est le logueur de messages
         /// </summary>
         protected ILogable _monLogueur;
 
+        /// <summary>
+        /// Constructeur de la classe
+        /// </summary>
+        /// <param name="pathRoot">chemin du répertoire local</param>
+        /// <param name="unLogueur">logueur de messages</param>
         public LocalManager(string pathRoot, ILogable unLogueur)
         {
             if (!Directory.Exists(pathRoot))
@@ -30,6 +35,11 @@ namespace API_FTP.FTP_Client.Classes
             }
         }
 
+        /// <summary>
+        /// Constructeur de la classe
+        /// </summary>
+        /// <param name="aFolderRoot">dossier local</param>
+        /// <param name="unLogueur">logueur de messages</param>
         public LocalManager(ElementFolder aFolderRoot, ILogable unLogueur)
         {
             base._pathRoot = aFolderRoot.GetPath();
@@ -38,6 +48,11 @@ namespace API_FTP.FTP_Client.Classes
             _monLogueur = unLogueur;
         }
 
+        /// <summary>
+        /// Constructeur de la classe
+        /// </summary>
+        /// <param name="theFolder">élement de transfer de type dossier (ElementFolder)</param>
+        /// <param name="unLogueur">logueur de messages</param>
         public LocalManager(ITransfer theFolder, ILogable unLogueur)
         {
             if (theFolder.EstUnDossier())
