@@ -21,7 +21,7 @@ namespace API_FTP.FTP_Client.Classes
         /// Obtient le code statut converti en int
         /// </summary>
         /// <returns>int</returns>
-        public int GetStatusCode()
+        abstract public int GetStatusCode()
         {
             return 0;
         }
@@ -30,9 +30,18 @@ namespace API_FTP.FTP_Client.Classes
         /// Obtient le statut détaillé sous forme de chaine de texte
         /// </summary>
         /// <returns>string</returns>
-        public string GetStatusDetail()
+        abstract public string GetStatusDetail()
         {
             return "";
+        }
+
+        /// <summary>
+        /// Dit si c'est un StatutCommand
+        /// </summary>
+        /// <returns>true pour c'est un statutCommand</returns>
+        abstract public bool EstUnStatutCommand()
+        {
+            return false;
         }
     }
 }
