@@ -22,5 +22,11 @@ namespace API_FTP.FTP_Client.Interfaces
         /// </summary>
         /// <returns>chaine (string)</returns>
         string GetStatusDetail();
+
+        /// <summary>
+        /// Dit si c'est un statut de type StatutCommand
+        /// </summary>
+        /// <returns>true pour est un statutCommand</returns>
+        bool EstUnStatutCommand();
     }
 }
