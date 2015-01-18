@@ -81,5 +81,75 @@ namespace API_FTP.FTP_Client.Classes
             return lesElementsDuDossier;
         }
 
+
+        public override List<ElementFolder> GetFolders()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<ITransfer> ListerContenu(ITransfer leDossier)
+        {
+            List<ITransfer> lesElementContenus = new List<ITransfer>();
+
+            if (leDossier.EstUnDossier())
+            {
+                ElementFolder unElementFolder = (ElementFolder)leDossier;
+
+                lesElementContenus.AddRange(ListerContenu(unElementFolder));
+            }
+            else
+            {
+                MethodesGlobales.AfficherMessage(string.Format("{0} N'est pas un dossier ! Il est impossible de le lister", leDossier.GetPath()), "Erreur de listage de contenu");
+            }
+
+            return lesElementContenus;
+        }
+
+        /// <summary>
+        /// Liste le contenu du répertoire
+        /// </summary>
+        /// <param name="leDossier">le dossier</param>
+        /// <param name="avecSousRepertoire">true pour lister les sous repertoire et false pour ne pas lister. Par défaut, il liste les sous répertoire</param>
+        /// <returns>la liste des ITranfers trouves dans le repertoire (sous-répertoires compris)</returns>
+        public override List<ITransfer> ListerContenu(ITransfer leDossier, bool avecSousRepertoire = false)
+        {
+            List<ITransfer> lesElementContenus = new List<ITransfer>();
+
+            if (leDossier.EstUnDossier())
+            {
+                if (avecSousRepertoire)
+                {
+                    ListerTousLesITransfertAvecSousRepertoire(leDossier, ref lesElementContenus);
+                }
+                else
+                {
+                    ElementFolder unELementFolder = (ElementFolder) leDossier;
+                    lesElementContenus.AddRange(ListerContenu(unELementFolder));
+                }
+            }
+            else
+            {
+                MethodesGlobales.AfficherMessage(string.Format("{0} N'est pas un dossier ! Il est impossible de le lister", leDossier.GetPath()), "Erreur de listage de contenu");
+            }
+
+            return lesElementContenus;
+        }
+
+        protected void ListerTousLesITransfertAvecSousRepertoire(ITransfer leDossier, ref List<ITransfer> lesElementContenus)
+        {
+            ElementFolder unElementFolder = (ElementFolder)leDossier;
+
+            foreach (ITransfer unElement in unElementFolder.ListerContenu())
+            {
+                if (unElementFolder.EstUnDossier())
+                {
+                    lesElementContenus.AddRange(ListerContenu(unElement));
+                }
+                else
+                {
+                    lesElementContenus.Add(unElement);
+                }
+            }
+        }
     }
 }
