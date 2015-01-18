@@ -13,9 +13,9 @@ namespace API_FTP.FTP_Client.Classes
         /// <summary>
         /// variable renseignant sur le loggeueur de message
         /// </summary>
-        protected ILog _monLogueur;
+        protected ILogable _monLogueur;
 
-        public LocalManager(string pathRoot)
+        public LocalManager(string pathRoot, ILogable unLogueur)
         {
             if (!Directory.Exists(pathRoot))
             {
@@ -26,28 +26,41 @@ namespace API_FTP.FTP_Client.Classes
                 base._pathRoot = pathRoot;
                 base._lesDossiers = new List<ITransfer>();
                 base._lesDossiers.Add(new ElementFolder(pathRoot));
+                _monLogueur = unLogueur;
             }
         }
 
-        public LocalManager(ElementFolder aFolderRoot)
+        public LocalManager(ElementFolder aFolderRoot, ILogable unLogueur)
         {
             base._pathRoot = aFolderRoot.GetPath();
             base._lesDossiers = new List<ITransfer>();
             base._lesDossiers.Add((ElementFolder) aFolderRoot.Clone());
+            _monLogueur = unLogueur;
         }
 
-        public LocalManager(ITransfer theFolder)
+        public LocalManager(ITransfer theFolder, ILogable unLogueur)
         {
             if (theFolder.EstUnDossier())
             {
                 base._pathRoot = theFolder.GetPath();
                 base._lesDossiers = new List<ITransfer>();
                 base._lesDossiers.Add((ElementFolder)theFolder.Clone());
+                _monLogueur = unLogueur;
             }
             else
             {
                 throw new DirectoryNotFoundException(string.Format("{0} n'existe pas !", theFolder.GetPath()));
             }
         }
+
+        public new List<ITransfer> Parcourrir(ElementFolder leDossier)
+        {
+            List<ITransfer> lesElementsDuDossier = new List<ITransfer>();
+
+            lesElementsDuDossier.AddRange(leDossier.ListerContenu());
+
+            return lesElementsDuDossier;
+        }
+
     }
 }
