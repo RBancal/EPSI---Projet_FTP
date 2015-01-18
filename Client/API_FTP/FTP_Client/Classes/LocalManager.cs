@@ -5,22 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace API_FTP.FTP_Client.Classes
 {
     class LocalManager : Manager
     {
         /// <summary>
-        /// est le logueur de messages
-        /// </summary>
-        protected ILogable _monLogueur;
-
-        /// <summary>
         /// Constructeur de la classe
         /// </summary>
         /// <param name="pathRoot">chemin du répertoire local</param>
         /// <param name="unLogueur">logueur de messages</param>
-        public LocalManager(string pathRoot, ILogable unLogueur)
+        public LocalManager(string pathRoot, ILog unLogueur)
         {
             if (!Directory.Exists(pathRoot))
             {
@@ -31,7 +27,8 @@ namespace API_FTP.FTP_Client.Classes
                 base._pathRoot = pathRoot;
                 base._lesDossiers = new List<ITransfer>();
                 base._lesDossiers.Add(new ElementFolder(pathRoot));
-                _monLogueur = unLogueur;
+
+                ChargerLogueur(unLogueur);
             }
         }
 
@@ -40,12 +37,12 @@ namespace API_FTP.FTP_Client.Classes
         /// </summary>
         /// <param name="aFolderRoot">dossier local</param>
         /// <param name="unLogueur">logueur de messages</param>
-        public LocalManager(ElementFolder aFolderRoot, ILogable unLogueur)
+        public LocalManager(ElementFolder aFolderRoot, ILog unLogueur)
         {
             base._pathRoot = aFolderRoot.GetPath();
             base._lesDossiers = new List<ITransfer>();
             base._lesDossiers.Add((ElementFolder) aFolderRoot.Clone());
-            _monLogueur = unLogueur;
+            ChargerLogueur(unLogueur);
         }
 
         /// <summary>
@@ -53,14 +50,16 @@ namespace API_FTP.FTP_Client.Classes
         /// </summary>
         /// <param name="theFolder">élement de transfer de type dossier (ElementFolder)</param>
         /// <param name="unLogueur">logueur de messages</param>
-        public LocalManager(ITransfer theFolder, ILogable unLogueur)
+        public LocalManager(ITransfer theFolder, ILog unLogueur)
         {
             if (theFolder.EstUnDossier())
             {
                 base._pathRoot = theFolder.GetPath();
                 base._lesDossiers = new List<ITransfer>();
                 base._lesDossiers.Add((ElementFolder)theFolder.Clone());
-                _monLogueur = unLogueur;
+
+                ChargerLogueur(unLogueur);
+                _monLogueur.LogCustom("Dossiers local chargé");
             }
             else
             {
@@ -68,7 +67,12 @@ namespace API_FTP.FTP_Client.Classes
             }
         }
 
-        public new List<ITransfer> Parcourrir(ElementFolder leDossier)
+        /// <summary>
+        /// Liste les élément contenu dans le répertoire fourni. Cette liste n'inclus pas le contenu des sous repertoires
+        /// </summary>
+        /// <param name="leDossier">le réertoire</param>
+        /// <returns>liste des ITransfert à la racine du répertoire</returns>
+        public new List<ITransfer> ListerContenu(ElementFolder leDossier)
         {
             List<ITransfer> lesElementsDuDossier = new List<ITransfer>();
 
