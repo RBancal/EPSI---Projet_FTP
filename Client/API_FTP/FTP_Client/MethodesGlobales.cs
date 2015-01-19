@@ -10,7 +10,7 @@ namespace API_FTP.FTP_Client
     /// <summary>
     /// Class fournissant l'enesemble des methodes globales du client FTP
     /// </summary>
-    public static abstract class MethodesGlobales
+    public static class MethodesGlobales
     {
         /// <summary>
         /// Affiche un message à l'utilisateur
