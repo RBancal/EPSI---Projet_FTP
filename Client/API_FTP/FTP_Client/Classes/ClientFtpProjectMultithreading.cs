@@ -20,7 +20,7 @@ namespace API_FTP.FTP_Client.Classes
 
         public ClientFtpProjectMultithreading(Configuration _maConfig) : base()
         {
-            this._maConfig = _maConfig;
+            this._maConfig = (Configuration)_maConfig.Clone();
         }
 
         public bool Connect()
@@ -85,7 +85,7 @@ namespace API_FTP.FTP_Client.Classes
             {
                 monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
                 monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
-               lesFtpElements = monFtp.GetList();
+                lesFtpElements = monFtp.GetList();
 
                 monFtp.Close();
             }
@@ -107,7 +107,11 @@ namespace API_FTP.FTP_Client.Classes
 
         public List<ITransfer> ListFolder(ElementFolder unDossier)
         {
-            throw new NotImplementedException();
+            List<ITransfer> lesElements = new List<ITransfer>();
+
+
+
+            return lesElements;
         }
 
         public List<ITransfer> ListFileFolder(ElementFolder unDossier)
