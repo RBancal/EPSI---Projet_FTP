@@ -9,7 +9,7 @@ namespace API_FTP.FTP_Client.Interfaces
     /// <summary>
     /// Interface des objets fournissant des status
     /// </summary>
-    interface IStatus
+    public interface IStatus
     {
         /// <summary>
         /// Obtient le code statut

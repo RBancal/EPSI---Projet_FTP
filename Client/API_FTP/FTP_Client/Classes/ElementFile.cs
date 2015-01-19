@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Classes
 {
-    class ElementFile : Element
+    public class ElementFile : Element
     {
         public bool EstUnFichier()
         {

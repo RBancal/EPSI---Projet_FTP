@@ -12,7 +12,7 @@ namespace API_FTP.FTP_Client.Classes
     /// <summary>
     /// Classe définissant la structure d'un dossier
     /// </summary>
-    class ElementFolder : Element
+    public class ElementFolder : Element
     {
         /// <summary>
         /// variable renseignant sur la liste des élements de ce dossier

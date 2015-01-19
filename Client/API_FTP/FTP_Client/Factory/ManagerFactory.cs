@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Factory
 {
-    static class ManagerFactory
+    public static class ManagerFactory
     {
         public static Manager Fabriquer(string gestionnaire, ILogable leLogable, Configuration laConfig = null)
         {

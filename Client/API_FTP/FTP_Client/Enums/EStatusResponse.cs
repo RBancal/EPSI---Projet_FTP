@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Enums
 {
-    enum EStatusResponse : int
+    public enum EStatusResponse : int
     {
         ReponseCustom = 1,
         DecnnexionReussie = 2,

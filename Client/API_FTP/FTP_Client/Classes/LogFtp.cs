@@ -11,7 +11,7 @@ namespace API_FTP.FTP_Client.Classes
     /// <summary>
     /// Classe définissant la structure du logFTP
     /// </summary>
-    class LogFtp : ILog
+    public class LogFtp : ILog
     {
         /// <summary>
         /// est l'attribut définissant le ILogable

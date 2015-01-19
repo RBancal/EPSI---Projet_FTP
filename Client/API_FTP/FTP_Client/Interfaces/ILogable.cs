@@ -9,7 +9,7 @@ namespace API_FTP.FTP_Client.Interfaces
     /// <summary>
     /// Interface des éléments pouvant loguer des informations
     /// </summary>
-    interface ILogable
+    public interface ILogable
     {
         /// <summary>
         /// Ajout une message de log à l'élément

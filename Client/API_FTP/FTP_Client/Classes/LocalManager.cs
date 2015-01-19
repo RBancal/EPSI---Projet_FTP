@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace API_FTP.FTP_Client.Classes
 {
-    class LocalManager : Manager
+    public class LocalManager : Manager
     {
         /// <summary>
         /// Constructeur de la classe

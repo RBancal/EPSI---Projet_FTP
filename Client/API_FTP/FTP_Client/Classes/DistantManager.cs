@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Classes
 {
-    class DistantManager : Manager
+    /// <summary>
+    /// Classe 
+    /// </summary>
+    public class DistantManager : Manager
     {
         protected Configuration _maConfig;
         protected IClientFtp _monClientFtp;

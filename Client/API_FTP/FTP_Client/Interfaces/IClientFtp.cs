@@ -10,7 +10,7 @@ namespace API_FTP.FTP_Client.Interfaces
     /// <summary>
     /// Interface permettant d'interagir avec le serveur FTP
     /// </summary>
-    interface IClientFtp
+    public interface IClientFtp
     {
         /// <summary>
         /// Permet de se connecter

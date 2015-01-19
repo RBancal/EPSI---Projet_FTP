@@ -10,7 +10,7 @@ namespace API_FTP.FTP_Client.Classes
     /// <summary>
     /// Class renseignant sur la structure d'un statut de type commande (StatusCommand)
     /// </summary>
-    class StatusCommand : Status
+    public class StatusCommand : Status
     {
         /// <summary>
         /// Renseigne sur le statut de la commande

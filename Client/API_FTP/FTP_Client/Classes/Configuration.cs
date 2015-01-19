@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Classes
 {
-    class Configuration : ICloneable
+    public class Configuration : ICloneable
     {
         protected string _login;
         protected string _password;

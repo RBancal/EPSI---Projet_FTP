@@ -10,7 +10,7 @@ namespace API_FTP.FTP_Client.Classes
     /// <summary>
     /// Class renseignant sur la structure d'un statut de type Réponse (StatusResponse)
     /// </summary>
-    class StatusResponse : Status
+    public class StatusResponse : Status
     {
         /// <summary>
         /// Renseigne sur le statut

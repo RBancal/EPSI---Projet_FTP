@@ -9,7 +9,7 @@ namespace API_FTP.FTP_Client.Interfaces
     /// <summary>
     /// Interface des éléments transferable
     /// </summary>
-    interface ITransfer : ICloneable
+    public interface ITransfer : ICloneable
     {
         /// <summary>
         /// Obtient le chemin complet de l'élément transferable

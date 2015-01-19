@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Interfaces
 {
-    interface IProgrammeClientFTP
+    public interface IProgrammeClientFTP
     {
     }
 }

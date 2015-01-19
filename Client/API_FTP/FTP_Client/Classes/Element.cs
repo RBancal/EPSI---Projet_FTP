@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Classes
 {
-    abstract class Element : ITransfer
+    public abstract class Element : ITransfer
     {
         protected string _name, _path;
 
