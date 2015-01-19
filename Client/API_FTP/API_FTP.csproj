@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ftp, Version=2.0.14247.1235, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\Ftp\Redistributables\Ftp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -55,11 +59,15 @@
     <Compile Include="FTP_Client\Classes\StatusResponse.cs" />
     <Compile Include="FTP_Client\Enums\EStatusCommand.cs" />
     <Compile Include="FTP_Client\Enums\EStatusResponse.cs" />
+    <Compile Include="FTP_Client\Factory\ManagerFactory.cs" />
     <Compile Include="FTP_Client\Interfaces\IClientFtp.cs" />
     <Compile Include="FTP_Client\Interfaces\ILog.cs" />
     <Compile Include="FTP_Client\Interfaces\ILogable.cs" />
+    <Compile Include="FTP_Client\Interfaces\IProgrammeClientFTP.cs" />
     <Compile Include="FTP_Client\Interfaces\IStatus.cs" />
     <Compile Include="FTP_Client\Interfaces\ITransfer.cs" />
+    <Compile Include="FTP_Client\MethodesGlobales.cs" />
+    <Compile Include="FTP_Client\VariablesGlobales.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Analyse\DiagrammeAPIFTP.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FTP_Client\LibExternes\Ftp.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

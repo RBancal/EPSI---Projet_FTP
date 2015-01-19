@@ -40,25 +40,25 @@ namespace API_FTP.FTP_Client.Interfaces
         /// Obtient la liste les dossiers sur le serveur
         /// </summary>
         /// <returns>list des ElementFolder</returns>
-        List<ElementFolder> ListFolder(string cheminFTPDossier);
+        List<ITransfer> ListFolder(string cheminFTPDossier);
 
         /// <summary>
         /// Obtient la liste les dossiers sur le serveur
         /// </summary>
         /// <returns>list des ElementFolder</returns>
-        List<ElementFolder> ListFolder(ElementFolder unDossier);
+        List<ITransfer> ListFolder(ElementFolder unDossier);
 
         /// <summary>
         /// Obtient la liste des Fchiers d'un dossier
         /// </summary>
         /// <returns>liste d'ElementFile</returns>
-        List<ElementFile> ListFileFolder(ElementFolder unDossier);
+        List<ITransfer> ListFileFolder(ElementFolder unDossier);
 
         /// <summary>
         /// Obtient la liste des Fchiers d'un dossier
         /// </summary>
         /// <returns>liste d'ElementFile</returns>
-        List<ElementFile> ListFileFolder(string unDossier);
+        List<ITransfer> ListFileFolder(string unDossier);
 
         /// <summary>
         /// Définit le répertoire root du serveur pour le client
