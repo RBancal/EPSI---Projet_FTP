@@ -81,12 +81,6 @@ namespace API_FTP.FTP_Client.Classes
             return lesElementsDuDossier;
         }
 
-
-        public override List<ElementFolder> GetFolders()
-        {
-            throw new NotImplementedException();
-        }
-
         public override List<ITransfer> ListerContenu(ITransfer leDossier)
         {
             List<ITransfer> lesElementContenus = new List<ITransfer>();

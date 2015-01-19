@@ -57,7 +57,7 @@ namespace API_FTP.FTP_Client.Classes
         /// Retourne le code statut réponse converti en int
         /// </summary>
         /// <returns>int</returns>
-        public new int GetStatusCode()
+        public override int GetStatusCode()
         {
             return GetStatusCodeConvertInt;
         }
@@ -66,7 +66,7 @@ namespace API_FTP.FTP_Client.Classes
         /// Retourne la commentaire détaillé de la commande
         /// </summary>
         /// <returns>String</returns>
-        public new String GetStatusDetail()
+        public override string GetStatusDetail()
         {
             return Commentaire;
         }
@@ -122,6 +122,11 @@ namespace API_FTP.FTP_Client.Classes
         {
             get { return string.Format("Réponse (Code {0}): {1}", (int)_status , _comment); }
             set { _comment = value; }
+        }
+
+        public override bool EstUnStatutCommand()
+        {
+            return false;
         }
     }
 }

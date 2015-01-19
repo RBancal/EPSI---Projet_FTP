@@ -28,12 +28,6 @@ namespace API_FTP.FTP_Client.Classes
         protected List<ITransfer> _lesDossiers;
 
         /// <summary>
-        /// Obtient tous les dossiers
-        /// </summary>
-        /// <returns></returns>
-        abstract public List<ElementFolder> GetFolders();
-
-        /// <summary>
         /// Liste le contenu d'un dossier sans prendre en compte le contenu des sous-dossiers
         /// </summary>
         /// <param name="leDossier">le dossier à lister</param>
