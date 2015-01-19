@@ -10,7 +10,7 @@ namespace API_FTP.FTP_Client.Classes
     /// <summary>
     /// Class définissant la structure d'un manager
     /// </summary>
-    abstract class Manager
+    abstract class Manager : IManager
     {
         /// <summary>
         /// est le logueur de messages
