@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client
 {
-    static abstract class VariablesGlobales
+    static class VariablesGlobales
     {
-        protected const string ERREUR_INITIALISATION_MESSAGE = "Ce {0} N'est pas initialisé. Merci de l'initialisé";
-        protected const string ERREUR_INITIALISATION_TITRE = "Erreur - {0}";
+        private const string ERREUR_INITIALISATION_MESSAGE = "Ce {0} N'est pas initialisé. Merci de l'initialisé";
+        private const string ERREUR_INITIALISATION_TITRE = "Erreur - {0}";
 
         public static string GetContenuMessageErreurInitialisationILog { get { return string.Format(ERREUR_INITIALISATION_MESSAGE, "ILog"); } }
         public static string GetTitreMessageErreurInitialisationILog { get { return string.Format(ERREUR_INITIALISATION_TITRE, "ILog");  } }
