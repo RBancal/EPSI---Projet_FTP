@@ -18,6 +18,8 @@ namespace API_FTP.FTP_Client.Classes
         private Stream _monFluxReponse;
         private StreamReader _monFluxLecture;
 
+        bool repConnect = false;
+
         public ClientFtpProjectMultithreading(Configuration _maConfig) : base()
         {
             this._maConfig = (Configuration)_maConfig.Clone();
@@ -25,11 +27,11 @@ namespace API_FTP.FTP_Client.Classes
 
         public bool Connect()
         {
-            bool repConnect = false;
-
+            
             try
             {
                 Connect(_maConfig.Host, _maConfig.Port);
+                Login(_maConfig.Login, _maConfig.MotDePass);
                 repConnect = true;
             }
             catch (Exception)
@@ -38,7 +40,6 @@ namespace API_FTP.FTP_Client.Classes
                 repConnect = false;
             }
             
-
             return repConnect;
         }
 
@@ -66,14 +67,36 @@ namespace API_FTP.FTP_Client.Classes
             return true;
         }
 
-        public bool Download()
+        public bool Download(ElementFolder remoteFolder, ElementFile remoteFile, ElementFolder localFolder)
         {
-            throw new NotImplementedException();
+            if (repConnect)
+            {
+                ChangeFolder(remoteFolder.GetPath());
+                Download(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+            }
+            else
+            {
+                Connect();
+
+                ChangeFolder(remoteFolder.GetPath());
+                Download(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+            }
         }
 
-        public bool Upload()
+        public bool Upload(ElementFolder remoteFolder, ElementFile remoteFile, ElementFolder localFolder)
         {
-            throw new NotImplementedException();
+            if (repConnect)
+            {
+                ChangeFolder(remoteFolder.GetPath());
+                Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+            }
+            else
+            {
+                Connect();
+
+                ChangeFolder(remoteFolder.GetPath());
+                Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+            }
         }
 
         public List<ITransfer> ListFolder(string cheminFTPDossier)
