@@ -8,5 +8,6 @@ namespace API_FTP.FTP_Client.Interfaces
 {
     public interface IProgrammeClientFTP
     {
+
     }
 }
