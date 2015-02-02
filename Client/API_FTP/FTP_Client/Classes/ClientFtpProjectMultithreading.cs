@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace API_FTP.FTP_Client.Classes
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ClientFtpProjectMultithreading : Ftp, IClientFtp
     {
         private Configuration _maConfig;

@@ -10,21 +10,23 @@
   <Class Name="API_FTP.FTP_Client.Classes.ClientFtpProjectMultithreading">
     <Position X="3.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gBQACAAAmAAQABAAABAAAIgAAAAAEAEAAAEAAAAAgAA=</HashCode>
       <FileName>FTP_Client\Classes\ClientFtpProjectMultithreading.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="API_FTP.FTP_Client.Classes.Configuration">
     <Position X="9.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAgAAEgA=</HashCode>
+      <HashCode>ggwAAAAAAAAAAAggAAAAAEAACAAACAAAAAAQJAAAABA=</HashCode>
       <FileName>FTP_Client\Classes\Configuration.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="API_FTP.FTP_Client.Classes.DistantManager">
     <Position X="7.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FTP_Client\Classes\DistantManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -39,28 +41,30 @@
   <Class Name="API_FTP.FTP_Client.Classes.LocalManager">
     <Position X="7.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FTP_Client\Classes\LocalManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="API_FTP.FTP_Client.Classes.LogFtp">
     <Position X="9.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAACABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAACAgAAAAAAAAAgAAAAAAAAAAABAAAA=</HashCode>
       <FileName>FTP_Client\Classes\LogFtp.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="API_FTP.FTP_Client.Classes.Manager">
     <Position X="6" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAgAAAAAAgAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAgAAAAAAAAECAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>FTP_Client\Classes\Manager.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="API_FTP.FTP_Client.Classes.Status">
     <Position X="3.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AAAAAAAAEAABAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>FTP_Client\Classes\Status.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -68,14 +72,14 @@
   <Class Name="API_FTP.FTP_Client.Classes.StatusCommand">
     <Position X="5.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAABAAAAAAAAAAAAAAQAAEgAAAAQAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AEAAABAAAAABAAAAAAAAQAAEgAAAAQAAAAAAAAAAAIA=</HashCode>
       <FileName>FTP_Client\Classes\StatusCommand.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="API_FTP.FTP_Client.Classes.StatusResponse">
     <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAABAAAAAAAAAAAAAAQAAEgAAAAQAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AEAAABAAAAABAAAAAAAAQAAEgAAAAQAAAAAAAAAAAIA=</HashCode>
       <FileName>FTP_Client\Classes\StatusResponse.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -87,14 +91,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="API_FTP.FTP_Client.Interfaces.ILog">
-    <Position X="2.25" Y="4.25" Width="1.5" />
+    <Position X="1.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAAABAAAA=</HashCode>
       <FileName>FTP_Client\Interfaces\ILog.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="API_FTP.FTP_Client.Interfaces.ILogable">
-    <Position X="4" Y="4.25" Width="1.5" />
+    <Position X="4" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAACA=</HashCode>
       <FileName>FTP_Client\Interfaces\ILogable.cs</FileName>
@@ -103,7 +107,7 @@
   <Interface Name="API_FTP.FTP_Client.Interfaces.IStatus">
     <Position X="7.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>FTP_Client\Interfaces\IStatus.cs</FileName>
     </TypeIdentifier>
   </Interface>

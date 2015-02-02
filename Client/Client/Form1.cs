@@ -1,4 +1,9 @@
-﻿using System;
+﻿using API_FTP.FTP_Client;
+using API_FTP.FTP_Client.Classes;
+using API_FTP.FTP_Client.Factory;
+using API_FTP.FTP_Client.Interfaces;
+using Limilabs.FTP.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +19,13 @@ namespace Client
 {
     public partial class Form1 : Form
     {
+        private IDictionary<string, IManager> _mesGestionnaires;
+
         public Form1()
         {
             InitializeComponent();
-            PopulateTreeView(treeViewLocal, "C:\\");
+            PopulateTreeView(treeViewLocal, @"C:\");
+            _mesGestionnaires.Add("$LocalManager", ManagerFactory.Fabriquer("$LocalManager", ));
         }
 
         private void PopulateTreeView(TreeView treeView ,string path)
@@ -32,8 +40,8 @@ namespace Client
                 GetDirectories(info.GetDirectories(), rootNode);
                 treeView.Nodes.Add(rootNode);
             }
-            FileInfo infoF = new FileInfo("toto");
-            int size = (int) infoF.Length;
+            //FileInfo infoF = new FileInfo("toto");
+            //int size = (int) infoF.Length;
         }
 
         private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
@@ -78,24 +86,36 @@ namespace Client
                 return;
             }
 
-            FtpWebRequest request = (FtpWebRequest) FtpWebRequest.Create(new Uri("ftp://" + address + ":" + port + "/"));
+
+
+            // Get the object used to communicate with the server.
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(string.Format("ftp://{0}:{1}/", address, port));
+            request.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
+
+            // This example assumes the FTP site uses anonymous logon.
             request.Credentials = new NetworkCredential(login, password);
             request.Method = WebRequestMethods.Ftp.ListDirectory;
             request.KeepAlive = true;
+            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
-            FtpWebResponse response = (FtpWebResponse) request.GetResponse();
+
 
             Stream responseStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(responseStream);
+            Console.WriteLine(reader.ReadToEnd());
 
-            //Console.WriteLine("Directory List Complete, status {0}", response.StatusDescription);
+            Console.WriteLine("Directory List Complete, status {0}", response.StatusDescription);
 
             reader.Close();
             response.Close();
 
-            // PopulateTreeView(treeViewDistant, string response);
 
             connexionButton.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
         /* private void deconnexionButton_Click(object sender, EventArgs e)

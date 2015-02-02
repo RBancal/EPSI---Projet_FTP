@@ -42,7 +42,6 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.connexionButton = new System.Windows.Forms.Button();
             this.deconnexionButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeViewLocal = new System.Windows.Forms.TreeView();
@@ -182,13 +181,6 @@
             this.deconnexionButton.TabIndex = 3;
             this.deconnexionButton.Text = "Déconnexion";
             this.deconnexionButton.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(12, 66);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(972, 84);
-            this.panel1.TabIndex = 3;
             // 
             // panel2
             // 
@@ -352,10 +344,10 @@
             this.Controls.Add(this.sendButton);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.connexionPanel);
             this.Name = "Form1";
             this.Text = "FTP Client";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.connexionPanel.ResumeLayout(false);
             this.connexionPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -385,7 +377,6 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Button deconnexionButton;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button sitesButton;
         private System.Windows.Forms.Panel panel3;
