@@ -33,5 +33,7 @@ namespace API_FTP.FTP_Client.Interfaces
         /// </summary>
         /// <returns>true si c'est un élémentFolder(dossier)</returns>
         Boolean EstUnDossier();
+
+        string ToString();
     }
 }
