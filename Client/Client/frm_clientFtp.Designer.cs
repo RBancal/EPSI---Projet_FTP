@@ -1,6 +1,6 @@
 ﻿namespace Client
 {
-    partial class Form1
+    partial class frm_clientFtp
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_clientFtp));
             this.loginLabel = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.connexionPanel = new System.Windows.Forms.Panel();
@@ -335,7 +335,7 @@
             this.receiveButton.Text = "<----";
             this.receiveButton.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // frm_clientFtp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -345,7 +345,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.connexionPanel);
-            this.Name = "Form1";
+            this.Name = "frm_clientFtp";
             this.Text = "FTP Client";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.connexionPanel.ResumeLayout(false);

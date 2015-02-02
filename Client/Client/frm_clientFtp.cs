@@ -17,11 +17,11 @@ using System.Windows.Forms;
 
 namespace Client
 {
-    public partial class Form1 : Form
+    public partial class frm_clientFtp : Form
     {
         private IDictionary<string, IManager> _mesGestionnaires;
 
-        public Form1()
+        public frm_clientFtp()
         {
             InitializeComponent();
             PopulateTreeView(treeViewLocal, @"C:\");
