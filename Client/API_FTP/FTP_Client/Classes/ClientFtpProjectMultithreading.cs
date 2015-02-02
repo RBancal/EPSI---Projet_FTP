@@ -75,31 +75,60 @@ namespace API_FTP.FTP_Client.Classes
             if (repConnect)
             {
                 ChangeFolder(remoteFolder.GetPath());
-                Download(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+
+                try
+                {
+                    Download(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+                }
+                catch (FtpException)
+                {
+                    return false;
+                }
+                
             }
             else
             {
                 Connect();
 
                 ChangeFolder(remoteFolder.GetPath());
-                Download(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+
+                try
+                {
+                    Download(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+                }
+                catch (FtpException)
+                {
+                    return false;
+                }
+                
             }
+
+            return true;
         }
 
         public bool Upload(ElementFolder remoteFolder, ElementFile remoteFile, ElementFolder localFolder)
         {
+            FtpResponse maReponseFtp;
+
             if (repConnect)
             {
                 ChangeFolder(remoteFolder.GetPath());
-                Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+                maReponseFtp = Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
             }
             else
             {
                 Connect();
 
                 ChangeFolder(remoteFolder.GetPath());
-                Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+                maReponseFtp = Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
             }
+
+            if (maReponseFtp.IsNegative)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public List<ITransfer> ListFolder(string cheminFTPDossier)
