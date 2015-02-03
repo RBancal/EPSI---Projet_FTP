@@ -143,42 +143,19 @@ namespace Client
             _maConfigCourrante.Port = port;
             _maConfigCourrante.Host = serverTextBox.Text;
 
-            
-            _mesGestionnaires.Add("$DistantManager", ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante.Clone()));
+            if (_mesGestionnaires.ContainsKey("$DistantManager"))
+            {
+                _mesGestionnaires["$DistantManager"] = ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante.Clone());
+            }
+            else
+            {
+                _mesGestionnaires.Add("$DistantManager", ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante.Clone()));
+            }
+
             List<ITransfer> desTransfertDistant = ((DistantManager)_mesGestionnaires["$DistantManager"]).ListerContenu();
 
-            //if (! int.TryParse(portTextBox.Text, out port))
-            //{
-            //    MessageBox.Show("Veuillez rentrer un port valide", "Port invalide", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-
-
-
-            //// Get the object used to communicate with the server.
-            //FtpWebRequest request = (FtpWebRequest)WebRequest.Create(string.Format("ftp://{0}:{1}/", address, port));
-            //request.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
-
-            //// This example assumes the FTP site uses anonymous logon.
-            //request.Credentials = new NetworkCredential(login, password);
-            //request.Method = WebRequestMethods.Ftp.ListDirectory;
-            //request.KeepAlive = true;
-            //    FtpWebResponse response = (FtpWebResponse)request.GetResponse();
-
-
-
-            //Stream responseStream = response.GetResponseStream();
-            //StreamReader reader = new StreamReader(responseStream);
-            //Console.WriteLine(reader.ReadToEnd());
-
-            //Console.WriteLine("Directory List Complete, status {0}", response.StatusDescription);
-
-            //reader.Close();
-            //response.Close();
-
-
-            //connexionButton.Hide();
             TreeNode rootNode = new TreeNode(_maConfigCourrante.GetUriChaine());
+            rootNode.Tag = desTransfertDistant.First();
             ExtraireNode(rootNode, desTransfertDistant, trv_arboDistant);
         }
 
@@ -270,6 +247,47 @@ namespace Client
                 iSousArbo++;
             }
             return indiceTrouve;
+        }
+
+        private void trv_arboDistant_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            ListerContenuDistant(sender, e);
+        }
+
+        private void ListerContenuDistant(object sender, EventArgs e)
+        {
+            ITransfer unTransferable = (ITransfer)trv_arboDistant.SelectedNode.Tag;
+            ElementFolder unDossier = null;
+
+            if (unTransferable.EstUnDossier())
+            {
+                unDossier = (ElementFolder)unTransferable;
+                lst_itransfertDistant.Items.Clear();
+
+                List<ITransfer> desTransfertDistant = ((DistantManager)_mesGestionnaires["$DistantManager"]).ListerContenu(unDossier);
+
+                foreach (ITransfer item in desTransfertDistant)
+                {
+                    ListViewItem uneListItem = new ListViewItem();
+                    uneListItem.Text = item.GetName();
+                    uneListItem.Tag = item;
+
+                    if (item.EstUnDossier())
+                    {
+                        uneListItem.ImageIndex = 0;
+                    }
+                    else
+                    {
+                        uneListItem.ImageIndex = 1;
+                    }
+
+                    lst_itransfertDistant.Items.Add(uneListItem);
+                }
+            }
+            else
+            {
+                lst_itransfertDistant.Items.Clear();
+            }
         }
 
         /* private void deconnexionButton_Click(object sender, EventArgs e)

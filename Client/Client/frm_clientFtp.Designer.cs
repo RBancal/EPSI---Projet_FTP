@@ -281,6 +281,7 @@
             this.trv_arboDistant.SelectedImageIndex = 0;
             this.trv_arboDistant.Size = new System.Drawing.Size(156, 360);
             this.trv_arboDistant.TabIndex = 1;
+            this.trv_arboDistant.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trv_arboDistant_AfterSelect);
             // 
             // lst_itransfertDistant
             // 
