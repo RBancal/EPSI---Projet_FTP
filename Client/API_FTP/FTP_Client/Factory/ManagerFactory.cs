@@ -20,7 +20,7 @@ namespace API_FTP.FTP_Client.Factory
             if (gestionnaire == "$LocalManager")
             {
                 
-                unManager = new LocalManager(new ElementFolder(@"c:\"), leLogFtp);
+                unManager = new LocalManager(new ElementFolder(@"d:\"), leLogFtp);
             }
             else
             {

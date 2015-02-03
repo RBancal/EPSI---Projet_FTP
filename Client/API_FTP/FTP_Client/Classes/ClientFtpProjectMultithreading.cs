@@ -20,6 +20,7 @@ namespace API_FTP.FTP_Client.Classes
         private FtpWebResponse _monWebReponseFtp;
         private Stream _monFluxReponse;
         private StreamReader _monFluxLecture;
+        private string _pathRoot;
 
         bool repConnect = false;
 
@@ -176,7 +177,7 @@ namespace API_FTP.FTP_Client.Classes
 
         public void DefinePathRoot(string chemnComplet)
         {
-            throw new NotImplementedException();
+            _pathRoot = chemnComplet;
         }
 
         public int FollowProgress()

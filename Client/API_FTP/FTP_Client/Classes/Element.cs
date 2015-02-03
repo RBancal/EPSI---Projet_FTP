@@ -14,22 +14,22 @@ namespace API_FTP.FTP_Client.Classes
         protected string Name { get { return _name; } set { _name = value; } }
         protected string Path { get { return _path; } set { _path = value; } }
 
-        public string GetPath()
+        public virtual string GetPath()
         {
             return Path;
         }
 
-        public string GetName()
+        public virtual string GetName()
         {
             return Name;
         }
 
-        public long GetSize()
+        public virtual long GetSize()
         {
             return -1;
         }
 
-        public bool EstUnDossier()
+        public virtual bool EstUnDossier()
         {
             return false;
         }

@@ -27,14 +27,20 @@ namespace API_FTP.FTP_Client.Interfaces
         /// <summary>
         /// Permet de télécharger des éléments
         /// </summary>
+        /// <param name="remoteFolder">le dossier serveur</param>
+        /// <param name="remoteFile">le fichier à télécharger</param>
+        /// <param name="localFolder">le dossier local</param>
         /// <returns>true si le téléchargement s'es bien passé</returns>
-        bool Download();
+        bool Download(ElementFolder remoteFolder, ElementFile remoteFile, ElementFolder localFolder);
 
         /// <summary>
         /// Permet d'envoyer des éléments au server FTP
         /// </summary>
+        /// <param name="remoteFolder">le dossier racine serveur</param>
+        /// <param name="remoteFile">le fichier serveur à upload</param>
+        /// <param name="localFolder">le dossier local</param>
         /// <returns>true si l'envoie s'est bien passé</returns>
-        bool Upload();
+        bool Upload(ElementFolder remoteFolder, ElementFile remoteFile, ElementFolder localFolder);
 
         /// <summary>
         /// Obtient la liste les dossiers sur le serveur

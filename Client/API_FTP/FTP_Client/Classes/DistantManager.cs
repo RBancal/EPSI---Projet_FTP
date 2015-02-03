@@ -40,6 +40,27 @@ namespace API_FTP.FTP_Client.Classes
                 lesElementsContenus.AddRange(_monClientFtp.ListFileFolder((ElementFolder)leDossier));
             }
 
+            
+            return lesElementsContenus;
+        }
+
+        public List<ITransfer> ListerContenu(bool avecSousRepertoire = false)
+        {
+            List<ITransfer> lesElementsContenus = new List<ITransfer>();
+            _monClientFtp.DefinePathRoot(base._pathRoot);
+            _monClientFtp.Connect();
+
+            if (avecSousRepertoire)
+            {
+
+            }
+            else
+            {
+                lesElementsContenus.AddRange(_monClientFtp.ListFolder(base._pathRoot));
+                lesElementsContenus.AddRange(_monClientFtp.ListFileFolder(base._pathRoot));
+            }
+
+
             return lesElementsContenus;
         }
 

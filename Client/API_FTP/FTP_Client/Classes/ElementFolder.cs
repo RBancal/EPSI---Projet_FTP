@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using API_FTP.FTP_Client.Interfaces;
+using Limilabs.FTP.Client;
 
 namespace API_FTP.FTP_Client.Classes
 {
@@ -23,7 +24,7 @@ namespace API_FTP.FTP_Client.Classes
         /// Obtient la valeur disant si c'est un dossier
         /// </summary>
         /// <returns>true pour dire que c'est un dossier</returns>
-        public new bool EstUnDossier()
+        public override bool EstUnDossier()
         {
             return true;
         }
@@ -48,6 +49,15 @@ namespace API_FTP.FTP_Client.Classes
                 ChargerLesFichiersALaRacine(_path);
 
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="unFtpItem"></param>
+        public ElementFolder(FtpItem unFtpItem)
+        {
+            
         }
 
         public void Rafraichir()
