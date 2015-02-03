@@ -307,6 +307,7 @@
             this.btn_envoyer.TabIndex = 6;
             this.btn_envoyer.Text = "---->";
             this.btn_envoyer.UseVisualStyleBackColor = true;
+            this.btn_envoyer.Click += new System.EventHandler(this.btn_envoyer_Click);
             // 
             // btn_recuperer
             // 
@@ -316,6 +317,7 @@
             this.btn_recuperer.TabIndex = 7;
             this.btn_recuperer.Text = "<----";
             this.btn_recuperer.UseVisualStyleBackColor = true;
+            this.btn_recuperer.Click += new System.EventHandler(this.btn_recuperer_Click);
             // 
             // lst_messagesLog
             // 

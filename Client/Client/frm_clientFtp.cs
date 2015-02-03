@@ -329,6 +329,44 @@ namespace Client
             AfficherTreeNode(trv_arboDistant, lst_itransfertDistant);
         }
 
+        private void btn_recuperer_Click(object sender, EventArgs e)
+        {
+            if (_mesGestionnaires.ContainsKey("$DistantManager"))
+            {
+                DistantManager monManager = (DistantManager)_mesGestionnaires["$DistantManager"];
+
+                if (!string.IsNullOrEmpty(trv_arboLocal.SelectedNode.Text))
+                {
+                    monManager.Download((ElementFolder)trv_arboDistant.SelectedNode.Tag, (ElementFile)lst_itransfertDistant.SelectedItems[0].Tag, (ElementFolder)trv_arboLocal.SelectedNode.Tag);
+                    trv_arboLocal.SelectedNode.Nodes.Clear();
+                    ExtraireNode(_mesGestionnaires["$LocalManager"].ListerContenu((ITransfer)trv_arboLocal.SelectedNode.Tag), trv_arboLocal.SelectedNode);
+                    trv_arboLocal_AfterSelect(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("merci de sélectionner le dossier de destination");
+                }
+                
+            }
+        }
+
+        private void btn_envoyer_Click(object sender, EventArgs e)
+        {
+            if (_mesGestionnaires.ContainsKey("$DistantManager"))
+            {
+                DistantManager monManager = (DistantManager)_mesGestionnaires["$DistantManager"];
+
+                if (!string.IsNullOrEmpty(trv_arboLocal.SelectedNode.Text))
+                {
+                    monManager.Upload((ElementFolder)trv_arboDistant.SelectedNode.Tag, (ElementFile)lst_itransfertDistant.SelectedItems[0].Tag, (ElementFolder)trv_arboLocal.SelectedNode.Tag);
+                }
+                else
+                {
+                    MessageBox.Show("merci de sélectionner le dossier de destination");
+                }
+            }
+        }
+
         /* private void deconnexionButton_Click(object sender, EventArgs e)
         {
             connexionButton.Show();

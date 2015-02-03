@@ -13,7 +13,7 @@ namespace API_FTP.FTP_Client.Classes
     /// <summary>
     /// 
     /// </summary>
-    public class ClientFtpProjectMultithreading : Ftp, IClientFtp
+    public class ClientFtpProjectMultithreading : IClientFtp
     {
         private Configuration _maConfig;
         private FtpWebRequest _monWebRequestFtp;
@@ -21,6 +21,7 @@ namespace API_FTP.FTP_Client.Classes
         private Stream _monFluxReponse;
         private StreamReader _monFluxLecture;
         private string _pathRoot;
+        private Ftp _monFtp;
 
         bool repConnect = false;
 
@@ -32,17 +33,6 @@ namespace API_FTP.FTP_Client.Classes
         public bool Connect()
         {
             
-            try
-            {
-                Connect(_maConfig.Host, _maConfig.Port);
-                Login(_maConfig.Login, _maConfig.MotDePass);
-                repConnect = true;
-            }
-            catch (Exception)
-            {
-                repConnect = false;
-            }
-            
             return repConnect;
         }
 
@@ -50,21 +40,21 @@ namespace API_FTP.FTP_Client.Classes
         {
             bool repDeconnect = false;
 
-            try
-            {
-                Close();
-                repDeconnect = true;
-            }
-            catch (Exception)
-            {
-                MethodesGlobales.AfficherMessage("Impossible de se déconnecté !", "Erreur de déconnexion");
-                repDeconnect = false;
-            }
-            finally
-            {
-                _monFluxLecture.Close();
-                _monFluxReponse.Close();
-            }
+            //try
+            //{
+            //    Close();
+            //    repDeconnect = true;
+            //}
+            //catch (Exception)
+            //{
+            //    MethodesGlobales.AfficherMessage("Impossible de se déconnecté !", "Erreur de déconnexion");
+            //    repDeconnect = false;
+            //}
+            //finally
+            //{
+            //    _monFluxLecture.Close();
+            //    _monFluxReponse.Close();
+            //}
 
 
             return true;
@@ -72,36 +62,18 @@ namespace API_FTP.FTP_Client.Classes
 
         public bool Download(ElementFolder remoteFolder, ElementFile remoteFile, ElementFolder localFolder)
         {
-            if (repConnect)
-            {
-                ChangeFolder(remoteFolder.GetPath());
+                using (_monFtp = new Ftp())
+                {
+                    _monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
+                    _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+                    string resteCheminFolder = remoteFolder.GetPath().Replace(_maConfig.GetUriChaine(), "").Replace(@"\", "/");
+                    string resteCheminFichier = remoteFile.GetPath().Replace(_maConfig.GetUriChaine(), "").Replace(@"\", "/");
+                    _monFtp.ChangeFolder(resteCheminFolder);
 
-                try
-                {
-                    Download(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
-                }
-                catch (FtpException)
-                {
-                    return false;
-                }
-                
-            }
-            else
-            {
-                Connect();
+                    _monFtp.Download(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
 
-                ChangeFolder(remoteFolder.GetPath());
-
-                try
-                {
-                    Download(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+                    _monFtp.Close();
                 }
-                catch (FtpException)
-                {
-                    return false;
-                }
-                
-            }
 
             return true;
         }
@@ -110,22 +82,13 @@ namespace API_FTP.FTP_Client.Classes
         {
             FtpResponse maReponseFtp;
 
-            if (repConnect)
+            using (_monFtp = new Ftp())
             {
-                ChangeFolder(remoteFolder.GetPath());
-                maReponseFtp = Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
-            }
-            else
-            {
-                Connect();
-
-                ChangeFolder(remoteFolder.GetPath());
-                maReponseFtp = Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
-            }
-
-            if (maReponseFtp.IsNegative)
-            {
-                return false;
+                _monFtp.Connect(_maConfig.Host, _maConfig.Port);
+                _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+                _monFtp.ChangeFolder(remoteFolder.GetPath());
+                maReponseFtp = _monFtp.Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+                _monFtp.Close();
             }
 
             return true;

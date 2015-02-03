@@ -72,5 +72,15 @@ namespace API_FTP.FTP_Client.Classes
 
             return lesElementsContenus;
         }
+
+        public void Download(ElementFolder remoteFolder, ElementFile remoteFile, ElementFolder localFolder)
+        {
+            _monClientFtp.Download(remoteFolder, remoteFile, localFolder);
+        }
+
+        public void Upload(ElementFolder elementFolder1, ElementFile elementFile, ElementFolder elementFolder2)
+        {
+            _monClientFtp.Upload(elementFolder1, elementFile, elementFolder2);
+        }
     }
 }
