@@ -40,7 +40,6 @@ namespace API_FTP.FTP_Client.Classes
             }
             catch (Exception)
             {
-                this.Close();
                 repConnect = false;
             }
             
@@ -150,15 +149,15 @@ namespace API_FTP.FTP_Client.Classes
             {
                 if (unFtpItem.IsFolder)
                 {
-                    lesElements.Add(new ElementFolder(unFtpItem.SymlinkPath));
+                    lesElements.Add(new ElementFolder(unFtpItem));
                 }
                 else
                 {
-                    lesElements.Add(new ElementFile(unFtpItem.SymlinkPath));
+                    lesElements.Add(new ElementFile(unFtpItem));
                 }
             }
 
-            return new List<ITransfer>();
+            return lesElements;
         }
 
         public List<ITransfer> ListFolder(ElementFolder unDossier)

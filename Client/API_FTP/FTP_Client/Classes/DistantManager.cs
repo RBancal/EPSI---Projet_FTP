@@ -28,7 +28,6 @@ namespace API_FTP.FTP_Client.Classes
         {
             List<ITransfer> lesElementsContenus = new List<ITransfer>();
             _monClientFtp.DefinePathRoot(base._pathRoot);
-            _monClientFtp.Connect();
 
             if (avecSousRepertoire)
             {
@@ -48,7 +47,6 @@ namespace API_FTP.FTP_Client.Classes
         {
             List<ITransfer> lesElementsContenus = new List<ITransfer>();
             _monClientFtp.DefinePathRoot(base._pathRoot);
-            _monClientFtp.Connect();
 
             if (avecSousRepertoire)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Limilabs.FTP.Client;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -34,6 +35,19 @@ namespace API_FTP.FTP_Client.Classes
             {
                 _path = chemin;
                 Name = new FileInfo(chemin).Name;
+            }
+        }
+
+        public ElementFile(FtpItem unFtpItem)
+        {
+            if (unFtpItem.IsFolder)
+            {
+                _path = unFtpItem.SymlinkPath;
+                Name = unFtpItem.Name;
+            }
+            else
+            {
+
             }
         }
     }

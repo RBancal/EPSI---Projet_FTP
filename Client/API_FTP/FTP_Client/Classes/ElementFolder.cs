@@ -57,7 +57,16 @@ namespace API_FTP.FTP_Client.Classes
         /// <param name="unFtpItem"></param>
         public ElementFolder(FtpItem unFtpItem)
         {
-            
+            if (unFtpItem.IsFolder)
+            {
+                _path = unFtpItem.SymlinkPath;
+                Name = unFtpItem.Name;
+                _mesElements = new List<ITransfer>();
+            }
+            else
+            {
+                
+            }
         }
 
         public void Rafraichir()
