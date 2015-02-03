@@ -239,7 +239,7 @@ namespace Client
                     leNodeSelectionne.Tag = unTranferable;
                     int indiceTrouve = RechercherTreeNode(leNodeSelectionne, uneTreeView);
 
-                    if(uneTreeView.Name.Equals("lst_itranfertLocal"))
+                    if (uneTreeView.Name.Equals("trv_arboLocal"))
                     {
                         lesTranferables = _mesGestionnaires["$LocalManager"].ListerContenu(unTranferable);
                     }
@@ -282,7 +282,7 @@ namespace Client
             return indiceTrouve;
         }
 
-        private void trv_arboDistant_AfterSelect(object sender, TreeViewEventArgs e)
+        private void trv_arboDistant_AfterSelect(object sender, EventArgs e)
         {
             ListerContenuDistant(sender, e);
         }
@@ -352,18 +352,54 @@ namespace Client
 
         private void btn_envoyer_Click(object sender, EventArgs e)
         {
+            UploadITranfert(sender, e, (ITransfer)lst_itranfertLocal.SelectedItems[0].Tag);
+        }
+
+        private void UploadITranfert(object sender, EventArgs e, ITransfer unDossierOuFichier)
+        {
             if (_mesGestionnaires.ContainsKey("$DistantManager"))
             {
                 DistantManager monManager = (DistantManager)_mesGestionnaires["$DistantManager"];
 
                 if (!string.IsNullOrEmpty(trv_arboLocal.SelectedNode.Text))
                 {
-                    monManager.Upload((ElementFolder)trv_arboDistant.SelectedNode.Tag, (ElementFile)lst_itransfertDistant.SelectedItems[0].Tag, (ElementFolder)trv_arboLocal.SelectedNode.Tag);
+                    if (!string.IsNullOrEmpty(lst_itranfertLocal.SelectedItems[0].Text))
+                    {
+                        ITransfer unTranferable = (ITransfer)lst_itranfertLocal.SelectedItems[0].Tag;
+
+                        if (unTranferable.EstUnDossier())
+                        {
+                            ElementFolder unFolderSelectionne = (ElementFolder)unTranferable;
+
+                            foreach (ITransfer item in unFolderSelectionne.ListerContenu())
+                            {
+                                if (item.EstUnDossier())
+                                {
+                                    UploadITranfert(sender, e, item);
+                                }
+                                else
+                                {
+                                    monManager.Upload((ElementFolder)trv_arboLocal.SelectedNode.Tag, (ElementFile)item, (ElementFolder)trv_arboDistant.SelectedNode.Tag);
+                                    trv_arboDistant.SelectedNode.Nodes.Clear();
+                                    ExtraireNode(_mesGestionnaires["$DistantManager"].ListerContenu((ITransfer)trv_arboDistant.SelectedNode.Tag), trv_arboDistant.SelectedNode);
+                                    trv_arboDistant_AfterSelect(sender, e);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            monManager.Upload((ElementFolder)trv_arboLocal.SelectedNode.Tag, (ElementFile)unTranferable, (ElementFolder)trv_arboDistant.SelectedNode.Tag);
+                            trv_arboDistant.SelectedNode.Nodes.Clear();
+                            ExtraireNode(_mesGestionnaires["$DistantManager"].ListerContenu((ITransfer)trv_arboDistant.SelectedNode.Tag), trv_arboDistant.SelectedNode);
+                            trv_arboDistant_AfterSelect(sender, e);
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("merci de sélectionner le dossier de destination");
-                }
+
+            }
+            else
+            {
+                MessageBox.Show("merci de sélectionner le dossier de destination");
             }
         }
 

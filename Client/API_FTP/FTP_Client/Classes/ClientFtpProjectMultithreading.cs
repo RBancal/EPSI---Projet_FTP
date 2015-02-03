@@ -78,7 +78,7 @@ namespace API_FTP.FTP_Client.Classes
             return true;
         }
 
-        public bool Upload(ElementFolder remoteFolder, ElementFile remoteFile, ElementFolder localFolder)
+        public bool Upload(ElementFolder localFolder, ElementFile localFile, ElementFolder distantFolder)
         {
             FtpResponse maReponseFtp;
 
@@ -86,8 +86,10 @@ namespace API_FTP.FTP_Client.Classes
             {
                 _monFtp.Connect(_maConfig.Host, _maConfig.Port);
                 _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
-                _monFtp.ChangeFolder(remoteFolder.GetPath());
-                maReponseFtp = _monFtp.Upload(remoteFile.GetName(), Path.Combine(localFolder.GetPath(), remoteFile.GetName()));
+                string resteChemin = distantFolder.GetPath().Replace(_maConfig.GetUriChaine(), "").Replace(@"\", "/");
+
+                _monFtp.ChangeFolder(resteChemin);
+                maReponseFtp = _monFtp.Upload(localFile.GetName(), localFile.GetPath());
                 _monFtp.Close();
             }
 
