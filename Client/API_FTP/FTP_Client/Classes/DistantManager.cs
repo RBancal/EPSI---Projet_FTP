@@ -54,6 +54,7 @@ namespace API_FTP.FTP_Client.Classes
             }
             else
             {
+                
                 lesElementsContenus.AddRange(_monClientFtp.ListFolder(base._pathRoot));
                 lesElementsContenus.AddRange(_monClientFtp.ListFileFolder(base._pathRoot));
             }
@@ -64,7 +65,12 @@ namespace API_FTP.FTP_Client.Classes
 
         public override List<ITransfer> ListerContenu(Interfaces.ITransfer leDossier)
         {
-            throw new NotImplementedException();
+            List<ITransfer> lesElementsContenus = new List<ITransfer>();
+            lesElementsContenus.AddRange(_monClientFtp.ListFolder(leDossier.GetPath()));
+            lesElementsContenus.AddRange(_monClientFtp.ListFileFolder(leDossier.GetPath()));
+
+
+            return lesElementsContenus;
         }
     }
 }

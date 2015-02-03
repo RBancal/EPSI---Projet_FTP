@@ -38,16 +38,17 @@ namespace API_FTP.FTP_Client.Classes
             }
         }
 
-        public ElementFile(FtpItem unFtpItem)
+        public ElementFile(FtpItem unFtpItem, string cheminCompletFichierSurServeur)
         {
             if (unFtpItem.IsFolder)
             {
-                _path = unFtpItem.SymlinkPath;
+                _path = cheminCompletFichierSurServeur;
                 Name = unFtpItem.Name;
             }
             else
             {
-
+                _path = cheminCompletFichierSurServeur;
+                Name = unFtpItem.Name;
             }
         }
     }

@@ -140,7 +140,29 @@ namespace API_FTP.FTP_Client.Classes
             {
                 monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
                 monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+                string resteChemin = cheminFTPDossier.Replace(_maConfig.GetUriChaine(), "");
+
+                if (resteChemin.Equals(""))
+                {
+                    lesFtpElements = monFtp.GetList();
+                }
+                else
+                {
+                    List<string> larbo = resteChemin.Split(new char[]{'/'}).ToList();
+
+                    if (larbo.Count > 0)
+                    {
+                        monFtp.ChangeFolder(larbo.Last());
+                    }
+                    else
+                    {
+                        monFtp.ChangeFolder(resteChemin);
+                    }
+                    
+                }
+
                 lesFtpElements = monFtp.GetList();
+                
 
                 monFtp.Close();
             }
@@ -149,11 +171,7 @@ namespace API_FTP.FTP_Client.Classes
             {
                 if (unFtpItem.IsFolder)
                 {
-                    lesElements.Add(new ElementFolder(unFtpItem));
-                }
-                else
-                {
-                    lesElements.Add(new ElementFile(unFtpItem));
+                     lesElements.Add(new ElementFolder(unFtpItem, Path.Combine(_maConfig.GetUriChaine(), unFtpItem.Name)));
                 }
             }
 
@@ -197,7 +215,49 @@ namespace API_FTP.FTP_Client.Classes
 
         List<ITransfer> IClientFtp.ListFileFolder(string unDossier)
         {
-            return new List<ITransfer>();
+            List<FtpItem> lesFtpElements = new List<FtpItem>();
+            List<ITransfer> lesElements = new List<ITransfer>();
+
+            using (Ftp monFtp = new Ftp())
+            {
+                monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
+                monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+                string resteChemin = unDossier.Replace(_maConfig.GetUriChaine(), "");
+
+                if (resteChemin.Equals(""))
+                {
+                    lesFtpElements = monFtp.GetList();
+                }
+                else
+                {
+                    List<string> larbo = resteChemin.Split(new char[] { '/' }).ToList();
+
+                    if (larbo.Count > 0)
+                    {
+                        monFtp.ChangeFolder(larbo.Last());
+                    }
+                    else
+                    {
+                        monFtp.ChangeFolder(resteChemin);
+                    }
+
+                }
+
+                lesFtpElements = monFtp.GetList();
+
+
+                monFtp.Close();
+            }
+
+            foreach (FtpItem unFtpItem in lesFtpElements)
+            {
+                if (unFtpItem.IsFile)
+                {
+                    lesElements.Add(new ElementFile(unFtpItem, Path.Combine(_maConfig.GetUriChaine(), unFtpItem.Name)));
+                }
+            }
+
+            return lesElements;
         }
     }
 }

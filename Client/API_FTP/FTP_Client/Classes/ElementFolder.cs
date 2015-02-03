@@ -51,15 +51,17 @@ namespace API_FTP.FTP_Client.Classes
             }
         }
 
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="unFtpItem"></param>
-        public ElementFolder(FtpItem unFtpItem)
+        /// <param name="cheminCompletFichierSurServeur"></param>
+        public ElementFolder(FtpItem unFtpItem, string cheminCompletFichierSurServeur)
         {
             if (unFtpItem.IsFolder)
             {
-                _path = unFtpItem.SymlinkPath;
+                _path = cheminCompletFichierSurServeur;
                 Name = unFtpItem.Name;
                 _mesElements = new List<ITransfer>();
             }
