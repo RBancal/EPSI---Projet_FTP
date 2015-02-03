@@ -140,7 +140,7 @@ namespace API_FTP.FTP_Client.Classes
             {
                 monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
                 monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
-                string resteChemin = cheminFTPDossier.Replace(_maConfig.GetUriChaine(), "");
+                string resteChemin = cheminFTPDossier.Replace(_maConfig.GetUriChaine(), "").Replace(@"\","/");
 
                 if (resteChemin.Equals(""))
                 {
@@ -152,7 +152,7 @@ namespace API_FTP.FTP_Client.Classes
 
                     if (larbo.Count > 0)
                     {
-                        monFtp.ChangeFolder(larbo.Last());
+                        monFtp.ChangeFolder(resteChemin);
                     }
                     else
                     {
@@ -171,7 +171,7 @@ namespace API_FTP.FTP_Client.Classes
             {
                 if (unFtpItem.IsFolder)
                 {
-                     lesElements.Add(new ElementFolder(unFtpItem, Path.Combine(_maConfig.GetUriChaine(), unFtpItem.Name)));
+                     lesElements.Add(new ElementFolder(unFtpItem, Path.Combine(cheminFTPDossier, unFtpItem.Name)));
                 }
             }
 
@@ -222,7 +222,7 @@ namespace API_FTP.FTP_Client.Classes
             {
                 monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
                 monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
-                string resteChemin = unDossier.Replace(_maConfig.GetUriChaine(), "");
+                string resteChemin = unDossier.Replace(_maConfig.GetUriChaine(), "").Replace(@"\","/");
 
                 if (resteChemin.Equals(""))
                 {
@@ -234,7 +234,7 @@ namespace API_FTP.FTP_Client.Classes
 
                     if (larbo.Count > 0)
                     {
-                        monFtp.ChangeFolder(larbo.Last());
+                        monFtp.ChangeFolder(resteChemin);
                     }
                     else
                     {
@@ -253,7 +253,7 @@ namespace API_FTP.FTP_Client.Classes
             {
                 if (unFtpItem.IsFile)
                 {
-                    lesElements.Add(new ElementFile(unFtpItem, Path.Combine(_maConfig.GetUriChaine(), unFtpItem.Name)));
+                    lesElements.Add(new ElementFile(unFtpItem, Path.Combine(unDossier, unFtpItem.Name)));
                 }
             }
 

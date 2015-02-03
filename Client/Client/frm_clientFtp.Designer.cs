@@ -53,8 +53,6 @@
             this.trv_arboDistant = new System.Windows.Forms.TreeView();
             this.lst_itransfertDistant = new System.Windows.Forms.ListView();
             this.nomDistant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.typeDistant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dernModifDistant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_envoyer = new System.Windows.Forms.Button();
             this.btn_recuperer = new System.Windows.Forms.Button();
             this.lst_messagesLog = new API_FTP.FTP_Client.Controls.ListBoxLogFtp();
@@ -286,9 +284,7 @@
             // lst_itransfertDistant
             // 
             this.lst_itransfertDistant.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.nomDistant,
-            this.typeDistant,
-            this.dernModifDistant});
+            this.nomDistant});
             this.lst_itransfertDistant.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lst_itransfertDistant.Location = new System.Drawing.Point(0, 0);
             this.lst_itransfertDistant.Name = "lst_itransfertDistant";
@@ -297,18 +293,11 @@
             this.lst_itransfertDistant.TabIndex = 1;
             this.lst_itransfertDistant.UseCompatibleStateImageBehavior = false;
             this.lst_itransfertDistant.View = System.Windows.Forms.View.Details;
+            this.lst_itransfertDistant.DoubleClick += new System.EventHandler(this.lst_itransfertDistant_DoubleClick);
             // 
             // nomDistant
             // 
             this.nomDistant.Text = "Nom";
-            // 
-            // typeDistant
-            // 
-            this.typeDistant.Text = "Type";
-            // 
-            // dernModifDistant
-            // 
-            this.dernModifDistant.Text = "Dernière Modification";
             // 
             // btn_envoyer
             // 
@@ -392,8 +381,6 @@
         private System.Windows.Forms.TreeView trv_arboDistant;
         private System.Windows.Forms.ListView lst_itransfertDistant;
         private System.Windows.Forms.ColumnHeader nomDistant;
-        private System.Windows.Forms.ColumnHeader typeDistant;
-        private System.Windows.Forms.ColumnHeader dernModifDistant;
         private API_FTP.FTP_Client.Controls.ListBoxLogFtp lst_messagesLog;
 
 

@@ -38,6 +38,26 @@ namespace Client
             ExtraireNode(rootNode, mesTranferables, trv_arboLocal);
         }
 
+        private void ExtraireNode(List<ITransfer> mesTranferables, TreeNode unNoeudAMettreAJour)
+        {
+            foreach (ITransfer item in mesTranferables)
+            {
+                TreeNode unNoeudEnfant = new TreeNode(item.GetName());
+                unNoeudEnfant.Tag = item;
+                
+
+                ElementFolder unFolder = null;
+
+                if (item.EstUnDossier())
+                {
+                    unFolder = (ElementFolder)item;
+                    unNoeudAMettreAJour.Nodes.Clear();
+                    ExtraireNode(unFolder.ListerContenu(), unNoeudEnfant);
+                    unNoeudAMettreAJour.Nodes.Add(unNoeudEnfant);
+                }
+            }
+        }
+
         private void ExtraireNode(TreeNode unNoeuSource, List<ITransfer> mesTranferables, TreeNode unNoeudParent)
         {
             foreach (ITransfer item in mesTranferables)
@@ -73,12 +93,9 @@ namespace Client
                 if (item.EstUnDossier())
 	            {
 		            unFolder = (ElementFolder) item;
-                    ExtraireNode(unNoeudEnfant, unFolder.ListerContenu(), unNoeuSource);
-	            }
-                else
-                {
+                    ExtraireNode(unFolder.ListerContenu(), unNoeudEnfant);
                     unNoeuSource.Nodes.Add(unNoeudEnfant);
-                }
+	            }
             }
 
             unTreeViewParent.Nodes.Add(unNoeuSource);
@@ -156,6 +173,7 @@ namespace Client
 
             TreeNode rootNode = new TreeNode(_maConfigCourrante.GetUriChaine());
             rootNode.Tag = desTransfertDistant.First();
+            trv_arboDistant.Nodes.Clear();
             ExtraireNode(rootNode, desTransfertDistant, trv_arboDistant);
         }
 
@@ -201,44 +219,58 @@ namespace Client
 
         private void lst_itranfertLocal_DoubleClick(object sender, EventArgs e)
         {
-            AfficherTreeNode();
+            AfficherTreeNode(trv_arboLocal, lst_itranfertLocal);
         }
 
-        private void AfficherTreeNode()
+        private void AfficherTreeNode(TreeView uneTreeView, ListView uneListeRecepteur)
         {
             ITransfer unTranferable = null;
 
-            if (lst_itranfertLocal.SelectedItems.Count > 0)
+            if (!string.IsNullOrEmpty(uneTreeView.SelectedNode.Text))
             {
-                unTranferable = (ITransfer)lst_itranfertLocal.SelectedItems[0].Tag;
+                unTranferable = (ITransfer)uneListeRecepteur.SelectedItems[0].Tag;
                 List<ITransfer> lesTranferables = new List<ITransfer>();
 
                 if (unTranferable.EstUnDossier())
                 {
-                    lesTranferables = _mesGestionnaires["$LocalManager"].ListerContenu(unTranferable);
                     TreeNode leNodeSelectionne = new TreeNode();
                     leNodeSelectionne.Text = unTranferable.GetName();
                     leNodeSelectionne.ImageIndex = 0;
                     leNodeSelectionne.Tag = unTranferable;
-                    int indiceTrouve = RechercherTreeNode(leNodeSelectionne);
+                    int indiceTrouve = RechercherTreeNode(leNodeSelectionne, uneTreeView);
 
-                    trv_arboLocal.SelectedNode = trv_arboLocal.SelectedNode.Nodes[indiceTrouve];
-                    trv_arboLocal.Select();
-                    trv_arboLocal.SelectedNode.Expand();
+                    if(uneTreeView.Name.Equals("lst_itranfertLocal"))
+                    {
+                        lesTranferables = _mesGestionnaires["$LocalManager"].ListerContenu(unTranferable);
+                    }
+                    else
+                    {
+                        lesTranferables = _mesGestionnaires["$DistantManager"].ListerContenu(unTranferable);
+                        leNodeSelectionne.Nodes.Clear();
+                        ExtraireNode(lesTranferables, leNodeSelectionne);
+                    }
+
+                    uneTreeView.SelectedNode = uneTreeView.SelectedNode.Nodes[indiceTrouve];
+                    uneTreeView.Select();
+                    uneTreeView.SelectedNode.Expand();
 
                 }
             }
+
+
+
+
         }
 
-        private int RechercherTreeNode(TreeNode leNodeRechercher)
+        private int RechercherTreeNode(TreeNode leNodeRechercher, TreeView unTreeView)
         {
             bool aTrouve = false;
             int iSousArbo = 0;
             int indiceTrouve = -1;
 
-            while (!aTrouve && iSousArbo < trv_arboLocal.SelectedNode.Nodes.Count)
+            while (!aTrouve && iSousArbo < unTreeView.SelectedNode.Nodes.Count)
             {
-                if (trv_arboLocal.SelectedNode.Nodes[iSousArbo].Text.Equals(leNodeRechercher.Text))
+                if (unTreeView.SelectedNode.Nodes[iSousArbo].Text.Equals(leNodeRechercher.Text))
                 {
                     indiceTrouve = iSousArbo;
                     aTrouve = true;
@@ -246,6 +278,7 @@ namespace Client
 
                 iSousArbo++;
             }
+
             return indiceTrouve;
         }
 
@@ -265,6 +298,7 @@ namespace Client
                 lst_itransfertDistant.Items.Clear();
 
                 List<ITransfer> desTransfertDistant = ((DistantManager)_mesGestionnaires["$DistantManager"]).ListerContenu(unDossier);
+                ExtraireNode(desTransfertDistant, trv_arboDistant.SelectedNode);
 
                 foreach (ITransfer item in desTransfertDistant)
                 {
@@ -288,6 +322,11 @@ namespace Client
             {
                 lst_itransfertDistant.Items.Clear();
             }
+        }
+
+        private void lst_itransfertDistant_DoubleClick(object sender, EventArgs e)
+        {
+            AfficherTreeNode(trv_arboDistant, lst_itransfertDistant);
         }
 
         /* private void deconnexionButton_Click(object sender, EventArgs e)

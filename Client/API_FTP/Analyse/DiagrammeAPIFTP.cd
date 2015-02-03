@@ -10,7 +10,7 @@
   <Class Name="API_FTP.FTP_Client.Classes.ClientFtpProjectMultithreading">
     <Position X="3.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>gBQACAAAmAAQABAAABAAAIgAAAAAEAEAAAEAAAAAgAA=</HashCode>
+      <HashCode>gBQACAAAmAgQABAAABAAAIkAAAAAEAEAAAEAAAAAgAA=</HashCode>
       <FileName>FTP_Client\Classes\ClientFtpProjectMultithreading.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
