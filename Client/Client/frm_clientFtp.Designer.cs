@@ -44,21 +44,20 @@
             this.deconnexionButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeViewLocal = new System.Windows.Forms.TreeView();
+            this.trv_arboLocal = new System.Windows.Forms.TreeView();
             this.imageListFtp = new System.Windows.Forms.ImageList(this.components);
-            this.listViewLocal = new System.Windows.Forms.ListView();
+            this.lst_itranfertLocal = new System.Windows.Forms.ListView();
             this.nomLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.typeLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dernModifLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.treeViewDistant = new System.Windows.Forms.TreeView();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.trv_arboDistant = new System.Windows.Forms.TreeView();
+            this.lst_itransfertDistant = new System.Windows.Forms.ListView();
             this.nomDistant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.typeDistant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dernModifDistant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sendButton = new System.Windows.Forms.Button();
-            this.receiveButton = new System.Windows.Forms.Button();
+            this.btn_envoyer = new System.Windows.Forms.Button();
+            this.btn_recuperer = new System.Windows.Forms.Button();
+            this.lst_messagesLog = new API_FTP.FTP_Client.Controls.ListBoxLogFtp();
             this.connexionPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -198,25 +197,26 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeViewLocal);
+            this.splitContainer1.Panel1.Controls.Add(this.trv_arboLocal);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.listViewLocal);
+            this.splitContainer1.Panel2.Controls.Add(this.lst_itranfertLocal);
             this.splitContainer1.Size = new System.Drawing.Size(420, 360);
             this.splitContainer1.SplitterDistance = 156;
             this.splitContainer1.TabIndex = 0;
             // 
-            // treeViewLocal
+            // trv_arboLocal
             // 
-            this.treeViewLocal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeViewLocal.ImageIndex = 0;
-            this.treeViewLocal.ImageList = this.imageListFtp;
-            this.treeViewLocal.Location = new System.Drawing.Point(0, 0);
-            this.treeViewLocal.Name = "treeViewLocal";
-            this.treeViewLocal.SelectedImageIndex = 0;
-            this.treeViewLocal.Size = new System.Drawing.Size(156, 360);
-            this.treeViewLocal.TabIndex = 0;
+            this.trv_arboLocal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trv_arboLocal.ImageIndex = 0;
+            this.trv_arboLocal.ImageList = this.imageListFtp;
+            this.trv_arboLocal.Location = new System.Drawing.Point(0, 0);
+            this.trv_arboLocal.Name = "trv_arboLocal";
+            this.trv_arboLocal.SelectedImageIndex = 0;
+            this.trv_arboLocal.Size = new System.Drawing.Size(156, 360);
+            this.trv_arboLocal.TabIndex = 0;
+            this.trv_arboLocal.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trv_arboLocal_AfterSelect);
             // 
             // imageListFtp
             // 
@@ -225,34 +225,26 @@
             this.imageListFtp.Images.SetKeyName(0, "ob_4a18d1_dossier.png");
             this.imageListFtp.Images.SetKeyName(1, "icone-fichier.png");
             // 
-            // listViewLocal
+            // lst_itranfertLocal
             // 
-            this.listViewLocal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.nomLocal,
-            this.typeLocal,
-            this.dernModifLocal});
-            this.listViewLocal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewLocal.Location = new System.Drawing.Point(0, 0);
-            this.listViewLocal.Name = "listViewLocal";
-            this.listViewLocal.Size = new System.Drawing.Size(260, 360);
-            this.listViewLocal.SmallImageList = this.imageListFtp;
-            this.listViewLocal.TabIndex = 0;
-            this.listViewLocal.UseCompatibleStateImageBehavior = false;
-            this.listViewLocal.View = System.Windows.Forms.View.Details;
+            this.lst_itranfertLocal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nomLocal});
+            this.lst_itranfertLocal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lst_itranfertLocal.LargeImageList = this.imageListFtp;
+            this.lst_itranfertLocal.Location = new System.Drawing.Point(0, 0);
+            this.lst_itranfertLocal.MultiSelect = false;
+            this.lst_itranfertLocal.Name = "lst_itranfertLocal";
+            this.lst_itranfertLocal.Size = new System.Drawing.Size(260, 360);
+            this.lst_itranfertLocal.SmallImageList = this.imageListFtp;
+            this.lst_itranfertLocal.TabIndex = 0;
+            this.lst_itranfertLocal.UseCompatibleStateImageBehavior = false;
+            this.lst_itranfertLocal.View = System.Windows.Forms.View.Details;
+            this.lst_itranfertLocal.DoubleClick += new System.EventHandler(this.lst_itranfertLocal_DoubleClick);
             // 
             // nomLocal
             // 
             this.nomLocal.Text = "Nom";
-            this.nomLocal.Width = 53;
-            // 
-            // typeLocal
-            // 
-            this.typeLocal.Text = "Type";
-            // 
-            // dernModifLocal
-            // 
-            this.dernModifLocal.Text = "Dernière Modification";
-            this.dernModifLocal.Width = 163;
+            this.nomLocal.Width = 255;
             // 
             // panel3
             // 
@@ -270,40 +262,40 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.treeViewDistant);
+            this.splitContainer2.Panel1.Controls.Add(this.trv_arboDistant);
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.listView2);
+            this.splitContainer2.Panel2.Controls.Add(this.lst_itransfertDistant);
             this.splitContainer2.Size = new System.Drawing.Size(420, 360);
             this.splitContainer2.SplitterDistance = 156;
             this.splitContainer2.TabIndex = 1;
             // 
-            // treeViewDistant
+            // trv_arboDistant
             // 
-            this.treeViewDistant.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeViewDistant.ImageIndex = 0;
-            this.treeViewDistant.ImageList = this.imageListFtp;
-            this.treeViewDistant.Location = new System.Drawing.Point(0, 0);
-            this.treeViewDistant.Name = "treeViewDistant";
-            this.treeViewDistant.SelectedImageIndex = 0;
-            this.treeViewDistant.Size = new System.Drawing.Size(156, 360);
-            this.treeViewDistant.TabIndex = 1;
+            this.trv_arboDistant.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trv_arboDistant.ImageIndex = 0;
+            this.trv_arboDistant.ImageList = this.imageListFtp;
+            this.trv_arboDistant.Location = new System.Drawing.Point(0, 0);
+            this.trv_arboDistant.Name = "trv_arboDistant";
+            this.trv_arboDistant.SelectedImageIndex = 0;
+            this.trv_arboDistant.Size = new System.Drawing.Size(156, 360);
+            this.trv_arboDistant.TabIndex = 1;
             // 
-            // listView2
+            // lst_itransfertDistant
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lst_itransfertDistant.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nomDistant,
             this.typeDistant,
             this.dernModifDistant});
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView2.Location = new System.Drawing.Point(0, 0);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(260, 360);
-            this.listView2.SmallImageList = this.imageListFtp;
-            this.listView2.TabIndex = 1;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.lst_itransfertDistant.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lst_itransfertDistant.Location = new System.Drawing.Point(0, 0);
+            this.lst_itransfertDistant.Name = "lst_itransfertDistant";
+            this.lst_itransfertDistant.Size = new System.Drawing.Size(260, 360);
+            this.lst_itransfertDistant.SmallImageList = this.imageListFtp;
+            this.lst_itransfertDistant.TabIndex = 1;
+            this.lst_itransfertDistant.UseCompatibleStateImageBehavior = false;
+            this.lst_itransfertDistant.View = System.Windows.Forms.View.Details;
             // 
             // nomDistant
             // 
@@ -317,31 +309,39 @@
             // 
             this.dernModifDistant.Text = "Dernière Modification";
             // 
-            // sendButton
+            // btn_envoyer
             // 
-            this.sendButton.Location = new System.Drawing.Point(462, 173);
-            this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(75, 23);
-            this.sendButton.TabIndex = 6;
-            this.sendButton.Text = "---->";
-            this.sendButton.UseVisualStyleBackColor = true;
+            this.btn_envoyer.Location = new System.Drawing.Point(462, 173);
+            this.btn_envoyer.Name = "btn_envoyer";
+            this.btn_envoyer.Size = new System.Drawing.Size(75, 23);
+            this.btn_envoyer.TabIndex = 6;
+            this.btn_envoyer.Text = "---->";
+            this.btn_envoyer.UseVisualStyleBackColor = true;
             // 
-            // receiveButton
+            // btn_recuperer
             // 
-            this.receiveButton.Location = new System.Drawing.Point(461, 295);
-            this.receiveButton.Name = "receiveButton";
-            this.receiveButton.Size = new System.Drawing.Size(75, 23);
-            this.receiveButton.TabIndex = 7;
-            this.receiveButton.Text = "<----";
-            this.receiveButton.UseVisualStyleBackColor = true;
+            this.btn_recuperer.Location = new System.Drawing.Point(461, 295);
+            this.btn_recuperer.Name = "btn_recuperer";
+            this.btn_recuperer.Size = new System.Drawing.Size(75, 23);
+            this.btn_recuperer.TabIndex = 7;
+            this.btn_recuperer.Text = "<----";
+            this.btn_recuperer.UseVisualStyleBackColor = true;
+            // 
+            // lst_messagesLog
+            // 
+            this.lst_messagesLog.Location = new System.Drawing.Point(15, 66);
+            this.lst_messagesLog.Name = "lst_messagesLog";
+            this.lst_messagesLog.Size = new System.Drawing.Size(969, 84);
+            this.lst_messagesLog.TabIndex = 8;
             // 
             // frm_clientFtp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 613);
-            this.Controls.Add(this.receiveButton);
-            this.Controls.Add(this.sendButton);
+            this.Controls.Add(this.lst_messagesLog);
+            this.Controls.Add(this.btn_recuperer);
+            this.Controls.Add(this.btn_envoyer);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.connexionPanel);
@@ -380,21 +380,20 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button sitesButton;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button sendButton;
-        private System.Windows.Forms.Button receiveButton;
+        private System.Windows.Forms.Button btn_envoyer;
+        private System.Windows.Forms.Button btn_recuperer;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView treeViewLocal;
+        private System.Windows.Forms.TreeView trv_arboLocal;
         private System.Windows.Forms.ImageList imageListFtp;
-        private System.Windows.Forms.ListView listViewLocal;
+        private System.Windows.Forms.ListView lst_itranfertLocal;
         private System.Windows.Forms.ColumnHeader nomLocal;
-        private System.Windows.Forms.ColumnHeader typeLocal;
-        private System.Windows.Forms.ColumnHeader dernModifLocal;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.TreeView treeViewDistant;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.TreeView trv_arboDistant;
+        private System.Windows.Forms.ListView lst_itransfertDistant;
         private System.Windows.Forms.ColumnHeader nomDistant;
         private System.Windows.Forms.ColumnHeader typeDistant;
         private System.Windows.Forms.ColumnHeader dernModifDistant;
+        private API_FTP.FTP_Client.Controls.ListBoxLogFtp lst_messagesLog;
 
 
 
