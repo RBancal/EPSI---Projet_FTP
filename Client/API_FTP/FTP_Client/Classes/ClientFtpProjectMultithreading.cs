@@ -203,7 +203,7 @@ namespace API_FTP.FTP_Client.Classes
 
         public List<ITransfer> ListFileFolder(ElementFolder unDossier)
         {
-            throw new NotImplementedException();
+            return ListFileFolder(unDossier.GetPath());
         }
 
         public void DefinePathRoot(string chemnComplet)
@@ -364,7 +364,7 @@ namespace API_FTP.FTP_Client.Classes
 
                 if (string.IsNullOrEmpty(resteChemin))
                 {
-                    
+                    VariablesGlobales._leLog.LogCustom("Vous ne pouvez supprimer le répertoire racinne !");
                     MessageBox.Show("Vous ne pouvez supprimer le répertoire racinne !");
                 }
                 else

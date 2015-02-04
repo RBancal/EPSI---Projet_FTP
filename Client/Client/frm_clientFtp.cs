@@ -29,7 +29,7 @@ namespace Client
             InitializeComponent();
             //PopulateTreeView(treeViewLocal, @"C:\");
             _mesGestionnaires = new Dictionary<string, IManager>();
-            _mesGestionnaires.Add("$LocalManager", ManagerFactory.Fabriquer("$LocalManager", lst_messagesLog));
+            _mesGestionnaires.Add("$LocalManager", ManagerFactory.Fabriquer("$LocalManager", _maConfigCourrante));
             VariablesGlobales._leLog = new LogFtp();
             VariablesGlobales._leLog.DefinirElementLogable(lst_messagesLog);
             _maConfigCourrante = new Configuration();
@@ -166,11 +166,11 @@ namespace Client
 
             if (_mesGestionnaires.ContainsKey("$DistantManager"))
             {
-                _mesGestionnaires["$DistantManager"] = ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante);
+                _mesGestionnaires["$DistantManager"] = ManagerFactory.Fabriquer("$DistantManager", (Configuration)_maConfigCourrante);
             }
             else
             {
-                _mesGestionnaires.Add("$DistantManager", ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante));
+                _mesGestionnaires.Add("$DistantManager", ManagerFactory.Fabriquer("$DistantManager", (Configuration)_maConfigCourrante));
                 DistantManager monDistantManage = (DistantManager)_mesGestionnaires["$DistantManager"];
             }
 
@@ -522,8 +522,12 @@ namespace Client
             if (lst_itranfertLocal.FocusedItem.Tag != null)
             {
                 _mesGestionnaires["$LocalManager"].Supprimer((ITransfer)lst_itranfertLocal.FocusedItem.Tag);
-            }
+                ElementFolder unFolder = (ElementFolder)trv_arboLocal.SelectedNode.Tag;
+                unFolder.Rafraichir();
 
+                trv_arboLocal.SelectedNode.Nodes.Clear();
+                ExtraireNode(_mesGestionnaires["$LocalManager"].ListerContenu(unFolder), trv_arboLocal.SelectedNode);
+            }
         }
 
         private void lst_messagesLog_ControlAdded(object sender, ControlEventArgs e)

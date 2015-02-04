@@ -54,7 +54,6 @@ namespace API_FTP.FTP_Client.Classes
             }
             else
             {
-                
                 lesElementsContenus.AddRange(_monClientFtp.ListFolder(base._pathRoot));
                 lesElementsContenus.AddRange(_monClientFtp.ListFileFolder(base._pathRoot));
             }

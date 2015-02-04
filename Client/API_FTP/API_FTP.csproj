@@ -84,6 +84,7 @@
     <None Include="Analyse\DiagrammeAPIFTP.cd" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Analyse\diagramme de classe uml.png" />
     <Content Include="FTP_Client\LibExternes\Ftp.dll" />
   </ItemGroup>
   <ItemGroup>

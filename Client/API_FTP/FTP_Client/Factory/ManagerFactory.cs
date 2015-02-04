@@ -10,12 +10,9 @@ namespace API_FTP.FTP_Client.Factory
 {
     public static class ManagerFactory
     {
-        public static Manager Fabriquer(string gestionnaire, ILogable leLogable, Configuration laConfig = null)
+        public static Manager Fabriquer(string gestionnaire, Configuration laConfig = null)
         {
             Manager unManager = null;
-            LogFtp leLogFtp = new LogFtp();
-            leLogFtp.DefinirElementLogable(leLogable);
-
 
             if (gestionnaire == "$LocalManager")
             {
