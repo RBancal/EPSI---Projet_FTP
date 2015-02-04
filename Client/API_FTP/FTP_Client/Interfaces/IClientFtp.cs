@@ -89,5 +89,11 @@ namespace API_FTP.FTP_Client.Interfaces
         /// </summary>
         /// <returns>chemin coomplet du dossier root sur le serveur pour l'utilisateur</returns>
         string GetPathRootString();
+
+        void CreerDossier(string leNmDossierACreer, ElementFolder leDossierDistant);
+
+        void UploadDossier(ElementFolder dossierLocal, ElementFolder dossierDistant);
+
+        Limilabs.FTP.Client.Ftp GetModuleFtp();
     }
 }

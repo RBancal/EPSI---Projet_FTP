@@ -71,6 +71,17 @@ namespace API_FTP.FTP_Client.Classes
             }
         }
 
+        /// <summary>
+        /// Crée un object dossier spécialement conçu pour le dossier serveur root
+        /// </summary>
+        /// <param name="cheminRootPourServeurFtp">le chemin root du serveur ftp</param>
+        public ElementFolder(string cheminRootPourServeurFtp, List<ITransfer> lesElementsDuRoot)
+        {
+            _path = cheminRootPourServeurFtp;
+            _name = cheminRootPourServeurFtp;
+            _mesElements = lesElementsDuRoot;
+        }
+
         public void Rafraichir()
         {
             Name = new DirectoryInfo(_path).Name;

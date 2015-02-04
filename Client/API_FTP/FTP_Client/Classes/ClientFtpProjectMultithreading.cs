@@ -87,7 +87,7 @@ namespace API_FTP.FTP_Client.Classes
                 _monFtp.Connect(_maConfig.Host, _maConfig.Port);
                 _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
                 string resteChemin = distantFolder.GetPath().Replace(_maConfig.GetUriChaine(), "").Replace(@"\", "/");
-
+                
                 _monFtp.ChangeFolder(resteChemin);
                 maReponseFtp = _monFtp.Upload(localFile.GetName(), localFile.GetPath());
                 _monFtp.Close();
@@ -169,14 +169,50 @@ namespace API_FTP.FTP_Client.Classes
 
         public ElementFolder GetPathRootFolder()
         {
-            throw new NotImplementedException();
+            List<ITransfer> lesTranferables = ListFolder(_maConfig.GetUriChaine());
+            lesTranferables.AddRange(ListFileFolder(_maConfig.GetUriChaine()));
+            return new ElementFolder(_maConfig.GetUriChaine(), lesTranferables);
+        }
+
+        private List<ITransfer> ListFileFolder(string cheminDossierServeurFtp)
+        {
+            List<FtpItem> lesFtpElements = new List<FtpItem>();
+            List<ITransfer> lesElements = new List<ITransfer>();
+
+            using (Ftp monFtp = new Ftp())
+            {
+                monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
+                monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+
+                string resteChemin = MethodesGlobales.GetCheminServerSansRacinne(cheminDossierServeurFtp, _maConfig.GetUriChaine());
+
+                if (!string.IsNullOrEmpty(resteChemin))
+                {
+                    monFtp.ChangeFolder(resteChemin);
+                }
+
+
+                lesFtpElements = monFtp.GetList();
+
+
+                monFtp.Close();
+            }
+
+            foreach (FtpItem unFtpItem in lesFtpElements)
+            {
+                if (unFtpItem.IsFile)
+                {
+                    lesElements.Add(new ElementFile(unFtpItem, Path.Combine(cheminDossierServeurFtp, unFtpItem.Name)));
+                }
+            }
+
+            return lesElements;
         }
 
         public string GetPathRootString()
         {
-            throw new NotImplementedException();
+            return _pathRoot;
         }
-
 
         List<ITransfer> IClientFtp.ListFileFolder(string unDossier)
         {
@@ -187,26 +223,14 @@ namespace API_FTP.FTP_Client.Classes
             {
                 monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
                 monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
-                string resteChemin = unDossier.Replace(_maConfig.GetUriChaine(), "").Replace(@"\","/");
 
-                if (resteChemin.Equals(""))
+                string resteChemin = MethodesGlobales.GetCheminServerSansRacinne(unDossier, _maConfig.GetUriChaine());
+
+                if (!string.IsNullOrEmpty(resteChemin))
                 {
-                    lesFtpElements = monFtp.GetList();
+                    monFtp.ChangeFolder(resteChemin);
                 }
-                else
-                {
-                    List<string> larbo = resteChemin.Split(new char[] { '/' }).ToList();
-
-                    if (larbo.Count > 0)
-                    {
-                        monFtp.ChangeFolder(resteChemin);
-                    }
-                    else
-                    {
-                        monFtp.ChangeFolder(resteChemin);
-                    }
-
-                }
+                
 
                 lesFtpElements = monFtp.GetList();
 
@@ -223,6 +247,41 @@ namespace API_FTP.FTP_Client.Classes
             }
 
             return lesElements;
+        }
+
+
+        public void CreerDossier(string leNmDossierACreer, ElementFolder leDossierDistant)
+        {
+            using (_monFtp = new Ftp())
+            {
+                _monFtp.Connect(_maConfig.Host, _maConfig.Port);
+                _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+                string resteChemin = MethodesGlobales.GetCheminServerSansRacinne(leDossierDistant.GetPath(), _maConfig.GetUriChaine());
+                _monFtp.ChangeFolder(resteChemin);
+                _monFtp.CreateFolder(leNmDossierACreer);
+                _monFtp.Close();
+            }
+        }
+
+
+        public void UploadDossier(ElementFolder dossierLocal, ElementFolder dossierDistant)
+        {
+            using (_monFtp = new Ftp())
+            {
+                _monFtp.Connect(_maConfig.Host, _maConfig.Port);
+                _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+                string resteChemin = MethodesGlobales.GetCheminServerSansRacinne(dossierDistant.GetPath(), _maConfig.GetUriChaine());
+                _monFtp.CreateFolder(MethodesGlobales.GetCheminDossierUploadSurServeur(resteChemin, dossierLocal.GetName()));
+                LocalSearchOptions uneLocalSearchOption = new LocalSearchOptions("*", true);
+                _monFtp.UploadFiles(MethodesGlobales.GetCheminDossierUploadSurServeur(resteChemin, dossierLocal.GetName()), dossierLocal.GetPath(), uneLocalSearchOption);
+                _monFtp.Close();
+            }
+        }
+
+
+        public Ftp GetModuleFtp()
+        {
+            return _monFtp;
         }
     }
 }

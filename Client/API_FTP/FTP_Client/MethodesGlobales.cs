@@ -37,5 +37,15 @@ namespace API_FTP.FTP_Client
         {
             AfficherMessage(VariablesGlobales.GetContenuMessageErreurInitialisationILogable, VariablesGlobales.GetTitreMessageErreurInitialisationILogable);
         }
+
+        internal static string GetCheminServerSansRacinne(string unDossier, string UriRacinneSrvFtp)
+        {
+            return unDossier.Replace(UriRacinneSrvFtp, "").Replace(@"\", "/");
+        }
+
+        internal static string GetCheminDossierUploadSurServeur(string cheminDossierServeurSansRacinne, string nomDossierUlploaded)
+        {
+            return string.Format(@"{0}/{1}", cheminDossierServeurSansRacinne, nomDossierUlploaded);
+        }
     }
 }

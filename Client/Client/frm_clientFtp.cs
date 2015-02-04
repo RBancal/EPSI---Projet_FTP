@@ -21,6 +21,8 @@ namespace Client
     {
         private IDictionary<string, IManager> _mesGestionnaires;
         private Configuration _maConfigCourrante;
+        private IDictionary<string, BackgroundWorker> _mesBackgroundworkers;
+        private BackgroundWorker _monBckGroundWorkerPrincipal;
 
         public frm_clientFtp()
         {
@@ -30,12 +32,15 @@ namespace Client
             _mesGestionnaires.Add("$LocalManager", ManagerFactory.Fabriquer("$LocalManager", lst_messagesLog));
             _maConfigCourrante = new Configuration();
             ITransfer unTransfert = new ElementFolder(@"d:\");
-            TreeNode rootNode = new TreeNode(unTransfert.GetName());
+            TreeNode rootNode = new TreeNode();
+            rootNode.Name = unTransfert.GetName();
+            rootNode.Text = unTransfert.GetName();
             rootNode.Tag = unTransfert;
 
             List<ITransfer> mesTranferables = _mesGestionnaires["$LocalManager"].ListerContenu(unTransfert);
 
-            ExtraireNode(rootNode, mesTranferables, trv_arboLocal);
+            ExtraireNode(mesTranferables, rootNode);
+            trv_arboLocal.Nodes.Add(rootNode);
         }
 
         private void ExtraireNode(List<ITransfer> mesTranferables, TreeNode unNoeudAMettreAJour)
@@ -51,7 +56,6 @@ namespace Client
                 if (item.EstUnDossier())
                 {
                     unFolder = (ElementFolder)item;
-                    unNoeudAMettreAJour.Nodes.Clear();
                     ExtraireNode(unFolder.ListerContenu(), unNoeudEnfant);
                     unNoeudAMettreAJour.Nodes.Add(unNoeudEnfant);
                 }
@@ -162,19 +166,22 @@ namespace Client
 
             if (_mesGestionnaires.ContainsKey("$DistantManager"))
             {
-                _mesGestionnaires["$DistantManager"] = ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante.Clone());
+                _mesGestionnaires["$DistantManager"] = ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante);
             }
             else
             {
-                _mesGestionnaires.Add("$DistantManager", ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante.Clone()));
+                _mesGestionnaires.Add("$DistantManager", ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante));
+                DistantManager monDistantManage = (DistantManager)_mesGestionnaires["$DistantManager"];
+                
             }
 
-            List<ITransfer> desTransfertDistant = ((DistantManager)_mesGestionnaires["$DistantManager"]).ListerContenu();
+            ITransfer unDossierRoot = new ElementFolder(_maConfigCourrante.GetUriChaine(), ((DistantManager)_mesGestionnaires["$DistantManager"]).ListerContenu());
 
-            TreeNode rootNode = new TreeNode(_maConfigCourrante.GetUriChaine());
-            rootNode.Tag = desTransfertDistant.First();
+            TreeNode rootNode = new TreeNode();
+            rootNode.Text = _maConfigCourrante.GetUriChaine();
+            rootNode.Tag = unDossierRoot;
             trv_arboDistant.Nodes.Clear();
-            ExtraireNode(rootNode, desTransfertDistant, trv_arboDistant);
+            ExtraireNode(rootNode, ((ElementFolder)unDossierRoot).ListerContenu(), trv_arboDistant);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -219,14 +226,14 @@ namespace Client
 
         private void lst_itranfertLocal_DoubleClick(object sender, EventArgs e)
         {
-            AfficherTreeNode(trv_arboLocal, lst_itranfertLocal);
+            AfficherTreeNode(trv_arboLocal.SelectedNode, lst_itranfertLocal);
         }
 
-        private void AfficherTreeNode(TreeView uneTreeView, ListView uneListeRecepteur)
+        private void AfficherTreeNode(TreeNode uneTreeNode, ListView uneListeRecepteur, bool actionLocal = true)
         {
             ITransfer unTranferable = null;
 
-            if (!string.IsNullOrEmpty(uneTreeView.SelectedNode.Text))
+            if (!string.IsNullOrEmpty(uneTreeNode.Text))
             {
                 unTranferable = (ITransfer)uneListeRecepteur.SelectedItems[0].Tag;
                 List<ITransfer> lesTranferables = new List<ITransfer>();
@@ -235,25 +242,58 @@ namespace Client
                 {
                     TreeNode leNodeSelectionne = new TreeNode();
                     leNodeSelectionne.Text = unTranferable.GetName();
+                    leNodeSelectionne.Name = unTranferable.GetName();
                     leNodeSelectionne.ImageIndex = 0;
                     leNodeSelectionne.Tag = unTranferable;
-                    int indiceTrouve = RechercherTreeNode(leNodeSelectionne, uneTreeView);
-
-                    if (uneTreeView.Name.Equals("trv_arboLocal"))
+                    int indiceTrouve = RechercherTreeNode(leNodeSelectionne, uneTreeNode);
+                    bool managerExiste = false;
+                    
+                    if (actionLocal)
                     {
-                        lesTranferables = _mesGestionnaires["$LocalManager"].ListerContenu(unTranferable);
+                        if (_mesGestionnaires.ContainsKey("$LocalManager"))
+                        {
+                            lesTranferables = _mesGestionnaires["$LocalManager"].ListerContenu(unTranferable);
+                            leNodeSelectionne.Nodes.Clear();
+                            ExtraireNode(lesTranferables, leNodeSelectionne);
+                            managerExiste = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Le gestionnaire de fichier local n'est pas présent dans le gestionnaire !");
+                        }
                     }
                     else
                     {
-                        lesTranferables = _mesGestionnaires["$DistantManager"].ListerContenu(unTranferable);
-                        leNodeSelectionne.Nodes.Clear();
-                        ExtraireNode(lesTranferables, leNodeSelectionne);
+                        if (_mesGestionnaires.ContainsKey("$DistantManager"))
+                        {
+                            lesTranferables = _mesGestionnaires["$DistantManager"].ListerContenu(unTranferable);
+                            leNodeSelectionne.Nodes.Clear();
+                            ExtraireNode(lesTranferables, leNodeSelectionne);
+                            managerExiste = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("La connexion au serveur ftp n'est pas configurée !");
+                        }
                     }
 
-                    uneTreeView.SelectedNode = uneTreeView.SelectedNode.Nodes[indiceTrouve];
-                    uneTreeView.Select();
-                    uneTreeView.SelectedNode.Expand();
+                    if (managerExiste)
+                    {
+                        uneTreeNode = uneTreeNode.Nodes[indiceTrouve];
 
+                        if (actionLocal)
+                        {
+                            trv_arboLocal.Select();
+                            trv_arboLocal.SelectedNode = uneTreeNode;
+                        }
+                        else
+                        {
+                            trv_arboDistant.Select();
+                            trv_arboDistant.SelectedNode = uneTreeNode;
+                        }
+
+                        uneTreeNode.Expand();   
+                    }
                 }
             }
 
@@ -262,15 +302,15 @@ namespace Client
 
         }
 
-        private int RechercherTreeNode(TreeNode leNodeRechercher, TreeView unTreeView)
+        private int RechercherTreeNode(TreeNode leNodeRechercher, TreeNode unTreeNode)
         {
             bool aTrouve = false;
             int iSousArbo = 0;
             int indiceTrouve = -1;
 
-            while (!aTrouve && iSousArbo < unTreeView.SelectedNode.Nodes.Count)
+            while (!aTrouve && iSousArbo < unTreeNode.Nodes.Count)
             {
-                if (unTreeView.SelectedNode.Nodes[iSousArbo].Text.Equals(leNodeRechercher.Text))
+                if (unTreeNode.Nodes[iSousArbo].Text.Equals(leNodeRechercher.Text))
                 {
                     indiceTrouve = iSousArbo;
                     aTrouve = true;
@@ -298,6 +338,7 @@ namespace Client
                 lst_itransfertDistant.Items.Clear();
 
                 List<ITransfer> desTransfertDistant = ((DistantManager)_mesGestionnaires["$DistantManager"]).ListerContenu(unDossier);
+                trv_arboDistant.SelectedNode.Nodes.Clear();
                 ExtraireNode(desTransfertDistant, trv_arboDistant.SelectedNode);
 
                 foreach (ITransfer item in desTransfertDistant)
@@ -326,7 +367,7 @@ namespace Client
 
         private void lst_itransfertDistant_DoubleClick(object sender, EventArgs e)
         {
-            AfficherTreeNode(trv_arboDistant, lst_itransfertDistant);
+            AfficherTreeNode(trv_arboDistant.SelectedNode, lst_itransfertDistant, false);
         }
 
         private void btn_recuperer_Click(object sender, EventArgs e)
@@ -369,31 +410,25 @@ namespace Client
 
                         if (unTranferable.EstUnDossier())
                         {
-                            ElementFolder unFolderSelectionne = (ElementFolder)unTranferable;
-
-                            foreach (ITransfer item in unFolderSelectionne.ListerContenu())
-                            {
-                                if (item.EstUnDossier())
-                                {
-                                    UploadITranfert(sender, e, item);
-                                }
-                                else
-                                {
-                                    monManager.Upload((ElementFolder)trv_arboLocal.SelectedNode.Tag, (ElementFile)item, (ElementFolder)trv_arboDistant.SelectedNode.Tag);
-                                    trv_arboDistant.SelectedNode.Nodes.Clear();
-                                    ExtraireNode(_mesGestionnaires["$DistantManager"].ListerContenu((ITransfer)trv_arboDistant.SelectedNode.Tag), trv_arboDistant.SelectedNode);
-                                    trv_arboDistant_AfterSelect(sender, e);
-                                }
-                            }
+                            UploadDossier(sender, e, monManager, unTranferable);
                         }
                         else
                         {
-                            monManager.Upload((ElementFolder)trv_arboLocal.SelectedNode.Tag, (ElementFile)unTranferable, (ElementFolder)trv_arboDistant.SelectedNode.Tag);
-                            trv_arboDistant.SelectedNode.Nodes.Clear();
-                            ExtraireNode(_mesGestionnaires["$DistantManager"].ListerContenu((ITransfer)trv_arboDistant.SelectedNode.Tag), trv_arboDistant.SelectedNode);
-                            trv_arboDistant_AfterSelect(sender, e);
+                            UploadFichier(monManager, unTranferable);
                         }
+
+                        trv_arboDistant.SelectedNode.Nodes.Clear();
+                        ExtraireNode(_mesGestionnaires["$DistantManager"].ListerContenu((ITransfer)trv_arboDistant.SelectedNode.Tag), trv_arboDistant.SelectedNode);
+                        trv_arboDistant_AfterSelect(sender, e);
                     }
+                    else
+                    {
+                        MessageBox.Show("Vous n'avez as sélectionné de dossier local. Veuillez un sélectionner un pour l'upload.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vous n'avez as sélectionné un élement de l'arborescence locale. Veuillez en sélectionner un.");
                 }
 
             }
@@ -401,6 +436,19 @@ namespace Client
             {
                 MessageBox.Show("merci de sélectionner le dossier de destination");
             }
+        }
+
+        private void UploadFichier(DistantManager monManager, ITransfer unTranferable)
+        {
+            monManager.Upload((ElementFolder)trv_arboLocal.SelectedNode.Tag, (ElementFile)unTranferable, (ElementFolder)trv_arboDistant.SelectedNode.Tag);
+        }
+
+        private void UploadDossier(object sender, EventArgs e, DistantManager monManager, ITransfer unTranferable)
+        {
+            ElementFolder unFolderSelectionne = (ElementFolder)unTranferable;
+
+            monManager.UploadDossier((ElementFolder)lst_itranfertLocal.SelectedItems[0].Tag, (ElementFolder)trv_arboDistant.SelectedNode.Tag);
+            
         }
 
         /* private void deconnexionButton_Click(object sender, EventArgs e)

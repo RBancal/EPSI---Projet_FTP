@@ -1,4 +1,5 @@
 ﻿using API_FTP.FTP_Client.Interfaces;
+using Limilabs.FTP.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,6 +82,21 @@ namespace API_FTP.FTP_Client.Classes
         public void Upload(ElementFolder elementFolder1, ElementFile elementFile, ElementFolder elementFolder2)
         {
             _monClientFtp.Upload(elementFolder1, elementFile, elementFolder2);
+        }
+
+        public void CreerDossier(string leNmDossierACreer, ElementFolder leDossierDistant)
+        {
+            _monClientFtp.CreerDossier(leNmDossierACreer, leDossierDistant);
+        }
+
+        public void UploadDossier(ElementFolder dossierLocal, ElementFolder dossierDistant)
+        {
+            _monClientFtp.UploadDossier(dossierLocal, dossierDistant);
+        }
+
+        public Ftp GetModuleFtp()
+        {
+            return _monClientFtp.GetModuleFtp();
         }
     }
 }

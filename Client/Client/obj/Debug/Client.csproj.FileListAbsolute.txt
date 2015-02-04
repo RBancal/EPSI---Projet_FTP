@@ -1,5 +1,6 @@
 C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\bin\Debug\Client.exe.config
 C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\bin\Debug\Client.exe
+C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\bin\Debug\Client.pdb
 C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\bin\Debug\API_FTP.dll
 C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\bin\Debug\Ftp.dll
 C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\bin\Debug\API_FTP.pdb
@@ -8,4 +9,5 @@ C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\obj\Debug\Cli
 C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\obj\Debug\Client.frm_clientFtp.resources
 C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\obj\Debug\Client.Properties.Resources.resources
 C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\obj\Debug\Client.exe
 C:\Users\------\SourceCsharp\Repos\EPSI---Projet_FTP\Client\Client\obj\Debug\Client.pdb
