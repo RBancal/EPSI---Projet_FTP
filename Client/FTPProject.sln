@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8DFA14
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject2", "ModelingProject2\ModelingProject2.modelproj", "{A4411FC2-58DD-4D52-B5DF-5CE29562AD7D}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ProjetModélisation", "ModelingProject2\ProjetModélisation.modelproj", "{A4411FC2-58DD-4D52-B5DF-5CE29562AD7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

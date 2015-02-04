@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{a4411fc2-58dd-4d52-b5df-5ce29562ad7d}</ProjectGuid>
     <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
-    <Name>ModelingProject2</Name>
+    <Name>ProjetModélisation</Name>
     <RootNamespace>ModelingProject2</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
