@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="47e7fdc5-7904-4ee3-86d2-235aa2803ec6"
+  name="Factory"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="1aacf51e-d0c3-458f-ace5-96af2b18de0a"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAPI_FTP.FTP_Client.Factory"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="71b985ca-e3dd-4525-a0fa-fb665ba13a5a"
+        name="ManagerFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="1f6764b5-61b8-4233-88df-eccb8ab4e9eb"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Factory Type%3DManagerFactory"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a01eb0bd-96a4-4fcb-8ec3-ea58ce8fe466"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="770351e1-c4da-41ab-997e-79abee59affc">
+                <propertyInstance
+                  Id="a6828492-e8dc-4b78-aecf-9fc3b174a8cd"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f16ae47c-4835-4158-a048-667ce144cc1e">
+                <propertyInstance
+                  Id="a4f70bd0-d758-421b-b890-dc22f994b05b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dfb450a7-462d-49f1-b2d4-e4b96507fd13">
+                <propertyInstance
+                  Id="8e906d1b-cab9-4286-8332-29fef6ad132a"
+                  name="IsStatic"
+                  value="True" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f32b0bad-dbea-4f02-9ed8-ff734733cf80">
+                <propertyInstance
+                  Id="948f1b2e-a4cc-4dd3-a010-5de6ffd5c19e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="07db2703-3c72-4106-a260-e86f7961534a">
+                <propertyInstance
+                  Id="57954f36-5b3f-46a5-8c9b-a6d9d234553d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="239682ce-9a01-4818-aeea-54bac5b548be"
+            name="Fabriquer"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="885a498e-b8c8-4e2c-9039-ea7b6dbbe161"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Factory Type%3DManagerFactory Member%3D(Name%3DFabriquer OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Interfaces Type%3DILogable)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Classes Type%3DConfiguration)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="40307825-39c6-4bc9-969b-0159a8b6c46c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e645ca8b-6091-4f06-971c-b6dc4313e44c">
+                    <propertyInstance
+                      Id="fbe187ba-bc06-4353-9ef2-74b7bfcbd9ed"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="00422391-d376-4c4b-b2b1-0ae46bba9c74">
+                    <propertyInstance
+                      Id="8a53ca3f-0bbb-4c7f-90e2-43ef1d8072f9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="317aea56-8713-416e-a6c8-630c7703f3e9">
+                    <propertyInstance
+                      Id="b9565b48-d6a4-4b26-8225-505e0ce2604e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2eff4c8-8918-4b1c-b9a0-fc1232408c39">
+                    <propertyInstance
+                      Id="2b5640a4-2381-4d14-a62e-cd23304ae55a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2baf4bbd-a779-49f0-a442-ea9c0280473d">
+                    <propertyInstance
+                      Id="1db31d8a-27e9-44a1-8944-0cbee1d19e2c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c533749-e86f-4f53-8c6f-67d38313998e">
+                    <propertyInstance
+                      Id="f6986e2c-14b7-4ed2-8069-20f4d9dd8297"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b8f14df7-614a-4982-9a90-0f3a5e03437b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="b3e1f7ba-ebc3-4746-a84f-355ddc1052bc"
+                      LastKnownName="Manager"
+                      LastKnownLocation="Package2_1152.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="506d0410-049d-48e0-8e64-66ea44c09ba4"
+                  name="gestionnaire"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4ebd5740-eefa-467c-8ab2-27a50296fd6a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Factory Type%3DManagerFactory Member%3D(Name%3DFabriquer OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Interfaces Type%3DILogable)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Classes Type%3DConfiguration)]) ParameterIdentifier%3Dgestionnaire"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e170826e-2d95-4308-8309-1c68b52dd82d"
+                  name="leLogable"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b924dcae-11a4-4321-8504-0fca7108287f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Factory Type%3DManagerFactory Member%3D(Name%3DFabriquer OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Interfaces Type%3DILogable)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Classes Type%3DConfiguration)]) ParameterIdentifier%3DleLogable"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="b0271767-8bbf-4964-8903-0009b6c14cb0"
+                      LastKnownName="ILogable"
+                      LastKnownLocation="Package6_1152.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3d3d5f41-6c6c-472a-9c26-e127f2654806"
+                  name="laConfig"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="58b51d73-6c2f-4304-af59-97f2adb38cb1"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Factory Type%3DManagerFactory Member%3D(Name%3DFabriquer OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Interfaces Type%3DILogable)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Classes Type%3DConfiguration)]) ParameterIdentifier%3DlaConfig"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="299f5baa-41e0-488f-b86d-d9373fa4b89b"
+                      LastKnownName="Configuration"
+                      LastKnownLocation="Package2_1152.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

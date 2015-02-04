@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="afc0aa50-7150-472e-9d44-f2a749f73bdd"
+  name="Enums"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="46ff6f1e-87de-40c6-933b-db646f03fec7"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAPI_FTP.FTP_Client.Enums"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="f32d9803-c53b-4c8f-8a8f-710b4be81727"
+        name="EStatusCommand"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="59203037-461f-422c-886c-a656675cf486"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusCommand"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d79aa7fd-903f-4676-ba01-88ffeda2e337"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="85e17dbf-2afa-4f23-97cc-9b436e4863a3">
+                <propertyInstance
+                  Id="aa09a6a1-6db1-480a-9c95-0df7248bf9cd"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1d4b0cff-7424-4d71-b39b-8bf436325515">
+                <propertyInstance
+                  Id="bde14927-43ef-4bad-8860-ae5449ad2ac0"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4e19593a-79b4-4a74-bae4-482ec2082362">
+                <propertyInstance
+                  Id="30584668-c720-4ffc-b909-5c5ac57c5a69"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="c3e3c49d-61dd-44ad-91e4-ffb174d12b97"
+            name="DemandeAuthentification">
+            <referencesInternal>
+              <reference
+                Id="2c6cd736-506a-41fe-8ff9-cfbd190de38e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusCommand Member%3DDemandeAuthentification"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="f172d79b-bf9f-4ce1-9ae5-fe53825c4e8f"
+            name="DemandeChangementRepertoire">
+            <referencesInternal>
+              <reference
+                Id="4762ff9a-fa82-4ad1-976c-ed5bfa6383a9"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusCommand Member%3DDemandeChangementRepertoire"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="9df04640-9f8e-4741-8fd4-3b3e3215cad1"
+            name="DemandeConnexion">
+            <referencesInternal>
+              <reference
+                Id="96e57851-3472-4ed2-807b-a6e30532bddb"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusCommand Member%3DDemandeConnexion"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="2b48350b-2a61-4f3f-ba02-5541c72a1866"
+            name="DemandeDeconnexion">
+            <referencesInternal>
+              <reference
+                Id="8ac02dce-d4d3-4b92-b47d-c4921599c76f"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusCommand Member%3DDemandeDeconnexion"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="6c37add5-4fcc-4543-be1f-70451adcf9b6"
+            name="DemandeFermetureFluxEchange">
+            <referencesInternal>
+              <reference
+                Id="35dfa140-5389-4372-9b9c-e7b31bdeaa30"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusCommand Member%3DDemandeFermetureFluxEchange"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="1e52753e-45a3-43fd-aea0-61df8bdef8c3"
+            name="DemandeListDossier">
+            <referencesInternal>
+              <reference
+                Id="e1d0a801-d420-4b2f-a431-18b3499e75ef"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusCommand Member%3DDemandeListDossier"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="7cf25e97-3855-42d4-b849-ca12e5857ed3"
+            name="DemandePersonalisee">
+            <referencesInternal>
+              <reference
+                Id="b7e817f6-fb28-4528-b133-c14ef1d0d1e0"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusCommand Member%3DDemandePersonalisee"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="1690f922-f5f9-414d-b9fe-aad23be35b97"
+        name="EStatusResponse"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="5f7fc24f-c5d5-453d-97ab-46466e489178"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="48aa4404-d5c8-47e8-8826-3e5ae92923dd"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0c871c19-537e-4437-956e-2024f670c583">
+                <propertyInstance
+                  Id="6b07a5eb-9e25-4aea-89d0-ea1b386aa3ec"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e8554083-efc1-4c68-bd5a-58e3503d7f88">
+                <propertyInstance
+                  Id="b92c4317-ef1f-42d6-aac4-290a1c30d00a"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3da86d17-ec98-44a8-bce4-af3e595ce830">
+                <propertyInstance
+                  Id="c6264956-c78e-4e34-a04b-40f2447e3934"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="6def68dc-9dee-429a-9500-eae47d4da282"
+            name="AReussieAjoindreHote">
+            <referencesInternal>
+              <reference
+                Id="0d50a363-df7d-499a-a858-50e5a6b03494"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DAReussieAjoindreHote"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="76367560-99af-43c2-8409-3f2ad5809807"
+            name="AuthentificationReussie">
+            <referencesInternal>
+              <reference
+                Id="b97830e2-8342-44bf-9299-390ea248b17b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DAuthentificationReussie"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="43f39378-8f6a-4389-8345-6f2f4b3bc3f7"
+            name="ChangementRepertoireEffectue">
+            <referencesInternal>
+              <reference
+                Id="91e445fc-8402-40ae-bc70-d022caa5f0a9"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DChangementRepertoireEffectue"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="be237e71-214d-4b6d-96b5-83ed636673bf"
+            name="ConnexionEnCours">
+            <referencesInternal>
+              <reference
+                Id="5f0e1970-158c-4651-9685-db40d1fcf018"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DConnexionEnCours"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="e376f341-d6c6-47e1-9908-b65b050dce8c"
+            name="ConnexionEtablie">
+            <referencesInternal>
+              <reference
+                Id="1e994816-b56e-49fd-9995-23b7a3c6e46f"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DConnexionEtablie"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="613dc293-3ac0-4022-a721-09df358edfde"
+            name="ConnexionFermee">
+            <referencesInternal>
+              <reference
+                Id="ebd89f01-19cc-46e2-950a-ab94c2790985"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DConnexionFermee"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="c0a8e5cb-050b-420e-8d91-2c0412222c72"
+            name="ConnexionPerdue">
+            <referencesInternal>
+              <reference
+                Id="bf8fe1a6-a3f0-4d0c-88ec-97910d3d36db"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DConnexionPerdue"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="4e2d0f54-a1a0-4a5f-9815-b150642e2720"
+            name="DecnnexionReussie">
+            <referencesInternal>
+              <reference
+                Id="c05179fa-2d5b-49da-826c-88dd000af082"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DDecnnexionReussie"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="421fe944-77f5-4050-95eb-3f3f62bed47c"
+            name="EtablissementConnexionEncours">
+            <referencesInternal>
+              <reference
+                Id="1d90f8d8-fb67-4ff9-89f3-081d0e4833bf"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DEtablissementConnexionEncours"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="2139dc11-d292-4782-8a6b-f8b91d1f20c2"
+            name="FermetureDuFlux">
+            <referencesInternal>
+              <reference
+                Id="7ce0e7af-22a1-40bb-87ce-59e744f922a5"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DFermetureDuFlux"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="8b778a55-b06f-4407-8ee4-0a4d3d5f06ac"
+            name="FermetureDuFluxReussie">
+            <referencesInternal>
+              <reference
+                Id="ddca5e16-0412-4a88-baa8-cb7794cec601"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DFermetureDuFluxReussie"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="ae8af010-dc98-4833-8e4c-67e7cca5c740"
+            name="GenerationElementTransferables">
+            <referencesInternal>
+              <reference
+                Id="b7750ac6-0aca-488f-a328-e799bd63969c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DGenerationElementTransferables"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="0342524d-6e1b-4f40-b2b5-248c18969ffa"
+            name="ImpossibleDAtteindreServeurFtp">
+            <referencesInternal>
+              <reference
+                Id="81a5978a-75b2-4127-adee-c0f31df3a4aa"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DImpossibleDAtteindreServeurFtp"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="708f24f8-635e-403a-8dd2-ca07612687da"
+            name="ListeTrouvee">
+            <referencesInternal>
+              <reference
+                Id="d7bb969f-188e-4957-a000-19a68c5b3e98"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DListeTrouvee"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="47fb5230-5f12-4d03-80ec-68c27503527a"
+            name="RepertoireInexistant">
+            <referencesInternal>
+              <reference
+                Id="3069882b-879a-4dc4-b731-3d9c13c4b649"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DRepertoireInexistant"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="191ddb4e-55ee-4f4d-9c7a-049b27e6b7fb"
+            name="RepertoireParDefaut">
+            <referencesInternal>
+              <reference
+                Id="7f68a480-4729-4a85-b99d-290633865b64"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DRepertoireParDefaut"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="2fb91243-071e-4fde-be37-106c3d0355fc"
+            name="RepertoireParDefautDefini">
+            <referencesInternal>
+              <reference
+                Id="8422976e-3127-4a17-a330-a890ad2f57f0"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DRepertoireParDefautDefini"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="baef2c2e-8946-4983-b4bf-8dde8a7ce3df"
+            name="ReponseCustom">
+            <referencesInternal>
+              <reference
+                Id="0317d200-7077-4d24-a167-ce3ff5549256"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DReponseCustom"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="5b0cdb64-5307-47ae-8857-c6f92eae87c6"
+            name="TelechargementEncours">
+            <referencesInternal>
+              <reference
+                Id="49f3ed58-b2f8-44f2-ac8b-ecbca24470f2"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2Fbin%2FDebug%2FAPI_FTP.dll Namespace%3DAPI_FTP.FTP_Client.Enums Type%3DEStatusResponse Member%3DTelechargementEncours"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

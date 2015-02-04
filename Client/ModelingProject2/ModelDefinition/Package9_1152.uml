@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7410c4cb-c92f-4371-9477-a8d40326f752"
+  name="Client"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="10888434-9085-468a-96e2-7b9d12b6feb6"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DLimilabs.FTP.Client"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="285972c8-62c1-4a20-9e12-4ebf355ae2bd"
+        name="Ftp"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="ed00e1d3-e0f8-436b-88f8-ae699410f944"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2FFTP_Client%2FLibExternes%2FFtp.dll Namespace%3DLimilabs.FTP.Client Type%3DFtp"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1d71a6b3-22e6-4fc8-9a7f-b1417cd3ea2f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a53d1f5d-917e-41d3-a27f-1eb4f3b3ed5d">
+                <propertyInstance
+                  Id="55e23357-81c7-4c28-babc-cc75a6240a57"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="811c4b07-65e8-4a44-a340-dbc661e4238f">
+                <propertyInstance
+                  Id="6794afb6-d7b1-4480-b8a5-4f80364d4a01"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ed1c9f07-92e6-41b5-8757-e41881d181d1">
+                <propertyInstance
+                  Id="2ffc11ef-070e-4a87-b43b-2fd0a5807fc1"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0ca54dc9-159c-46d8-b481-9d610c71d931">
+                <propertyInstance
+                  Id="aebf17fc-2e04-4cf4-9510-b3922823907a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="49167aa6-391e-4e6c-be9e-55a834163223">
+                <propertyInstance
+                  Id="d269cf79-b6d6-4000-878e-20af91fe37c2"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7996edf0-e25a-49ee-a6fe-9b6c276783f4"
+        name="FtpItem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a448fafd-0dd4-4294-b045-42cbb5d80091"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2F------%2FSourceCsharp%2FRepos%2FEPSI---Projet_FTP%2FClient%2FAPI_FTP%2FFTP_Client%2FLibExternes%2FFtp.dll Namespace%3DLimilabs.FTP.Client Type%3DFtpItem"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="425a3175-f1f2-4eb6-8ac2-1cca0855469a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a039f441-9375-4486-8673-2c37f1f83c96">
+                <propertyInstance
+                  Id="a67dc972-c561-4c93-8c51-6bc761bfc8cb"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0ac5cb8a-7758-465c-af1d-a2233d701208">
+                <propertyInstance
+                  Id="a7d0f454-c0dd-401a-83a3-0e1a2290b242"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1ba393f7-db52-44ee-93ac-18fc18c42bc9">
+                <propertyInstance
+                  Id="80b93d4b-65e9-40a3-a1fe-dbb6d82bf119"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="06506124-6774-4fa9-bdc9-c643823d518d">
+                <propertyInstance
+                  Id="e1b1ba8b-4353-4325-b108-4d48d7f327ab"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="333aec57-c34a-468c-99a3-933528ed0c3d">
+                <propertyInstance
+                  Id="aa3b8a8e-cc73-4d8f-9e74-779d064f9fb8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
