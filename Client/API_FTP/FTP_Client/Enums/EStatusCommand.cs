@@ -10,6 +10,10 @@ namespace API_FTP.FTP_Client.Enums
     {
         DemandeConnexion = 1,
         DemandeDeconnexion = 2,
-        DemandePersonalisee = 3
+        DemandePersonalisee = 3,
+        DemandeAuthentification,
+        DemandeListDossier,
+        DemandeChangementRepertoire,
+        DemandeFermetureFluxEchange
     }
 }

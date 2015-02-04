@@ -48,6 +48,9 @@
             this.imageListFtp = new System.Windows.Forms.ImageList(this.components);
             this.lst_itranfertLocal = new System.Windows.Forms.ListView();
             this.nomLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cms_localAction = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmi_supprimer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_creerDossier = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.trv_arboDistant = new System.Windows.Forms.TreeView();
@@ -62,6 +65,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.cms_localAction.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -227,6 +231,7 @@
             // 
             this.lst_itranfertLocal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nomLocal});
+            this.lst_itranfertLocal.ContextMenuStrip = this.cms_localAction;
             this.lst_itranfertLocal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lst_itranfertLocal.LargeImageList = this.imageListFtp;
             this.lst_itranfertLocal.Location = new System.Drawing.Point(0, 0);
@@ -237,12 +242,35 @@
             this.lst_itranfertLocal.TabIndex = 0;
             this.lst_itranfertLocal.UseCompatibleStateImageBehavior = false;
             this.lst_itranfertLocal.View = System.Windows.Forms.View.Details;
+            this.lst_itranfertLocal.ContextMenuStripChanged += new System.EventHandler(this.lst_itranfertLocal_ContextMenuStripChanged);
             this.lst_itranfertLocal.DoubleClick += new System.EventHandler(this.lst_itranfertLocal_DoubleClick);
+            this.lst_itranfertLocal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lst_itranfertLocal_MouseDown);
             // 
             // nomLocal
             // 
             this.nomLocal.Text = "Nom";
             this.nomLocal.Width = 255;
+            // 
+            // cms_localAction
+            // 
+            this.cms_localAction.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_supprimer,
+            this.tsmi_creerDossier});
+            this.cms_localAction.Name = "cms_localAction";
+            this.cms_localAction.Size = new System.Drawing.Size(160, 48);
+            // 
+            // tsmi_supprimer
+            // 
+            this.tsmi_supprimer.Name = "tsmi_supprimer";
+            this.tsmi_supprimer.Size = new System.Drawing.Size(159, 22);
+            this.tsmi_supprimer.Text = "Supprimer";
+            this.tsmi_supprimer.Click += new System.EventHandler(this.tsmi_supprimer_Click);
+            // 
+            // tsmi_creerDossier
+            // 
+            this.tsmi_creerDossier.Name = "tsmi_creerDossier";
+            this.tsmi_creerDossier.Size = new System.Drawing.Size(159, 22);
+            this.tsmi_creerDossier.Text = "Créer un dossier";
             // 
             // panel3
             // 
@@ -285,6 +313,7 @@
             // 
             this.lst_itransfertDistant.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nomDistant});
+            this.lst_itransfertDistant.ContextMenuStrip = this.cms_localAction;
             this.lst_itransfertDistant.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lst_itransfertDistant.Location = new System.Drawing.Point(0, 0);
             this.lst_itransfertDistant.Name = "lst_itransfertDistant";
@@ -325,6 +354,7 @@
             this.lst_messagesLog.Name = "lst_messagesLog";
             this.lst_messagesLog.Size = new System.Drawing.Size(969, 84);
             this.lst_messagesLog.TabIndex = 8;
+            this.lst_messagesLog.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.lst_messagesLog_ControlAdded);
             // 
             // frm_clientFtp
             // 
@@ -347,6 +377,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.cms_localAction.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -384,6 +415,9 @@
         private System.Windows.Forms.ListView lst_itransfertDistant;
         private System.Windows.Forms.ColumnHeader nomDistant;
         private API_FTP.FTP_Client.Controls.ListBoxLogFtp lst_messagesLog;
+        private System.Windows.Forms.ContextMenuStrip cms_localAction;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_supprimer;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_creerDossier;
 
 
 

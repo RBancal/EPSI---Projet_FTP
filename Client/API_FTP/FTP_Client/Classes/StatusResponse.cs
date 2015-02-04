@@ -103,6 +103,9 @@ namespace API_FTP.FTP_Client.Classes
                 case EStatusResponse.ConnexionFermee:
                     Commentaire = "Connexion fermée";
                     break;
+                case EStatusResponse.AReussieAjoindreHote:
+                    Commentaire = "A réussie à joindre le server FTP";
+                    break;
                 default:
                     break;
             }

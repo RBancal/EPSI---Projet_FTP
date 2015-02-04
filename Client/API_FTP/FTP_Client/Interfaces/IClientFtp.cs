@@ -97,5 +97,7 @@ namespace API_FTP.FTP_Client.Interfaces
         Limilabs.FTP.Client.Ftp GetModuleFtp();
 
         void DownloadDossier(ElementFolder dossierDistant, ElementFolder dossierLocal);
+
+        void Supprimer(ITransfer transfer);
     }
 }

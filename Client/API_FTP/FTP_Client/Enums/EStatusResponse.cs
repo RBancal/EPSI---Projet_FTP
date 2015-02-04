@@ -15,6 +15,16 @@ namespace API_FTP.FTP_Client.Enums
         TelechargementEncours = 5,
         EtablissementConnexionEncours = 6,
         ConnexionEnCours = 7,
-        ConnexionFermee = 8
+        ConnexionFermee = 8,
+        AReussieAjoindreHote,
+        AuthentificationReussie,
+        ListeTrouvee,
+        RepertoireInexistant,
+        RepertoireParDefaut,
+        RepertoireParDefautDefini,
+        ChangementRepertoireEffectue,
+        FermetureDuFlux,
+        FermetureDuFluxReussie,
+        GenerationElementTransferables
     }
 }

@@ -30,6 +30,8 @@ namespace Client
             //PopulateTreeView(treeViewLocal, @"C:\");
             _mesGestionnaires = new Dictionary<string, IManager>();
             _mesGestionnaires.Add("$LocalManager", ManagerFactory.Fabriquer("$LocalManager", lst_messagesLog));
+            VariablesGlobales._leLog = new LogFtp();
+            VariablesGlobales._leLog.DefinirElementLogable(lst_messagesLog);
             _maConfigCourrante = new Configuration();
             ITransfer unTransfert = new ElementFolder(@"d:\");
             TreeNode rootNode = new TreeNode();
@@ -152,8 +154,6 @@ namespace Client
 
         private void connexionButton_Click(object sender, EventArgs e)
         {
-           
-
             string login = loginTextBox.Text;
             string password = passwordTextBox.Text;
             string address = serverTextBox.Text;
@@ -464,18 +464,18 @@ namespace Client
                     }
                     else
                     {
-                        MessageBox.Show("Vous n'avez as sélectionné de dossier local. Veuillez un sélectionner un pour l'upload.");
+                        VariablesGlobales._leLog.LogCustom("Vous n'avez pas sélectionné de dossier local. Veuillez un sélectionner un pour l'upload.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vous n'avez as sélectionné un élement de l'arborescence locale. Veuillez en sélectionner un.");
+                    VariablesGlobales._leLog.LogCustom("Vous n'avez as sélectionné un élement de l'arborescence locale. Veuillez en sélectionner une.");
                 }
 
             }
             else
             {
-                MessageBox.Show("merci de sélectionner le dossier de destination");
+                VariablesGlobales._leLog.LogCustom("merci de sélectionner le dossier de destination");
             }
         }
 
@@ -490,6 +490,46 @@ namespace Client
 
             monManager.UploadDossier((ElementFolder)lst_itranfertLocal.SelectedItems[0].Tag, (ElementFolder)trv_arboDistant.SelectedNode.Tag);
             
+        }
+
+        private void lst_itranfertLocal_ContextMenuStripChanged(object sender, EventArgs e)
+        {
+            if (lst_itranfertLocal.SelectedIndices != null)
+            {
+                cms_localAction.Enabled = false;
+            }
+        }
+
+        private void lst_itranfertLocal_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (lst_itranfertLocal.Items.Count>0)
+                {
+                    if (lst_itranfertLocal.SelectedIndices.Count>0)
+                    {
+                        cms_localAction.Enabled = true;
+                    }
+                }
+                else
+                {
+                    cms_localAction.Enabled = false;
+                }
+            }
+        }
+
+        private void tsmi_supprimer_Click(object sender, EventArgs e)
+        {
+            if (lst_itranfertLocal.FocusedItem.Tag != null)
+            {
+                _mesGestionnaires["$LocalManager"].Supprimer((ITransfer)lst_itranfertLocal.FocusedItem.Tag);
+            }
+
+        }
+
+        private void lst_messagesLog_ControlAdded(object sender, ControlEventArgs e)
+        {
+            lst_messagesLog.Select();
         }
 
         /* private void deconnexionButton_Click(object sender, EventArgs e)

@@ -22,5 +22,7 @@ namespace API_FTP.FTP_Client.Interfaces
         /// <param name="avecSousRepertoire">true pour les sous répertoire et false pour ne pas lister les éléments des sous-répertoires. Par défaut ne liste pas les éléments des sous-répertoires</param>
         /// <returns>retourn la liste des ITranfert contenu dans ce dossier</returns>
         List<ITransfer> ListerContenu(ITransfer leDossier, bool avecSousRepertoire = false);
+
+        void Supprimer(ITransfer transfer);
     }
 }

@@ -1,4 +1,5 @@
-﻿using API_FTP.FTP_Client.Interfaces;
+﻿using API_FTP.FTP_Client.Enums;
+using API_FTP.FTP_Client.Interfaces;
 using Limilabs.FTP.Client;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Net;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace API_FTP.FTP_Client.Classes
 {
@@ -102,36 +104,66 @@ namespace API_FTP.FTP_Client.Classes
             List<FtpItem> lesFtpElements = new List<FtpItem>();
             List<ITransfer> lesElements = new List<ITransfer>();
 
-            using (Ftp monFtp = new Ftp())
+            //StatusCommand lesStatuts = new StatusCommand(EStatusCommand);
+
+            using (_monFtp = new Ftp())
             {
-                monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
-                monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+                VariablesGlobales._leLog.Log(new StatusCommand(EStatusCommand.DemandeConnexion));
+
+                _monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
+
+                VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.AReussieAjoindreHote));
+                VariablesGlobales._leLog.Log(new StatusCommand(EStatusCommand.DemandeAuthentification));
+
+                _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+
+                VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.AuthentificationReussie));
+
                 string resteChemin = cheminFTPDossier.Replace(_maConfig.GetUriChaine(), "").Replace(@"\","/");
 
                 if (resteChemin.Equals(""))
                 {
-                    lesFtpElements = monFtp.GetList();
+                    VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.RepertoireInexistant));
+                    VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.RepertoireParDefautDefini));
+                    VariablesGlobales._leLog.Log(new StatusCommand(EStatusCommand.DemandeListDossier));
+                    VariablesGlobales._leLog.LogCustom(string.Format("Demande de la liste des dossiers de : {0}", _maConfig.GetUriChaine()), true);
+
+                    lesFtpElements = _monFtp.GetList();
+
+                    VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.ListeTrouvee));
                 }
                 else
                 {
                     List<string> larbo = resteChemin.Split(new char[]{'/'}).ToList();
 
+                    VariablesGlobales._leLog.Log(new StatusCommand(EStatusCommand.DemandeChangementRepertoire));
+
                     if (larbo.Count > 0)
                     {
-                        monFtp.ChangeFolder(resteChemin);
+                        _monFtp.ChangeFolder(resteChemin);
                     }
                     else
                     {
-                        monFtp.ChangeFolder(resteChemin);
+                        _monFtp.ChangeFolder(resteChemin);
                     }
-                    
+
+                    VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.ChangementRepertoireEffectue));
+                    VariablesGlobales._leLog.Log(new StatusCommand(EStatusCommand.DemandeListDossier));
+                    VariablesGlobales._leLog.LogCustom(string.Format("Demande de la liste des dossiers de : {0}", resteChemin), true);
+
+                    lesFtpElements = _monFtp.GetList();
+
+                    VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.ListeTrouvee));
                 }
 
-                lesFtpElements = monFtp.GetList();
-                
+                VariablesGlobales._leLog.Log(new StatusCommand(EStatusCommand.DemandeFermetureFluxEchange));
 
-                monFtp.Close();
+                _monFtp.Close();
+
+                VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.FermetureDuFluxReussie));
             }
+
+            VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.GenerationElementTransferables));
 
             foreach (FtpItem unFtpItem in lesFtpElements)
             {
@@ -299,6 +331,37 @@ namespace API_FTP.FTP_Client.Classes
                 Directory.CreateDirectory(cheminDossierADowloaded);
 
                 _monFtp.DownloadFiles(resteChemin, cheminDossierADowloaded, new RemoteSearchOptions("*", true));
+
+                _monFtp.Close();
+            }
+        }
+
+
+        public void Supprimer(ITransfer transfer)
+        {
+            using (_monFtp = new Ftp())
+            {
+                _monFtp.Connect(_maConfig.Host, _maConfig.Port);
+                _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+
+                string resteChemin = MethodesGlobales.GetCheminServerSansRacinne(transfer.GetPath(), _maConfig.GetUriChaine());
+
+                if (string.IsNullOrEmpty(resteChemin))
+                {
+                    
+                    MessageBox.Show("Vous ne pouvez supprimer le répertoire racinne !");
+                }
+                else
+                {
+                    if (transfer.EstUnDossier())
+                    {
+                        _monFtp.DeleteFolder(resteChemin);
+                    }
+                    else
+                    {
+                        _monFtp.DeleteFile(resteChemin);
+                    }
+                }
 
                 _monFtp.Close();
             }

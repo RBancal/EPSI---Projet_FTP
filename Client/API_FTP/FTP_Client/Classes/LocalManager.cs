@@ -145,5 +145,17 @@ namespace API_FTP.FTP_Client.Classes
                 }
             }
         }
+
+        public override void Supprimer(ITransfer transfer)
+        {
+            if (transfer.EstUnDossier())
+            {
+                Directory.Delete(transfer.GetPath());
+            }
+            else
+            {
+                File.Delete(transfer.GetPath());
+            }
+        }
     }
 }

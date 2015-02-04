@@ -57,5 +57,7 @@ namespace API_FTP.FTP_Client.Classes
                 _monLogueur = unLogueur;
             }
         }
+
+        public abstract void Supprimer(ITransfer transfer);
     }
 }

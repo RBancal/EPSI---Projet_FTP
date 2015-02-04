@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API_FTP.FTP_Client.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

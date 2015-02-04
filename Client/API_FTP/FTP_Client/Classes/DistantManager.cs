@@ -103,5 +103,10 @@ namespace API_FTP.FTP_Client.Classes
         {
             _monClientFtp.DownloadDossier(dossierDistant, dossierLocal);
         }
+
+        public override void Supprimer(ITransfer transfer)
+        {
+            _monClientFtp.Supprimer(transfer);
+        }
     }
 }
