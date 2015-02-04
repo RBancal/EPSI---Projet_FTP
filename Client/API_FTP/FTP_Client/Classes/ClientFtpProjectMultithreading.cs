@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -282,6 +283,25 @@ namespace API_FTP.FTP_Client.Classes
         public Ftp GetModuleFtp()
         {
             return _monFtp;
+        }
+
+
+        public void DownloadDossier(ElementFolder dossierDistant, ElementFolder dossierLocal)
+        {
+            using (_monFtp = new Ftp())
+            {
+                _monFtp.Connect(_maConfig.Host, _maConfig.Port);
+                _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+
+                string resteChemin = MethodesGlobales.GetCheminServerSansRacinne(dossierDistant.GetPath(), _maConfig.GetUriChaine());
+                string cheminDossierADowloaded = MethodesGlobales.GetCheminDossierLocalDownload(dossierLocal.GetPath(), dossierDistant.GetName());
+
+                Directory.CreateDirectory(cheminDossierADowloaded);
+
+                _monFtp.DownloadFiles(resteChemin, cheminDossierADowloaded, new RemoteSearchOptions("*", true));
+
+                _monFtp.Close();
+            }
         }
     }
 }

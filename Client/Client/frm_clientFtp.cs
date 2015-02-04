@@ -372,23 +372,64 @@ namespace Client
 
         private void btn_recuperer_Click(object sender, EventArgs e)
         {
+            DownloadITranfert(sender, e, (ITransfer)lst_itransfertDistant.SelectedItems[0].Tag);
+        }
+
+        private void DownloadITranfert(object sender, EventArgs e, ITransfer unDossierOuFichier)
+        {
             if (_mesGestionnaires.ContainsKey("$DistantManager"))
             {
                 DistantManager monManager = (DistantManager)_mesGestionnaires["$DistantManager"];
 
+
                 if (!string.IsNullOrEmpty(trv_arboLocal.SelectedNode.Text))
                 {
-                    monManager.Download((ElementFolder)trv_arboDistant.SelectedNode.Tag, (ElementFile)lst_itransfertDistant.SelectedItems[0].Tag, (ElementFolder)trv_arboLocal.SelectedNode.Tag);
-                    trv_arboLocal.SelectedNode.Nodes.Clear();
-                    ExtraireNode(_mesGestionnaires["$LocalManager"].ListerContenu((ITransfer)trv_arboLocal.SelectedNode.Tag), trv_arboLocal.SelectedNode);
-                    trv_arboLocal_AfterSelect(sender, e);
+                    if (!string.IsNullOrEmpty(lst_itransfertDistant.SelectedItems[0].Text))
+                    {
+                        if (!string.IsNullOrEmpty(trv_arboDistant.SelectedNode.Text))
+                        {
+                            ITransfer unTranferable = (ITransfer)lst_itransfertDistant.SelectedItems[0].Tag;
+                            ElementFolder unElementFolder = unElementFolder = (ElementFolder)trv_arboLocal.SelectedNode.Tag;
+
+                            if (unTranferable.EstUnDossier())
+                            {
+                                DownloadDossier(sender, e, monManager, unTranferable);
+                            }
+                            else
+                            {
+                                DownloadFichier(monManager, unTranferable);
+                            }
+
+                            trv_arboLocal.SelectedNode.Nodes.Clear();
+
+                            unElementFolder.Rafraichir();
+                            ExtraireNode(_mesGestionnaires["$LocalManager"].ListerContenu(unElementFolder), trv_arboLocal.SelectedNode);
+                            
+                            LocalManager monLocalManager = (LocalManager)_mesGestionnaires["$LocalManager"];
+                            
+                            trv_arboLocal_AfterSelect(sender, e);
+
+                            trv_arboDistant.SelectedNode.Nodes.Clear();
+                            ExtraireNode(_mesGestionnaires["$DistantManager"].ListerContenu((ITransfer)trv_arboDistant.SelectedNode.Tag), trv_arboDistant.SelectedNode);
+                            trv_arboDistant_AfterSelect(sender, e);
+                        }
+                        else
+                        {
+
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("merci de sélectionner le dossier de destination");
-                }
-                
             }
+        }
+
+        private void DownloadFichier(DistantManager monManager, ITransfer unTranferable)
+        {
+            monManager.Download((ElementFolder)trv_arboDistant.SelectedNode.Tag, (ElementFile)unTranferable, (ElementFolder)trv_arboLocal.SelectedNode.Tag);
+        }
+
+        private void DownloadDossier(object sender, EventArgs e, DistantManager monManager, ITransfer unTranferable)
+        {
+            monManager.DownloadDossier((ElementFolder)lst_itransfertDistant.SelectedItems[0].Tag, (ElementFolder)trv_arboLocal.SelectedNode.Tag);
         }
 
         private void btn_envoyer_Click(object sender, EventArgs e)

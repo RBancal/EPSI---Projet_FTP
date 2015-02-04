@@ -98,5 +98,10 @@ namespace API_FTP.FTP_Client.Classes
         {
             return _monClientFtp.GetModuleFtp();
         }
+
+        public void DownloadDossier(ElementFolder dossierDistant, ElementFolder dossierLocal)
+        {
+            _monClientFtp.DownloadDossier(dossierDistant, dossierLocal);
+        }
     }
 }

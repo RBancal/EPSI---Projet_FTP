@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,11 @@ namespace API_FTP.FTP_Client
         internal static string GetCheminDossierUploadSurServeur(string cheminDossierServeurSansRacinne, string nomDossierUlploaded)
         {
             return string.Format(@"{0}/{1}", cheminDossierServeurSansRacinne, nomDossierUlploaded);
+        }
+
+        internal static string GetCheminDossierLocalDownload(string cheminCompletDossierLocal, string nomDossierDistantATelecharger)
+        {
+            return Path.Combine(cheminCompletDossierLocal, nomDossierDistantATelecharger);
         }
     }
 }
