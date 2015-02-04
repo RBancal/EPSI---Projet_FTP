@@ -16,13 +16,12 @@ namespace API_FTP.FTP_Client.Classes
         protected Configuration _maConfig;
         protected IClientFtp _monClientFtp;
 
-        public DistantManager(Configuration laConfig, ILog unLogueur)
+        public DistantManager(Configuration laConfig)
         {
             _maConfig = (Configuration)laConfig.Clone();
             base._pathRoot = _maConfig.GetUriChaine();
             base._lesDossiers = new List<ITransfer>();
             _monClientFtp = new ClientFtpProjectMultithreading(_maConfig);
-            ChargerLogueur(unLogueur);
         }
 
         public override List<ITransfer> ListerContenu(ITransfer leDossier, bool avecSousRepertoire = false)

@@ -71,7 +71,6 @@
     <Compile Include="FTP_Client\Interfaces\ILog.cs" />
     <Compile Include="FTP_Client\Interfaces\ILogable.cs" />
     <Compile Include="FTP_Client\Interfaces\IManager.cs" />
-    <Compile Include="FTP_Client\Interfaces\IProgrammeClientFTP.cs" />
     <Compile Include="FTP_Client\Interfaces\IStatus.cs" />
     <Compile Include="FTP_Client\Interfaces\ITransfer.cs" />
     <Compile Include="FTP_Client\MethodesGlobales.cs" />

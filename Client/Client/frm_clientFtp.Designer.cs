@@ -33,7 +33,6 @@
             this.loginLabel = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.connexionPanel = new System.Windows.Forms.Panel();
-            this.sitesButton = new System.Windows.Forms.Button();
             this.portTextBox = new System.Windows.Forms.TextBox();
             this.portLabel = new System.Windows.Forms.Label();
             this.serverLabel = new System.Windows.Forms.Label();
@@ -91,7 +90,6 @@
             // 
             // connexionPanel
             // 
-            this.connexionPanel.Controls.Add(this.sitesButton);
             this.connexionPanel.Controls.Add(this.portTextBox);
             this.connexionPanel.Controls.Add(this.portLabel);
             this.connexionPanel.Controls.Add(this.serverLabel);
@@ -106,15 +104,6 @@
             this.connexionPanel.Name = "connexionPanel";
             this.connexionPanel.Size = new System.Drawing.Size(972, 48);
             this.connexionPanel.TabIndex = 2;
-            // 
-            // sitesButton
-            // 
-            this.sitesButton.Location = new System.Drawing.Point(17, 12);
-            this.sitesButton.Name = "sitesButton";
-            this.sitesButton.Size = new System.Drawing.Size(75, 23);
-            this.sitesButton.TabIndex = 9;
-            this.sitesButton.Text = "Sites";
-            this.sitesButton.UseVisualStyleBackColor = true;
             // 
             // portTextBox
             // 
@@ -401,7 +390,6 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Button deconnexionButton;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button sitesButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_envoyer;
         private System.Windows.Forms.Button btn_recuperer;

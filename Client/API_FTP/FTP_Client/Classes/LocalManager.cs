@@ -15,8 +15,7 @@ namespace API_FTP.FTP_Client.Classes
         /// Constructeur de la classe
         /// </summary>
         /// <param name="pathRoot">chemin du répertoire local</param>
-        /// <param name="unLogueur">logueur de messages</param>
-        public LocalManager(string pathRoot, ILog unLogueur)
+        public LocalManager(string pathRoot)
         {
             if (!Directory.Exists(pathRoot))
             {
@@ -27,8 +26,6 @@ namespace API_FTP.FTP_Client.Classes
                 base._pathRoot = pathRoot;
                 base._lesDossiers = new List<ITransfer>();
                 base._lesDossiers.Add(new ElementFolder(pathRoot));
-
-                ChargerLogueur(unLogueur);
             }
         }
 
@@ -36,30 +33,24 @@ namespace API_FTP.FTP_Client.Classes
         /// Constructeur de la classe
         /// </summary>
         /// <param name="aFolderRoot">dossier local</param>
-        /// <param name="unLogueur">logueur de messages</param>
-        public LocalManager(ElementFolder aFolderRoot, ILog unLogueur)
+        public LocalManager(ElementFolder aFolderRoot)
         {
             base._pathRoot = aFolderRoot.GetPath();
             base._lesDossiers = new List<ITransfer>();
             base._lesDossiers.Add((ElementFolder) aFolderRoot.Clone());
-            ChargerLogueur(unLogueur);
         }
 
         /// <summary>
         /// Constructeur de la classe
         /// </summary>
         /// <param name="theFolder">élement de transfer de type dossier (ElementFolder)</param>
-        /// <param name="unLogueur">logueur de messages</param>
-        public LocalManager(ITransfer theFolder, ILog unLogueur)
+        public LocalManager(ITransfer theFolder)
         {
             if (theFolder.EstUnDossier())
             {
                 base._pathRoot = theFolder.GetPath();
                 base._lesDossiers = new List<ITransfer>();
                 base._lesDossiers.Add((ElementFolder)theFolder.Clone());
-
-                ChargerLogueur(unLogueur);
-                _monLogueur.LogCustom("Dossiers local chargé");
             }
             else
             {

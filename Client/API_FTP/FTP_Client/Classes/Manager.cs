@@ -13,11 +13,6 @@ namespace API_FTP.FTP_Client.Classes
     public abstract class Manager : IManager
     {
         /// <summary>
-        /// est le logueur de messages
-        /// </summary>
-        protected ILog _monLogueur;
-
-        /// <summary>
         /// Chemin du répertoire racine de démarrage 
         /// </summary>
         protected string _pathRoot;
@@ -41,22 +36,6 @@ namespace API_FTP.FTP_Client.Classes
         /// <param name="avecSousRepertoire">true pour les sous répertoire et false pour ne pas lister les éléments des sous-répertoires. Par défaut ne liste pas les éléments des sous-répertoires</param>
         /// <returns>retourn la liste des ITranfert contenu dans ce dossier</returns>
         abstract public List<ITransfer> ListerContenu(ITransfer leDossier, bool avecSousRepertoire = false);
-
-        /// <summary>
-        /// Charge le lILog du manager et vérifie si le ILog est ibnitialisé
-        /// </summary>
-        /// <param name="unLogueur"> le ILog</param>
-        protected void ChargerLogueur(ILog unLogueur)
-        {
-            if (unLogueur == null)
-            {
-                MethodesGlobales.AfficherMessageErreurInitialisationILog();
-            }
-            else
-            {
-                _monLogueur = unLogueur;
-            }
-        }
 
         public abstract void Supprimer(ITransfer transfer);
     }

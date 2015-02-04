@@ -106,6 +106,36 @@ namespace API_FTP.FTP_Client.Classes
                 case EStatusResponse.AReussieAjoindreHote:
                     Commentaire = "A réussie à joindre le server FTP";
                     break;
+                case EStatusResponse.AuthentificationReussie:
+                    Commentaire = "Authentification réssie";
+                    break;
+                case EStatusResponse.ListeTrouvee:
+                    Commentaire = "Liste trouvée";
+                    break;
+                case EStatusResponse.RepertoireInexistant:
+                    Commentaire = "Répertoire inexistant";
+                    break;
+                case EStatusResponse.RepertoireParDefaut:
+                    Commentaire = "Basculement sur le réertoire par défaut répertoire root";
+                    break;
+                case EStatusResponse.RepertoireParDefautDefini:
+                    Commentaire = "Basculement sur le réertoire par défaut répertoire root";
+                    break;
+                case EStatusResponse.ChangementRepertoireEffectue:
+                    Commentaire = "Changement du répertoire effectué";
+                    break;
+                case EStatusResponse.FermetureDuFlux:
+                    Commentaire = "Fermeture du flux de traitement";
+                    break;
+                case EStatusResponse.FermetureDuFluxReussie:
+                    Commentaire = "Fermeure du flux de traitement réussie";
+                    break;
+                case EStatusResponse.GenerationElementTransferables:
+                    Commentaire = "Génératon des éléments tranférables";
+                    break;
+                case EStatusResponse.ImpossibleDAtteindreServeurFtp:
+                    Commentaire = "Imossible de joindre le serveur FTP";
+                    break;
                 default:
                     break;
             }

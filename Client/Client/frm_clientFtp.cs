@@ -172,7 +172,6 @@ namespace Client
             {
                 _mesGestionnaires.Add("$DistantManager", ManagerFactory.Fabriquer("$DistantManager", lst_messagesLog, (Configuration)_maConfigCourrante));
                 DistantManager monDistantManage = (DistantManager)_mesGestionnaires["$DistantManager"];
-                
             }
 
             ITransfer unDossierRoot = new ElementFolder(_maConfigCourrante.GetUriChaine(), ((DistantManager)_mesGestionnaires["$DistantManager"]).ListerContenu());

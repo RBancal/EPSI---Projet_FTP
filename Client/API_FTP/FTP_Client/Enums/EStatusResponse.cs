@@ -25,6 +25,7 @@ namespace API_FTP.FTP_Client.Enums
         ChangementRepertoireEffectue,
         FermetureDuFlux,
         FermetureDuFluxReussie,
-        GenerationElementTransferables
+        GenerationElementTransferables,
+        ImpossibleDAtteindreServeurFtp
     }
 }

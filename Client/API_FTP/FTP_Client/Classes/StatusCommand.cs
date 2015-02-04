@@ -88,8 +88,19 @@ namespace API_FTP.FTP_Client.Classes
                 case EStatusCommand.DemandePersonalisee:
                     Commentaire = commentairePersonalisee;
                     break;
+                case EStatusCommand.DemandeAuthentification:
+                    Commentaire = "Demande d'authetification";
+                    break;
+                case EStatusCommand.DemandeListDossier:
+                    Commentaire = "Demande List des dossiers";
+                    break;
+                case EStatusCommand.DemandeChangementRepertoire:
+                    Commentaire = "Demande de changement de répertoire";
+                    break;
+                case EStatusCommand.DemandeFermetureFluxEchange:
+                    Commentaire = "Demande de fermeture du flux";
+                    break;
                 default:
-                    Commentaire = "";
                     break;
             }
         }

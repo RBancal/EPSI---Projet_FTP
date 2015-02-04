@@ -20,11 +20,11 @@ namespace API_FTP.FTP_Client.Factory
             if (gestionnaire == "$LocalManager")
             {
                 
-                unManager = new LocalManager(new ElementFolder(@"d:\"), leLogFtp);
+                unManager = new LocalManager(new ElementFolder(@"d:\"));
             }
             else
             {
-                unManager = new DistantManager(laConfig, leLogFtp);
+                unManager = new DistantManager(laConfig);
             }
 
             return unManager;

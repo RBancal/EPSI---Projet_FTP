@@ -19,10 +19,6 @@ namespace API_FTP.FTP_Client.Classes
     public class ClientFtpProjectMultithreading : IClientFtp
     {
         private Configuration _maConfig;
-        private FtpWebRequest _monWebRequestFtp;
-        private FtpWebResponse _monWebReponseFtp;
-        private Stream _monFluxReponse;
-        private StreamReader _monFluxLecture;
         private string _pathRoot;
         private Ftp _monFtp;
 
@@ -90,8 +86,12 @@ namespace API_FTP.FTP_Client.Classes
                 _monFtp.Connect(_maConfig.Host, _maConfig.Port);
                 _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
                 string resteChemin = distantFolder.GetPath().Replace(_maConfig.GetUriChaine(), "").Replace(@"\", "/");
+
+                if (!string.IsNullOrEmpty(resteChemin))
+                {
+                    _monFtp.ChangeFolder(resteChemin);
+                }
                 
-                _monFtp.ChangeFolder(resteChemin);
                 maReponseFtp = _monFtp.Upload(localFile.GetName(), localFile.GetPath());
                 _monFtp.Close();
             }
@@ -110,14 +110,30 @@ namespace API_FTP.FTP_Client.Classes
             {
                 VariablesGlobales._leLog.Log(new StatusCommand(EStatusCommand.DemandeConnexion));
 
-                _monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
-
-                VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.AReussieAjoindreHote));
+                try
+                {
+                    _monFtp.Connect(_maConfig.Host, _maConfig.Port);  // or ConnectSSL for SSL
+                    VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.AReussieAjoindreHote));
+                }
+                catch (Exception)
+                {
+                    VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.ImpossibleDAtteindreServeurFtp));
+                }
+                
                 VariablesGlobales._leLog.Log(new StatusCommand(EStatusCommand.DemandeAuthentification));
 
-                _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+                try
+                {
+                    _monFtp.Login(_maConfig.Login, _maConfig.MotDePass);
+                    VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.AuthentificationReussie));
+                }
+                catch (FtpResponseException e)
+                {
+                    VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.AuthentificationReussie));
+                }
+                
 
-                VariablesGlobales._leLog.Log(new StatusResponse(EStatusResponse.AuthentificationReussie));
+                
 
                 string resteChemin = cheminFTPDossier.Replace(_maConfig.GetUriChaine(), "").Replace(@"\","/");
 
