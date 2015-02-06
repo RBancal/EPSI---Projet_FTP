@@ -535,6 +535,11 @@ namespace Client
             lst_messagesLog.Select();
         }
 
+        private void cms_localAction_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
         /* private void deconnexionButton_Click(object sender, EventArgs e)
         {
             connexionButton.Show();

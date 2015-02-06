@@ -246,7 +246,8 @@
             this.tsmi_supprimer,
             this.tsmi_creerDossier});
             this.cms_localAction.Name = "cms_localAction";
-            this.cms_localAction.Size = new System.Drawing.Size(160, 48);
+            this.cms_localAction.Size = new System.Drawing.Size(160, 70);
+            this.cms_localAction.Opening += new System.ComponentModel.CancelEventHandler(this.cms_localAction_Opening);
             // 
             // tsmi_supprimer
             // 
