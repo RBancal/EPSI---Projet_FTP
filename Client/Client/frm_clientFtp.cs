@@ -2,17 +2,10 @@
 using API_FTP.FTP_Client.Classes;
 using API_FTP.FTP_Client.Factory;
 using API_FTP.FTP_Client.Interfaces;
-using Limilabs.FTP.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Client
