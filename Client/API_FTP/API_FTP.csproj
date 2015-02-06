@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="FTP_Client\Classes\ClientFtpProjectMultithreading.cs" />
     <Compile Include="FTP_Client\Classes\Configuration.cs" />
     <Compile Include="FTP_Client\Classes\DistantManager.cs" />

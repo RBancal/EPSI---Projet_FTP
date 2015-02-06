@@ -523,10 +523,10 @@ namespace Client
             {
                 _mesGestionnaires["$LocalManager"].Supprimer((ITransfer)lst_itranfertLocal.FocusedItem.Tag);
                 ElementFolder unFolder = (ElementFolder)trv_arboLocal.SelectedNode.Tag;
-                unFolder.Rafraichir();
+                //unFolder.Rafraichir();
 
-                trv_arboLocal.SelectedNode.Nodes.Clear();
-                ExtraireNode(_mesGestionnaires["$LocalManager"].ListerContenu(unFolder), trv_arboLocal.SelectedNode);
+                //trv_arboLocal.SelectedNode.Nodes.Clear();
+                //ExtraireNode(_mesGestionnaires["$LocalManager"].ListerContenu(unFolder), trv_arboLocal.SelectedNode);
             }
         }
 

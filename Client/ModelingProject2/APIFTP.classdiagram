@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="d21a8efa-6f4f-4761-a24f-d4a1da886fb3" name="APIFTP" linkedPackageId="6dd5df75-6d96-4da1-acf0-e3f7224de370" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="2d185044-54d4-4811-a9b6-95604a4ae0e5">
-      <profileInstance Id="061afb6f-15d4-49c4-ac22-d77be4750ed8" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="f08579e1-509d-4340-a086-b013cba40520">
-      <profileInstance Id="a906ce84-b767-4719-aecc-26f5d5e36bbd" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="d22af30b-c23d-4c3a-b9bc-75bd51b7853c">
-      <profileInstance Id="95d799f8-f958-470f-9b9d-aa410ba6e937" name="CSharpProfile">
-        <elementDefinition Id="5571fc79-75ec-4e0c-a235-176336938c53" />
-      </profileInstance>
-      <elementDefinition Id="9d26739e-409a-4cf9-8a4f-87199ec5c0c0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="daf5993f-9be5-4b8b-89c9-268e8aee1427" name="Element" isAbstract="true" isLeaf="false" isActiveClass="false">
@@ -13203,5 +13183,25 @@
   </packagedElements>
   <package Id="6dd5df75-6d96-4da1-acf0-e3f7224de370" name="PrajetModelisationAPIFTP">
     <elementDefinition Id="eb23cdb2-564b-47b6-b5db-c2198d486f1c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="2d185044-54d4-4811-a9b6-95604a4ae0e5">
+        <profileInstance Id="061afb6f-15d4-49c4-ac22-d77be4750ed8" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f08579e1-509d-4340-a086-b013cba40520">
+        <profileInstance Id="a906ce84-b767-4719-aecc-26f5d5e36bbd" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d22af30b-c23d-4c3a-b9bc-75bd51b7853c">
+        <profileInstance Id="95d799f8-f958-470f-9b9d-aa410ba6e937" name="CSharpProfile">
+          <elementDefinition Id="5571fc79-75ec-4e0c-a235-176336938c53" />
+        </profileInstance>
+        <elementDefinition Id="9d26739e-409a-4cf9-8a4f-87199ec5c0c0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
