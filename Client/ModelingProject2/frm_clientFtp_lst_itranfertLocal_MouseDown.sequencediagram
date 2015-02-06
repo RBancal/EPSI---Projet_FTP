@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" dslVersion="1.0.0.0" Id="497c7acb-cc08-467c-aa0b-b776f5c45450" name="frm_clientFtp_lst_itranfertLocal_MouseDown" mode="DotNet" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="f5bf9ac4-836c-456c-b2fe-5c82073f208f" name="frm_clientFtp_lst_itranfertLocal_MouseDown" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification Id="bf454b8c-2c8f-439f-ac31-47ad70b9ae4a" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="2a2e3432-c855-4cd5-be69-3d89694f2aed" LastKnownName="this : frm_clientFtp" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="01da5cf8-fde0-44fd-9784-c3c9925a1032" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="5ba4f0ec-c3db-4f9a-a173-1fced0394a30" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="95146ba3-5604-45d6-9223-2194da622fb4" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="5ba4f0ec-c3db-4f9a-a173-1fced0394a30" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="183488ee-cbbb-4de1-86bd-9940da0fc3d2" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="2a2e3432-c855-4cd5-be69-3d89694f2aed" LastKnownName="this : frm_clientFtp" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget Id="73a28eab-d61f-4a81-b5eb-aa78d96d0963" name="LostFoundTarget" />
+          <messageOccurrenceSpecification Id="95146ba3-5604-45d6-9223-2194da622fb4" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="2a2e3432-c855-4cd5-be69-3d89694f2aed" LastKnownName="this : frm_clientFtp" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="01da5cf8-fde0-44fd-9784-c3c9925a1032" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="b7144c0f-c919-46da-857b-f1dcf821ed21" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="2a2e3432-c855-4cd5-be69-3d89694f2aed" LastKnownName="this : frm_clientFtp" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="2a2e3432-c855-4cd5-be69-3d89694f2aed" name="this : frm_clientFtp" isActor="false" lifelineDisplayName="this : frm_clientFtp" referencedInstance="(Assembly=$(a7b23967-8431-49a7-ba7d-80ebee199cc1.OutputPathUri) Namespace=Client Type=frm_clientFtp ObjectInstance=&quot;Object instance 3&quot;)" referencedType="Client‎.frm_clientFtp">
+            <referencesInternal>
+              <reference Id="1810a58c-f5b6-4a39-b0f8-8f242dceb3b2" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=Client)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7b23967-8431-49a7-ba7d-80ebee199cc1.OutputPathUri)&amp;quot; Namespace=Client Type=frm_clientFtp)&quot;)" tag="DGQL" />
+              <reference Id="7fa9c02e-51b7-4f7b-b73d-6d36bbafef1c" handle="(Assembly=&quot;$(a7b23967-8431-49a7-ba7d-80ebee199cc1.OutputPathUri)&quot; Namespace=Client Type=frm_clientFtp)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="5ba4f0ec-c3db-4f9a-a173-1fced0394a30" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="01da5cf8-fde0-44fd-9784-c3c9925a1032" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="4a10c6f9-2c8e-478a-8fd9-3c935bcb5d5a" name="lst_itranfertLocal_MouseDown" messageKind="Found" messageSort="AsynchCall" createSelfMessage="false">
+            <referencesInternal>
+              <reference Id="4473890d-0272-430a-96ad-becdcf9a1baa" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=Client)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7b23967-8431-49a7-ba7d-80ebee199cc1.OutputPathUri)&amp;quot; Namespace=Client Type=frm_clientFtp)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7b23967-8431-49a7-ba7d-80ebee199cc1.OutputPathUri)&amp;quot; Namespace=Client Type=frm_clientFtp Member=(Name=lst_itranfertLocal_MouseDown OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.1/mscorlib.dll&amp;quot; Namespace=System Type=Object),(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.1/System.Windows.Forms.dll&amp;quot; Namespace=System.Windows.Forms Type=MouseEventArgs)]))&quot;)" tag="DGQL" />
+              <reference Id="15b8c8a4-9037-489a-859c-cbd711be65f8" handle="(Assembly=&quot;$(a7b23967-8431-49a7-ba7d-80ebee199cc1.OutputPathUri)&quot; Namespace=Client Type=frm_clientFtp Member=(Name=lst_itranfertLocal_MouseDown OverloadingParameters=[(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.1/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.1/System.Windows.Forms.dll&quot; Namespace=System.Windows.Forms Type=MouseEventArgs)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <lostFoundTargetMoniker Id="73a28eab-d61f-4a81-b5eb-aa78d96d0963" LastKnownName="LostFoundTarget" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="95146ba3-5604-45d6-9223-2194da622fb4" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="183488ee-cbbb-4de1-86bd-9940da0fc3d2" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="b7144c0f-c919-46da-857b-f1dcf821ed21" name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+</SequenceDesignerModel>

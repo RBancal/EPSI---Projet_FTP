@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" dslVersion="1.0.0.0" Id="963c6c7b-abf9-45ba-a580-424e13327055" name="ClientFtpProjectMultithreading_ListFileFolder" mode="DotNet" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="745c225b-453b-42dc-8b65-02d1ed70acea" name="ClientFtpProjectMultithreading_ListFileFolder" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification Id="33758aba-2381-44eb-84d4-cd54fcdc5c57" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="0988a4b8-a2d8-4e65-b935-d632e8510fe3" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="20748023-6234-488c-a4df-7e0bc4e9d10e" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="6aa24fb1-4f21-46c9-8b04-2c9afd9a304a" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="da288e64-5e59-428a-ad02-b9b6b5b86956" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="302ee181-e243-486e-b6e3-f43e08e2c96e" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="04334cf8-c146-4766-99a0-c9f2e58359b7" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="5f292520-0219-4c66-b9f9-3639e3c202d1" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="2e628c22-7806-4715-bc3a-cf5b22783094" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="cb916f45-6685-4559-8282-a4e7b8f4c2cb" LastKnownName="MessageOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="8b581c30-23c0-4167-adcd-81a94147f55d" LastKnownName="OperandOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="fffe27e5-54e1-4e8d-a8cd-a58bedd74ae2" LastKnownName="OperandOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="2fe42572-8d67-4fe3-9808-e3e8bdd31c1d" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="122d2fdf-5f2f-4f1d-9ca0-2fb2aca3daa5" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="74d4a460-ef29-4273-9dff-87d143565b9a" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="f4f8cd03-967b-4c85-8a38-15f05983ccc6" LastKnownName="MessageOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="23fb2bd2-840d-405e-b425-9f5bd025bb26" LastKnownName="OperandOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="a9a00b64-bc60-4d33-a6a8-0208d6e10d04" LastKnownName="OperandOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="20748023-6234-488c-a4df-7e0bc4e9d10e" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="e81f943e-891d-40f0-998f-b8919162d13d" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget Id="033663b5-2bfa-447d-977a-08fce97fe827" name="LostFoundTarget" />
+          <messageOccurrenceSpecification Id="6aa24fb1-4f21-46c9-8b04-2c9afd9a304a" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="78e72abc-bad7-4291-88ff-e87ddedd30d1" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="7cf49b85-b768-417d-81ce-e90ea9e67122" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="210e0591-fc25-497f-bd5c-33ced4c99847" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="9a07b255-6652-42c0-aa44-88f088399107" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="151f4d27-4017-4f7a-a971-dff7787855c9" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="210e0591-fc25-497f-bd5c-33ced4c99847" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="9ed41633-a5af-4190-8757-dfe385961d67" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="da288e64-5e59-428a-ad02-b9b6b5b86956" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="9a07b255-6652-42c0-aa44-88f088399107" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="151f4d27-4017-4f7a-a971-dff7787855c9" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="302ee181-e243-486e-b6e3-f43e08e2c96e" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="7cf49b85-b768-417d-81ce-e90ea9e67122" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="8ceeabc6-0ee8-46a5-9f14-b3681f6fe052" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="353b58e3-af2d-438d-851f-b4cdd619a35f" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="a04abd3b-ab59-499a-84d8-d51b859d6abc" LastKnownName="this._maConfig : Configuration" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="52d1f6c9-1d66-4e34-9e12-e154be6d6b06" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="507d749c-3251-4557-8e41-a3d5964317dc" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="fd5c6a4c-7aea-4218-816e-69eebd4f3307" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="572f5482-c315-4eba-9674-98a993a402d0" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="507d749c-3251-4557-8e41-a3d5964317dc" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="eb718138-0541-4010-a6a9-6b93e17a2146" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="a04abd3b-ab59-499a-84d8-d51b859d6abc" LastKnownName="this._maConfig : Configuration" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="04334cf8-c146-4766-99a0-c9f2e58359b7" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="fd5c6a4c-7aea-4218-816e-69eebd4f3307" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="a04abd3b-ab59-499a-84d8-d51b859d6abc" LastKnownName="this._maConfig : Configuration" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="572f5482-c315-4eba-9674-98a993a402d0" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="a04abd3b-ab59-499a-84d8-d51b859d6abc" LastKnownName="this._maConfig : Configuration" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="5f292520-0219-4c66-b9f9-3639e3c202d1" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="52d1f6c9-1d66-4e34-9e12-e154be6d6b06" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="7adf39de-a8ad-4e9f-a4cb-4b4bcf5cfd34" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="a04abd3b-ab59-499a-84d8-d51b859d6abc" LastKnownName="this._maConfig : Configuration" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="89abe5d7-aa0e-4723-a068-a777588db919" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="ef107c43-c93a-4611-b02d-52590d6f085d" LastKnownName="MethodesGlobales" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="7151e673-eb2f-4f61-a7d3-0b05959f6d35" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="d51cb7ce-8f8d-4e06-868b-226870df9e93" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="21191959-5552-43e1-9f42-aaa950a36770" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="a17c1ed3-e38e-4677-9dbd-fb1e57da4a77" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="d51cb7ce-8f8d-4e06-868b-226870df9e93" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="c3130926-8ce3-42ee-91b5-e56e0842288d" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="ef107c43-c93a-4611-b02d-52590d6f085d" LastKnownName="MethodesGlobales" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="2e628c22-7806-4715-bc3a-cf5b22783094" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="21191959-5552-43e1-9f42-aaa950a36770" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="ef107c43-c93a-4611-b02d-52590d6f085d" LastKnownName="MethodesGlobales" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="cb916f45-6685-4559-8282-a4e7b8f4c2cb" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="a17c1ed3-e38e-4677-9dbd-fb1e57da4a77" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="ef107c43-c93a-4611-b02d-52590d6f085d" LastKnownName="MethodesGlobales" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="7151e673-eb2f-4f61-a7d3-0b05959f6d35" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="bd947c35-bc46-45dc-89f6-1c780c31b102" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="ef107c43-c93a-4611-b02d-52590d6f085d" LastKnownName="MethodesGlobales" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <combinedFragment Id="5c1cdf66-7aef-4c84-9daf-2815181cba7b" name="CombinedFragment1" interactionOperator="Loop" customInteractionOperator="Loop">
+            <coveredLifelines>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </coveredLifelines>
+            <operands>
+              <interactionOperand Id="974c8de2-9a30-455c-b162-7d2b2ecd7732" name="InteractionOperand1">
+                <coveredLifelines>
+                  <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+                  <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+                  <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+                </coveredLifelines>
+                <fragments>
+                  <combinedFragment Id="bf6c18d3-c2d1-40c2-ad9f-57793a3eea23" name="CombinedFragment1" interactionOperator="Opt" customInteractionOperator="If">
+                    <coveredLifelines>
+                      <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+                      <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+                      <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+                    </coveredLifelines>
+                    <operands>
+                      <interactionOperand Id="b2e65a76-4046-4305-a509-1a438624a301" name="InteractionOperand1">
+                        <coveredLifelines>
+                          <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+                          <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+                          <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+                        </coveredLifelines>
+                        <guard>
+                          <interactionConstraint Id="00a2cb18-8fa1-4dee-ad76-fc6cf40ecfbf" guardText="if (unFtpItem.IsFile)" />
+                        </guard>
+                        <operandOccurrenceSpecifications>
+                          <operandOccurrenceSpecificationMoniker Id="fffe27e5-54e1-4e8d-a8cd-a58bedd74ae2" LastKnownName="OperandOccurrenceSpecification" />
+                          <operandOccurrenceSpecificationMoniker Id="23fb2bd2-840d-405e-b425-9f5bd025bb26" LastKnownName="OperandOccurrenceSpecification" />
+                          <operandOccurrenceSpecificationMoniker Id="d5019fee-2bac-40f4-b958-348b592aed1f" LastKnownName="OperandOccurrenceSpecification" />
+                          <operandOccurrenceSpecificationMoniker Id="1898d1ae-c81f-4f04-b1f5-e4d381175eca" LastKnownName="OperandOccurrenceSpecification" />
+                          <operandOccurrenceSpecificationMoniker Id="26c6fea6-7bcf-4748-8def-50465784a4b8" LastKnownName="OperandOccurrenceSpecification" />
+                          <operandOccurrenceSpecificationMoniker Id="dc57bce5-a871-4a0c-97be-b74537410dde" LastKnownName="OperandOccurrenceSpecification" />
+                        </operandOccurrenceSpecifications>
+                      </interactionOperand>
+                    </operands>
+                  </combinedFragment>
+                </fragments>
+                <guard>
+                  <interactionConstraint Id="794a229b-bbc9-4a5d-95cf-33207c0d2a54" guardText="foreach (lesFtpElements)">
+                    <maxInt>
+                      <literalString Id="638c33b8-5535-44a7-81ce-6f1b52b729df" name="LiteralString1" />
+                    </maxInt>
+                    <minInt>
+                      <literalString Id="b699e7f3-e5d6-4485-9191-357a0fc05690" name="LiteralString2" />
+                    </minInt>
+                  </interactionConstraint>
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker Id="8b581c30-23c0-4167-adcd-81a94147f55d" LastKnownName="OperandOccurrenceSpecification" />
+                  <operandOccurrenceSpecificationMoniker Id="a9a00b64-bc60-4d33-a6a8-0208d6e10d04" LastKnownName="OperandOccurrenceSpecification" />
+                  <operandOccurrenceSpecificationMoniker Id="60582b2f-a488-4017-a049-2b772529ef88" LastKnownName="OperandOccurrenceSpecification" />
+                  <operandOccurrenceSpecificationMoniker Id="4fddef89-e245-45bc-aed1-a7b7a7c9fba3" LastKnownName="OperandOccurrenceSpecification" />
+                  <operandOccurrenceSpecificationMoniker Id="473c6df5-165b-4954-99f4-612f3c5c4097" LastKnownName="OperandOccurrenceSpecification" />
+                  <operandOccurrenceSpecificationMoniker Id="c457a315-eb3e-4a11-8572-909372301d8d" LastKnownName="OperandOccurrenceSpecification" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+            </operands>
+          </combinedFragment>
+          <operandOccurrenceSpecification Id="8b581c30-23c0-4167-adcd-81a94147f55d" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="473c6df5-165b-4954-99f4-612f3c5c4097" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="60582b2f-a488-4017-a049-2b772529ef88" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="26c6fea6-7bcf-4748-8def-50465784a4b8" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="fffe27e5-54e1-4e8d-a8cd-a58bedd74ae2" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="d5019fee-2bac-40f4-b958-348b592aed1f" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="15c0b7cc-8629-4415-8a76-11c1409831ab" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="d1224a66-cbc6-43c7-9717-2156fa2762be" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="8aeb6497-b0f1-4986-9801-fdcc006ee39b" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="fbbc08fe-45c0-4a58-9681-0edcf28788b6" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="eff604d0-ca63-403e-836f-19f19111cfa7" LastKnownName="MessageOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="fa72b822-e048-4ee3-a608-85c52771f367" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="b978b8b2-418f-4c0e-8fd9-dfdc89e59859" LastKnownName="ExecutionOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="1d834cf4-0879-4092-b5ef-4b8342ffa5eb" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="8aeb6497-b0f1-4986-9801-fdcc006ee39b" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="41705113-136e-48e3-aadb-f5638e9b30b5" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="2fe42572-8d67-4fe3-9808-e3e8bdd31c1d" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="fbbc08fe-45c0-4a58-9681-0edcf28788b6" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="eff604d0-ca63-403e-836f-19f19111cfa7" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="e2ea9a32-35bf-44fa-bedd-850e9122cf80" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="b978b8b2-418f-4c0e-8fd9-dfdc89e59859" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="fa72b822-e048-4ee3-a608-85c52771f367" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="b64c6c21-1c7f-4427-b82a-1b7eda37cf66" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="fa72b822-e048-4ee3-a608-85c52771f367" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="6ba0115d-c1d6-469d-939f-cb8b9ffbd650" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="b64c6c21-1c7f-4427-b82a-1b7eda37cf66" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="b978b8b2-418f-4c0e-8fd9-dfdc89e59859" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="cc7d0d27-359b-4300-aa69-0decf086b593" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="122d2fdf-5f2f-4f1d-9ca0-2fb2aca3daa5" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="1d834cf4-0879-4092-b5ef-4b8342ffa5eb" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="d1224a66-cbc6-43c7-9717-2156fa2762be" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="b082003f-5329-44a4-9b65-8f9e7d335b0b" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="f258db36-0352-4782-9aae-069bc1b5b1a8" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="5796b0ba-9006-4408-b393-adaa78bcc0de" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="19ab1c84-040c-4f17-b90c-0c78f9fec0b5" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="2e4e263b-d20e-41aa-931c-414881be477c" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="bd401361-a336-4a6c-81ed-0cfd2f208ff3" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="19ab1c84-040c-4f17-b90c-0c78f9fec0b5" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="87848522-cbb0-4e87-83f4-3f121c5ceab6" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="74d4a460-ef29-4273-9dff-87d143565b9a" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="2e4e263b-d20e-41aa-931c-414881be477c" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="bd401361-a336-4a6c-81ed-0cfd2f208ff3" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="f4f8cd03-967b-4c85-8a38-15f05983ccc6" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="5796b0ba-9006-4408-b393-adaa78bcc0de" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="6d7e2a94-e29a-4dd8-a3f4-d7f331774c7d" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="1898d1ae-c81f-4f04-b1f5-e4d381175eca" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="23fb2bd2-840d-405e-b425-9f5bd025bb26" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="dc57bce5-a871-4a0c-97be-b74537410dde" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="4fddef89-e245-45bc-aed1-a7b7a7c9fba3" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="66e640de-7421-476e-b666-b27719ae8a46" LastKnownName="item : ElementFile" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="a9a00b64-bc60-4d33-a6a8-0208d6e10d04" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="c457a315-eb3e-4a11-8572-909372301d8d" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fa75fa29-6d58-4335-bb87-551762524872" LastKnownName="lesElements : List&lt;ITransfer&gt;" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="0988a4b8-a2d8-4e65-b935-d632e8510fe3" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="de637d5d-0746-4e45-bb06-42ac43469b72" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" LastKnownName="this : ClientFtpProjectMultithreading" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="c247c7a1-f24b-4b53-971f-eb8ca5d4393c" name="this : ClientFtpProjectMultithreading" isActor="false" lifelineDisplayName="this : ClientFtpProjectMultithreading" referencedInstance="(Assembly=$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri) Namespace=API_FTP.FTP_Client.Classes Type=ClientFtpProjectMultithreading ObjectInstance=&quot;Object instance 2&quot;)" referencedType="API_FTP‎.FTP_Client‎.Classes‎.ClientFtpProjectMultithreading">
+            <referencesInternal>
+              <reference Id="f6a59fda-3edb-4d13-8104-1a182474fd1a" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=API_FTP.FTP_Client.Classes)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=ClientFtpProjectMultithreading)&quot;)" tag="DGQL" />
+              <reference Id="f7c7135f-f9d1-4d45-9528-9c8f2c5d4572" handle="(Assembly=&quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&quot; Namespace=API_FTP.FTP_Client.Classes Type=ClientFtpProjectMultithreading)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="20748023-6234-488c-a4df-7e0bc4e9d10e" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="0988a4b8-a2d8-4e65-b935-d632e8510fe3" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="fa75fa29-6d58-4335-bb87-551762524872" name="lesElements : List&lt;ITransfer&gt;" isActor="false" lifelineDisplayName="lesElements : List&lt;ITransfer&gt;" referencedInstance="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1 GenericArguments=[(Assembly=$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri) Namespace=API_FTP.FTP_Client.Interfaces Type=ITransfer)]) ObjectInstance=&quot;Object instance 5&quot;)" referencedType="System‎.Collections‎.Generic‎.List‎&lt;ITransfer‎&gt;">
+            <referencesInternal>
+              <reference Id="259b7648-93f3-42b3-82b1-2cef31b63516" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=System.Collections.Generic)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1))&quot;)" tag="DGQL" />
+              <reference Id="8a24f523-48c3-4741-a61e-e88acc7e8255" handle="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1))" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="210e0591-fc25-497f-bd5c-33ced4c99847" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="7cf49b85-b768-417d-81ce-e90ea9e67122" LastKnownName="ExecutionOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="473c6df5-165b-4954-99f4-612f3c5c4097" LastKnownName="OperandOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="26c6fea6-7bcf-4748-8def-50465784a4b8" LastKnownName="OperandOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="19ab1c84-040c-4f17-b90c-0c78f9fec0b5" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="5796b0ba-9006-4408-b393-adaa78bcc0de" LastKnownName="ExecutionOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="dc57bce5-a871-4a0c-97be-b74537410dde" LastKnownName="OperandOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="c457a315-eb3e-4a11-8572-909372301d8d" LastKnownName="OperandOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="a04abd3b-ab59-499a-84d8-d51b859d6abc" name="this._maConfig : Configuration" isActor="false" lifelineDisplayName="this._maConfig : Configuration" referencedInstance="(Assembly=$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri) Namespace=API_FTP.FTP_Client.Classes Type=ClientFtpProjectMultithreading Member=_maConfig ObjectInstance=&quot;Object instance 9&quot;)" referencedType="API_FTP‎.FTP_Client‎.Classes‎.Configuration">
+            <referencesInternal>
+              <reference Id="e9069f88-1b01-4f83-adae-f8dfff8fc7bb" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=API_FTP.FTP_Client.Classes)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=Configuration)&quot;)" tag="DGQL" />
+              <reference Id="ef1cd3b0-8127-4fca-b1ef-e4bccfe461b9" handle="(Assembly=&quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&quot; Namespace=API_FTP.FTP_Client.Classes Type=Configuration)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="507d749c-3251-4557-8e41-a3d5964317dc" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="52d1f6c9-1d66-4e34-9e12-e154be6d6b06" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="ef107c43-c93a-4611-b02d-52590d6f085d" name="MethodesGlobales" isActor="false" lifelineDisplayName="MethodesGlobales" referencedType="API_FTP‎.FTP_Client‎.MethodesGlobales">
+            <referencesInternal>
+              <reference Id="61238a8a-7ad9-4840-988b-fcef05c21793" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=API_FTP.FTP_Client)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client Type=MethodesGlobales)&quot;)" tag="DGQL" />
+              <reference Id="3c377d38-2053-487c-857d-7b036d0ed5aa" handle="(Assembly=&quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&quot; Namespace=API_FTP.FTP_Client Type=MethodesGlobales)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="d51cb7ce-8f8d-4e06-868b-226870df9e93" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="7151e673-eb2f-4f61-a7d3-0b05959f6d35" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="66e640de-7421-476e-b666-b27719ae8a46" name="item : ElementFile" isActor="false" lifelineDisplayName="item : ElementFile" referencedInstance="(Assembly=$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri) Namespace=API_FTP.FTP_Client.Classes Type=ElementFile ObjectInstance=&quot;Object instance 37&quot;)" referencedType="API_FTP‎.FTP_Client‎.Classes‎.ElementFile">
+            <referencesInternal>
+              <reference Id="9da4aa32-f7e4-42a5-a65e-533bcbbd782a" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=API_FTP.FTP_Client.Classes)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=ElementFile)&quot;)" tag="DGQL" />
+              <reference Id="d7f504f0-d06d-4acc-805a-df9425328b87" handle="(Assembly=&quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&quot; Namespace=API_FTP.FTP_Client.Classes Type=ElementFile)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <operandOccurrenceSpecificationMoniker Id="60582b2f-a488-4017-a049-2b772529ef88" LastKnownName="OperandOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="d5019fee-2bac-40f4-b958-348b592aed1f" LastKnownName="OperandOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="8aeb6497-b0f1-4986-9801-fdcc006ee39b" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="d1224a66-cbc6-43c7-9717-2156fa2762be" LastKnownName="ExecutionOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="1898d1ae-c81f-4f04-b1f5-e4d381175eca" LastKnownName="OperandOccurrenceSpecification" />
+              <operandOccurrenceSpecificationMoniker Id="4fddef89-e245-45bc-aed1-a7b7a7c9fba3" LastKnownName="OperandOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="4c4c2ae1-153a-4f03-88ff-0c6222fffae7" name="ListFileFolder" messageKind="Found" messageSort="AsynchCall" createSelfMessage="false">
+            <referencesInternal>
+              <reference Id="2791fb5c-80a9-446e-a08e-51738fc79e94" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=API_FTP.FTP_Client.Classes)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=ClientFtpProjectMultithreading)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=ClientFtpProjectMultithreading Member=(Name=ListFileFolder OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System Type=String)]))&quot;)" tag="DGQL" />
+              <reference Id="4b97ce41-7701-4751-8748-973c6797eba6" handle="(Assembly=&quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&quot; Namespace=API_FTP.FTP_Client.Classes Type=ClientFtpProjectMultithreading Member=(Name=ListFileFolder OverloadingParameters=[(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=String)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <lostFoundTargetMoniker Id="033663b5-2bfa-447d-977a-08fce97fe827" LastKnownName="LostFoundTarget" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="6aa24fb1-4f21-46c9-8b04-2c9afd9a304a" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="d705376b-3226-488a-ab45-a061490f81c2" name="Créer List‎&lt;ITransfer‎&gt;" messageKind="Complete" messageSort="CreateMessage" createSelfMessage="false" signatureText="new List&lt;ITransfer&gt;()">
+            <referencesInternal>
+              <reference Id="5af8ac1e-8018-4724-8692-45c0862fae22" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=System.Collections.Generic)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1))&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1) Member=.ctor)&quot;)" tag="DGQL" />
+              <reference Id="25009d95-3522-4f42-a9fc-567c1c27fbb1" handle="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1) Member=.ctor)" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="da288e64-5e59-428a-ad02-b9b6b5b86956" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="9a07b255-6652-42c0-aa44-88f088399107" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="8cf8daa1-75a0-4e88-8534-b52df1628ceb" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="151f4d27-4017-4f7a-a971-dff7787855c9" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="302ee181-e243-486e-b6e3-f43e08e2c96e" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="bb9516cd-f386-460d-b9d9-940657b6f95d" name="GetUriChaine" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="_maConfig.GetUriChaine()">
+            <referencesInternal>
+              <reference Id="f4812472-f402-4f36-a2f6-e5920412b3f9" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=API_FTP.FTP_Client.Classes)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=Configuration)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=Configuration Member=GetUriChaine)&quot;)" tag="DGQL" />
+              <reference Id="ce80aac2-2d12-4086-a515-d5cb49ab88bc" handle="(Assembly=&quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&quot; Namespace=API_FTP.FTP_Client.Classes Type=Configuration Member=GetUriChaine)" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="04334cf8-c146-4766-99a0-c9f2e58359b7" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="fd5c6a4c-7aea-4218-816e-69eebd4f3307" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="866ff1da-a835-4b12-aae1-3066357e8e6d" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="572f5482-c315-4eba-9674-98a993a402d0" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="5f292520-0219-4c66-b9f9-3639e3c202d1" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="86e7d68d-af83-46df-a30d-eae6e40dc672" name="GetCheminServerSansRacinne" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="MethodesGlobales.GetCheminServerSansRacinne(cheminDossierServeurFtp, _maConfig.GetUriChaine())">
+            <referencesInternal>
+              <reference Id="d3937caf-6c22-4fc0-9bc8-4aca779ae09b" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=API_FTP.FTP_Client)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client Type=MethodesGlobales)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client Type=MethodesGlobales Member=(Name=GetCheminServerSansRacinne OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System Type=String),(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System Type=String)]))&quot;)" tag="DGQL" />
+              <reference Id="a9b4d741-3934-4945-96d3-108aae7d2546" handle="(Assembly=&quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&quot; Namespace=API_FTP.FTP_Client Type=MethodesGlobales Member=(Name=GetCheminServerSansRacinne OverloadingParameters=[(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=String)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="2e628c22-7806-4715-bc3a-cf5b22783094" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="21191959-5552-43e1-9f42-aaa950a36770" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="37724475-76c3-4541-b450-3ae8065c1966" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="a17c1ed3-e38e-4677-9dbd-fb1e57da4a77" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="cb916f45-6685-4559-8282-a4e7b8f4c2cb" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="434c0379-7566-4c65-9dae-b66a5282bcc7" name="Créer ElementFile" messageKind="Complete" messageSort="CreateMessage" createSelfMessage="false" signatureText="new ElementFile(unFtpItem, Path.Combine(cheminDossierServeurFtp, unFtpItem.Name))">
+            <referencesInternal>
+              <reference Id="6850c55b-92df-4245-b897-7b304f9702db" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=API_FTP.FTP_Client.Classes)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=ElementFile)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=ElementFile Member=(Name=.ctor OverloadingParameters=[(Assembly=&amp;quot;$(VsSolutionUri)/API_FTP/FTP_Client/LibExternes/Ftp.dll&amp;quot; Namespace=Limilabs.FTP.Client Type=FtpItem),(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System Type=String)]))&quot;)" tag="DGQL" />
+              <reference Id="f7cf42cb-d2e3-4b4b-911b-e3ac4621bf95" handle="(Assembly=&quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&quot; Namespace=API_FTP.FTP_Client.Classes Type=ElementFile Member=(Name=.ctor OverloadingParameters=[(Assembly=&quot;$(VsSolutionUri)/API_FTP/FTP_Client/LibExternes/Ftp.dll&quot; Namespace=Limilabs.FTP.Client Type=FtpItem),(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=String)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="2fe42572-8d67-4fe3-9808-e3e8bdd31c1d" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="fbbc08fe-45c0-4a58-9681-0edcf28788b6" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="87ff0ebc-5598-4dbf-bedc-68c3627a400f" name="Créer Element" messageKind="Complete" messageSort="CreateMessage" createSelfMessage="true">
+            <referencesInternal>
+              <reference Id="f3780127-3635-45f3-bd8e-8067c3350c03" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=API_FTP.FTP_Client.Classes)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=Element)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&amp;quot; Namespace=API_FTP.FTP_Client.Classes Type=Element Member=.ctor)&quot;)" tag="DGQL" />
+              <reference Id="2a6e1c89-4433-4292-bb78-63b52aa9fe9a" handle="(Assembly=&quot;$(10222f15-7161-4aca-93f5-5f980f6d7661.OutputPathUri)&quot; Namespace=API_FTP.FTP_Client.Classes Type=Element Member=.ctor)" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="eff604d0-ca63-403e-836f-19f19111cfa7" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="b64c6c21-1c7f-4427-b82a-1b7eda37cf66" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="03beab65-19ab-48f7-975c-9ad7e1def75d" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="1d834cf4-0879-4092-b5ef-4b8342ffa5eb" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="122d2fdf-5f2f-4f1d-9ca0-2fb2aca3daa5" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="5e2667ca-23f5-41fb-826b-71e0f62bbcea" name="Add" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="lesElements.Add(new ElementFile(unFtpItem, Path.Combine(cheminDossierServeurFtp, unFtpItem.Name)))">
+            <referencesInternal>
+              <reference Id="8a847577-87a0-485b-9490-7ea834e03a3e" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=System.Collections.Generic)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1))&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1) Member=(Name=Add OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1) ParameterIdentifier=0)]))&quot;)" tag="DGQL" />
+              <reference Id="46b11612-7da4-4a4b-8a60-c9bd28db42a3" handle="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1) Member=(Name=Add OverloadingParameters=[(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1) ParameterIdentifier=0)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="74d4a460-ef29-4273-9dff-87d143565b9a" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="2e4e263b-d20e-41aa-931c-414881be477c" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="c5c3c0cf-0a56-4488-a7ba-e7366ce2b2d3" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="bd401361-a336-4a6c-81ed-0cfd2f208ff3" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="f4f8cd03-967b-4c85-8a38-15f05983ccc6" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="e81f943e-891d-40f0-998f-b8919162d13d" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="de637d5d-0746-4e45-bb06-42ac43469b72" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="9ed41633-a5af-4190-8757-dfe385961d67" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="8ceeabc6-0ee8-46a5-9f14-b3681f6fe052" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="eb718138-0541-4010-a6a9-6b93e17a2146" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="7adf39de-a8ad-4e9f-a4cb-4b4bcf5cfd34" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="c3130926-8ce3-42ee-91b5-e56e0842288d" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="bd947c35-bc46-45dc-89f6-1c780c31b102" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="41705113-136e-48e3-aadb-f5638e9b30b5" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="b082003f-5329-44a4-9b65-8f9e7d335b0b" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="6ba0115d-c1d6-469d-939f-cb8b9ffbd650" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="cc7d0d27-359b-4300-aa69-0decf086b593" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="87848522-cbb0-4e87-83f4-3f121c5ceab6" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="6d7e2a94-e29a-4dd8-a3f4-d7f331774c7d" name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+</SequenceDesignerModel>

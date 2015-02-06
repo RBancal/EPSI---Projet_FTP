@@ -22,6 +22,146 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_API_FTP.FTP_Client.Interfaces.IClientFtp.ListFileFolder.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_API_FTP.FTP_Client.Interfaces.IClientFtp.ListFileFolder.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_API_FTP.FTP_Client.Interfaces.IClientFtp.ListFileFolder.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_CreerDossier.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_CreerDossier.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_CreerDossier.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_Download.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_Download.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_Download.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_DownloadDossier.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_DownloadDossier.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_DownloadDossier.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_GetPathRootFolder.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_GetPathRootFolder.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_GetPathRootFolder.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_ListFileFolder.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_ListFileFolder.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_ListFileFolder.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_ListFileFolder_1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_ListFileFolder_1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_ListFileFolder_1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_ListFolder.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_ListFolder.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_ListFolder.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_Supprimer.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_Supprimer.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_Supprimer.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_Upload.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_Upload.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_Upload.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_UploadDossier.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Diagramme de séquences\ClientFtpProjectMultithreading_UploadDossier.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Diagramme de séquences\ClientFtpProjectMultithreading_UploadDossier.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="frm_clientFtp_frm_clientFtp.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="frm_clientFtp_frm_clientFtp.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>frm_clientFtp_frm_clientFtp.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="frm_clientFtp_lst_itranfertLocal_MouseDown.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="frm_clientFtp_lst_itranfertLocal_MouseDown.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>frm_clientFtp_lst_itranfertLocal_MouseDown.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="frm_clientFtp_lst_itransfertDistant_DoubleClick.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="frm_clientFtp_lst_itransfertDistant_DoubleClick.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>frm_clientFtp_lst_itransfertDistant_DoubleClick.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="frm_clientFtp_lst_messagesLog_ControlAdded.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="frm_clientFtp_lst_messagesLog_ControlAdded.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>frm_clientFtp_lst_messagesLog_ControlAdded.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="frm_clientFtp_trv_arboDistant_AfterSelect.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="frm_clientFtp_trv_arboDistant_AfterSelect.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>frm_clientFtp_trv_arboDistant_AfterSelect.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="frm_clientFtp_trv_arboLocal_AfterSelect.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="frm_clientFtp_trv_arboLocal_AfterSelect.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>frm_clientFtp_trv_arboLocal_AfterSelect.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="frm_clientFtp_tsmi_supprimer_Click.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="frm_clientFtp_tsmi_supprimer_Click.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>frm_clientFtp_tsmi_supprimer_Click.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="frm_clientFtp_UploadDossier.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="frm_clientFtp_UploadDossier.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>frm_clientFtp_UploadDossier.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="frm_clientFtp_UploadITranfert.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="frm_clientFtp_UploadITranfert.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>frm_clientFtp_UploadITranfert.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package1_1152.uml">
       <SubType>Content</SubType>
     </Content>
@@ -80,6 +220,55 @@
       <SubType>Content</SubType>
       <DependentUpon>APIFTP.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Modules\Connexion\Diagramme de séquences\frm_clientFtp_connexionButton_Click.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Modules\Connexion\Diagramme de séquences\frm_clientFtp_connexionButton_Click.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Modules\Connexion\Diagramme de séquences\frm_clientFtp_connexionButton_Click.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Modules\Envoyer_Itransfer\Diagramme de séquences\frm_clientFtp_btn_envoyer_Click.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Modules\Envoyer_Itransfer\Diagramme de séquences\frm_clientFtp_btn_envoyer_Click.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Modules\Envoyer_Itransfer\Diagramme de séquences\frm_clientFtp_btn_envoyer_Click.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_btn_recuperer_Click.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_btn_recuperer_Click.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Modules\Recuperer_Itransfer\frm_clientFtp_btn_recuperer_Click.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_DownloadDossier.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_DownloadDossier.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Modules\Recuperer_Itransfer\frm_clientFtp_DownloadDossier.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_DownloadITranfert.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_DownloadITranfert.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Modules\Recuperer_Itransfer\frm_clientFtp_DownloadITranfert.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_lst_itranfertLocal_ContextMenuStripChanged.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_lst_itranfertLocal_ContextMenuStripChanged.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Modules\Recuperer_Itransfer\frm_clientFtp_lst_itranfertLocal_ContextMenuStripChanged.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_lst_itranfertLocal_DoubleClick.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Modules\Recuperer_Itransfer\frm_clientFtp_lst_itranfertLocal_DoubleClick.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Modules\Recuperer_Itransfer\frm_clientFtp_lst_itranfertLocal_DoubleClick.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="SeqListerContenuLocal.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -94,9 +283,24 @@
       <SubType>Content</SubType>
       <DependentUpon>UMLUseCaseDiagram1.usecasediagram</DependentUpon>
     </Content>
+    <Folder Include="Classes\" />
+    <Folder Include="Classes\Diagramme de séquences\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\Diagramme de séquences\" />
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\ModelingProject2.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Modules" />
+    <Folder Include="Modules\Afficher\Diagramme de séquences\" />
+    <Folder Include="Modules\Connexion\Diagramme de séquences\" />
+    <Folder Include="Modules\Envoyer_Itransfer" />
+    <Folder Include="Modules\Connexion" />
+    <Folder Include="Modules\Afficher" />
+    <Folder Include="Modules\Envoyer_Itransfer\Diagramme de séquences\" />
+    <Folder Include="Modules\Recuperer_Itransfer" />
+    <Folder Include="Modules\Recuperer_Itransfer\Diagramme de séquences\" />
+    <Folder Include="Modules\Supprimer\" />
+    <Folder Include="Modules\Supprimer\Diagramme de séquences\" />
   </ItemGroup>
 </Project>
